@@ -19,10 +19,12 @@ public class UserInfo {
         }
     }
 
+//  printing method
     public static void printUserInfo(String firstName, String lastName, int age) {
         System.out.println("Hi " + firstName + " " + lastName + ", you are " + age + " years old ;)");
     }
 
+//  printing method on not entered information exception
     public static void exceptionPrint() {
 
 //      initializing scanner to get information
