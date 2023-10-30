@@ -1,4 +1,4 @@
-package org.manumiguezz;
+package org.manumiguezz.taskone;
 
 import java.util.Scanner;
 

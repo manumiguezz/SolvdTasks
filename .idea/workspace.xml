@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="09dda446-2e85-4c47-ac8d-9aa9477b7826" name="Changes" comment="files moved">
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/manumiguezz/BubbleSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/manumiguezz/taskone/BubbleSort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/manumiguezz/SelectionSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/manumiguezz/taskone/SelectionSort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/manumiguezz/SortingAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/manumiguezz/taskone/SortingAlgorithm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/manumiguezz/UserInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/manumiguezz/taskone/UserInfo.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="taskTwo" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2XLlvtO76MMFGiUeNdVkU5jZ4dQ" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "taskOne",
+    "last_opened_file_path": "F:/Coding/JavaProjects/Solvd/SolvdTasks/src/main/java/org/manumiguezz/tasktwo"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\Coding\JavaProjects\Solvd\SolvdTasks\src\main\java\org\manumiguezz\tasktwo" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\Coding\JavaProjects\Solvd\SolvdTasks" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.manumiguezz.Main" />
+      <module name="SolvdTasks" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.manumiguezz.taskone.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="09dda446-2e85-4c47-ac8d-9aa9477b7826" name="Changes" comment="" />
+      <created>1698416477825</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1698416477825</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Selection sort created and finished, bubble sort started.">
+      <created>1698419265700</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1698419265700</updated>
+    </task>
+    <task id="LOCAL-00002" summary="computer component added with two classes, task two started">
+      <created>1698612478352</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1698612478352</updated>
+    </task>
+    <task id="LOCAL-00003" summary="moved">
+      <created>1698612603853</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1698612603853</updated>
+    </task>
+    <task id="LOCAL-00004" summary="deleted">
+      <created>1698612646202</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1698612646202</updated>
+    </task>
+    <task id="LOCAL-00005" summary="all classes created, main instances added, display needed">
+      <created>1698613697415</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1698613697415</updated>
+    </task>
+    <task id="LOCAL-00006" summary="display details method added to each one, task finished">
+      <created>1698615081836</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1698615081836</updated>
+    </task>
+    <task id="LOCAL-00007" summary="files moved">
+      <created>1698615204364</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1698615204364</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Selection sort created and finished, bubble sort started." />
+    <MESSAGE value="computer component added with two classes, task two started" />
+    <MESSAGE value="moved" />
+    <MESSAGE value="deleted" />
+    <MESSAGE value="all classes created, main instances added, display needed" />
+    <MESSAGE value="display details method added to each one, task finished" />
+    <MESSAGE value="files moved" />
+    <option name="LAST_COMMIT_MESSAGE" value="files moved" />
+  </component>
+</project>
