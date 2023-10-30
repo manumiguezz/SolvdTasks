@@ -1,12 +1,11 @@
-package org.manumiguezz.tasktwo;
+package org.manumiguezz.tasktwo.models;
 
 public class CPU extends ComputerComponent {
     private int cores;
     private String socketType;
 
     public CPU(String name, String manufacturer, int cores, String socketType) {
-        super.setName(name);
-        super.setManufacturer(manufacturer);
+        super(name, manufacturer);
         this.cores = cores;
         this.socketType = socketType;
     }

@@ -1,14 +1,11 @@
-package org.manumiguezz.tasktwo;
-
-import org.manumiguezz.ComputerComponent;
+package org.manumiguezz.tasktwo.models;
 
 public class Storage extends ComputerComponent {
     private int capacityGB;
     private String storageType;
 
     public Storage(String name, String manufacturer, int capacityGB, String storageType) {
-        super.setName(name);
-        super.setManufacturer(manufacturer);
+        super(name, manufacturer);
         this.capacityGB = capacityGB;
         this.storageType = storageType;
     }

@@ -1,12 +1,11 @@
-package org.manumiguezz.tasktwo;
+package org.manumiguezz.tasktwo.models;
 
-public class Memory extends ComputerComponent{
+public class Memory extends ComputerComponent {
     private int sizeGb;
     private String memoryType;
 
     public Memory(String name, String manufacturer, int sizeGb, String memoryType) {
-        super.setName(name);
-        super.setManufacturer(manufacturer);
+        super(name, manufacturer);
         this.sizeGb = sizeGb;
         this.memoryType = memoryType;
     }

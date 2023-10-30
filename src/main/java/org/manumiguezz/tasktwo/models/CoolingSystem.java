@@ -1,14 +1,11 @@
-package org.manumiguezz.tasktwo;
-
-import org.manumiguezz.ComputerComponent;
+package org.manumiguezz.tasktwo.models;
 
 public class CoolingSystem extends ComputerComponent {
     private int fanSpeed;
     private String coolingType;
 
     public CoolingSystem(String name, String manufacturer, int fanSpeed, String coolingType) {
-        super.setName(name);
-        super.setManufacturer(manufacturer);
+        super(name, manufacturer);
         this.fanSpeed = fanSpeed;
         this.coolingType = coolingType;
     }

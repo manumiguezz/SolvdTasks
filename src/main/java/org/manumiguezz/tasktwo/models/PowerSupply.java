@@ -1,13 +1,12 @@
-package org.manumiguezz.tasktwo;
+package org.manumiguezz.tasktwo.models;
 
-public class PowerSupply extends ComputerComponent{
+public class PowerSupply extends ComputerComponent {
 
     private int wattsCertificate;
     private String powerSupplyType;
 
     public PowerSupply(String name, String manufacturer, int wattsCertificate, String powerSupplyType) {
-        super.setName(name);
-        super.setManufacturer(manufacturer);
+        super(name, manufacturer);
         this.wattsCertificate = wattsCertificate;
         this.powerSupplyType = powerSupplyType;
     }

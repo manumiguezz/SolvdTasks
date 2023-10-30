@@ -1,12 +1,11 @@
-package org.manumiguezz.tasktwo;
+package org.manumiguezz.tasktwo.models;
 
 public class NetworkAdapter extends ComputerComponent {
     private int speed;
     private String ConnectionType;
 
     public NetworkAdapter(String name, String manufacturer, int speed, String connectionType) {
-        super.setName(name);
-        super.setManufacturer(manufacturer);
+        super(name, manufacturer);
         this.speed = speed;
         ConnectionType = connectionType;
     }

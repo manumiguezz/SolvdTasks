@@ -1,14 +1,11 @@
-package org.manumiguezz.tasktwo;
-
-import org.manumiguezz.ComputerComponent;
+package org.manumiguezz.tasktwo.models;
 
 public class Motherboard extends ComputerComponent {
     private String chipset;
     private String socketType;
 
     public Motherboard(String name, String manufacturer, String chipset, String socketType) {
-        super.setName(name);
-        super.setManufacturer(manufacturer);
+        super(name, manufacturer);
         this.chipset = chipset;
         this.socketType = socketType;
     }

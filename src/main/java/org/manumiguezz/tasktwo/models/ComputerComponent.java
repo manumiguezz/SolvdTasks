@@ -1,8 +1,11 @@
-package org.manumiguezz.tasktwo;
+package org.manumiguezz.tasktwo.models;
 
 public class ComputerComponent {
     private String name;
     private String manufacturer;
+
+    public ComputerComponent(String name, String manufacturer) {
+    }
 
     public String getName() {
         return name;

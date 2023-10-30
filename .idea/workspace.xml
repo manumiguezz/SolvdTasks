@@ -5,11 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="09dda446-2e85-4c47-ac8d-9aa9477b7826" name="Changes" comment="files moved">
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/manumiguezz/BubbleSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/manumiguezz/taskone/BubbleSort.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/manumiguezz/SelectionSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/manumiguezz/taskone/SelectionSort.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/manumiguezz/SortingAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/manumiguezz/taskone/SortingAlgorithm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/manumiguezz/UserInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/manumiguezz/taskone/UserInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/manumiguezz/tasktwo/models/Computer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/manumiguezz/tasktwo/CPU.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/manumiguezz/tasktwo/models/CPU.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/manumiguezz/tasktwo/ComputerComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/manumiguezz/tasktwo/models/ComputerComponent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/manumiguezz/tasktwo/CoolingSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/manumiguezz/tasktwo/models/CoolingSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/manumiguezz/tasktwo/GPU.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/manumiguezz/tasktwo/models/GPU.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/manumiguezz/tasktwo/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/manumiguezz/tasktwo/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/manumiguezz/tasktwo/Memory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/manumiguezz/tasktwo/models/Memory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/manumiguezz/tasktwo/Motherboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/manumiguezz/tasktwo/models/Motherboard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/manumiguezz/tasktwo/NetworkAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/manumiguezz/tasktwo/models/NetworkAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/manumiguezz/tasktwo/PowerSupply.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/manumiguezz/tasktwo/models/PowerSupply.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/manumiguezz/tasktwo/Storage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/manumiguezz/tasktwo/models/Storage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,6 +63,7 @@
       <recent name="F:\Coding\JavaProjects\Solvd\SolvdTasks\src\main\java\org\manumiguezz\tasktwo" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\Coding\JavaProjects\Solvd\SolvdTasks\src\main\java\org\manumiguezz\tasktwo" />
       <recent name="F:\Coding\JavaProjects\Solvd\SolvdTasks" />
     </key>
   </component>

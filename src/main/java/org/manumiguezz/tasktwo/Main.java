@@ -1,5 +1,7 @@
 package org.manumiguezz.tasktwo;
 
+import org.manumiguezz.tasktwo.models.*;
+
 public class Main {
     public static void main(String[] args) {
         CPU cpu = new CPU("Intel I9", "Intel", 9, "LGA1151");
@@ -12,6 +14,7 @@ public class Main {
         Storage internalStorage = new Storage("Kingston 240", "Kingston", 240, "SSD");
         Storage externalStorage = new Storage("WD elements 1TB", "WD", 1000, "External");
 
+        Computer myHomeComputer = new Computer(cpu, gpu, motherboard, memory, internalStorage, power, net, cool);
 
         System.out.println("info about my computer and each component:");
         cpu.displayDetails();

@@ -1,14 +1,11 @@
-package org.manumiguezz.tasktwo;
-
-import org.manumiguezz.ComputerComponent;
+package org.manumiguezz.tasktwo.models;
 
 public class GPU extends ComputerComponent {
     private int memorySizeGB;
     private String gpuType;
 
     public GPU(String name, String manufacturer, int memorySizeGB, String gpuType) {
-        super.setName(name);
-        super.setManufacturer(manufacturer);
+        super(name, manufacturer);
         this.memorySizeGB = memorySizeGB;
         this.gpuType = gpuType;
     }
