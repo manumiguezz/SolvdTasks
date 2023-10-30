@@ -25,4 +25,8 @@ public class GPU extends ComputerComponent {
     public void setGpuType(String gpuType) {
         this.gpuType = gpuType;
     }
+
+    public void usingGpu () {
+        System.out.println("using " + gpuType + "...");
+    }
 }

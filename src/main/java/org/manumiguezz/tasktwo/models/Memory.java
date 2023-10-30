@@ -25,4 +25,8 @@ public class Memory extends ComputerComponent {
     public void setMemoryType(String memoryType) {
         this.memoryType = memoryType;
     }
+
+    public void usingMemory () {
+        System.out.println("using the total capacity of " + sizeGb + "gb...");
+    }
 }

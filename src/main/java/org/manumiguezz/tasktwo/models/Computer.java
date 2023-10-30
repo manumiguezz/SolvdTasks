@@ -1,5 +1,4 @@
 package org.manumiguezz.tasktwo.models;
-import org.manumiguezz.tasktwo.models.*;
 
 public class Computer {
     private CPU cpu;
@@ -22,15 +21,40 @@ public class Computer {
         this.coolingSystem = coolingSystem;
     }
 
-    public static void playGames () {
+    public void playGames (CPU cpu, GPU gpu, CoolingSystem cool) {
+        cpu.usingCpu();
+        gpu.usingGpu();
+        cool.coolingSystemMax();
         System.out.println("playing games...");
     }
 
-    public static void playMusic () {
+    public void playMusic (CPU cpu, Memory memory) {
+        cpu.usingCpu();
+        memory.usingMemory();
         System.out.println("playing music...");
     }
 
-    public static void code () {
+    public void code (Memory memory) {
+        memory.usingMemory();
         System.out.println("coding...");
+    }
+
+    public void chatting (NetworkAdapter networkAdapter) {
+        networkAdapter.usingNetwork();
+        System.out.println("chatting");
+    }
+
+    public void seeDetails (CoolingSystem coolingSystem, NetworkAdapter networkAdapter, GPU gpu, CPU cpu,
+                            Memory memory, Motherboard motherboard, PowerSupply powerSupply, Storage storage) {
+        System.out.println("Info about each component");
+        gpu.displayDetails();
+        cpu.displayDetails();
+        motherboard.displayDetails();
+        memory.displayDetails();
+        storage.displayDetails();
+        powerSupply.displayDetails();
+        coolingSystem.displayDetails();
+        networkAdapter.displayDetails();
+
     }
 }

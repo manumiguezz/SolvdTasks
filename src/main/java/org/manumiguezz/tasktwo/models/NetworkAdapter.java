@@ -7,7 +7,7 @@ public class NetworkAdapter extends ComputerComponent {
     public NetworkAdapter(String name, String manufacturer, int speed, String connectionType) {
         super(name, manufacturer);
         this.speed = speed;
-        ConnectionType = connectionType;
+        this.ConnectionType = connectionType;
     }
 
     public int getSpeed() {
@@ -24,5 +24,9 @@ public class NetworkAdapter extends ComputerComponent {
 
     public void setConnectionType(String connectionType) {
         this.ConnectionType = connectionType;
+    }
+
+    public void usingNetwork () {
+        System.out.println("connecting to " + getConnectionType() + "network...");
     }
 }

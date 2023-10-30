@@ -25,4 +25,8 @@ public class CPU extends ComputerComponent {
     public void setSocketType(String socketType) {
         this.socketType = socketType;
     }
+
+    public void usingCpu () {
+        System.out.println("running cpu using a number of " + cores + "...");
+    }
 }

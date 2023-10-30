@@ -5,18 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="09dda446-2e85-4c47-ac8d-9aa9477b7826" name="Changes" comment="files moved">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/manumiguezz/tasktwo/models/Computer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/manumiguezz/tasktwo/CPU.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/manumiguezz/tasktwo/models/CPU.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/manumiguezz/tasktwo/ComputerComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/manumiguezz/tasktwo/models/ComputerComponent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/manumiguezz/tasktwo/CoolingSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/manumiguezz/tasktwo/models/CoolingSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/manumiguezz/tasktwo/GPU.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/manumiguezz/tasktwo/models/GPU.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/manumiguezz/tasktwo/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/manumiguezz/tasktwo/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/manumiguezz/tasktwo/Memory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/manumiguezz/tasktwo/models/Memory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/manumiguezz/tasktwo/Motherboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/manumiguezz/tasktwo/models/Motherboard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/manumiguezz/tasktwo/NetworkAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/manumiguezz/tasktwo/models/NetworkAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/manumiguezz/tasktwo/PowerSupply.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/manumiguezz/tasktwo/models/PowerSupply.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/manumiguezz/tasktwo/Storage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/manumiguezz/tasktwo/models/Storage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/manumiguezz/tasktwo/models/CPU.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/manumiguezz/tasktwo/models/CPU.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/manumiguezz/tasktwo/models/Computer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/manumiguezz/tasktwo/models/Computer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/manumiguezz/tasktwo/models/CoolingSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/manumiguezz/tasktwo/models/CoolingSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/manumiguezz/tasktwo/models/GPU.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/manumiguezz/tasktwo/models/GPU.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/manumiguezz/tasktwo/models/Memory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/manumiguezz/tasktwo/models/Memory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/manumiguezz/tasktwo/models/NetworkAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/manumiguezz/tasktwo/models/NetworkAdapter.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +51,11 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "taskOne",
-    "last_opened_file_path": "F:/Coding/JavaProjects/Solvd/SolvdTasks/src/main/java/org/manumiguezz/tasktwo"
+    "last_opened_file_path": "F:/Coding/JavaProjects/Solvd/SolvdTasks/src/main/java/org/manumiguezz/tasktwo",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -67,7 +67,7 @@
       <recent name="F:\Coding\JavaProjects\Solvd\SolvdTasks" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.org.manumiguezz.tasktwo.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.manumiguezz.Main" />
       <module name="SolvdTasks" />
@@ -81,9 +81,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="org.manumiguezz.tasktwo.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.manumiguezz.tasktwo.Main" />
+      <module name="SolvdTasks" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.manumiguezz.tasktwo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.org.manumiguezz.tasktwo.Main" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main" />

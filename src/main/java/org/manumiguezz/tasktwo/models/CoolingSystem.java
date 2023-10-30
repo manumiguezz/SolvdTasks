@@ -25,4 +25,11 @@ public class CoolingSystem extends ComputerComponent {
     public void setCoolingType(String coolingType) {
         this.coolingType = coolingType;
     }
+
+    public void coolingSystemMax() {
+        int maximumPerformance = fanSpeed + 2;
+        System.out.println("taking fan speed to maximum: " + fanSpeed + "...");
+    }
+
+
 }
