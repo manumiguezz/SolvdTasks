@@ -1,8 +1,10 @@
 package org.manumiguezz.taskthree.models;
 
+import java.util.Objects;
+
 public class CoolingSystem extends ComputerComponent {
-    private int fanSpeed;
-    private String coolingType;
+    protected int fanSpeed;
+    protected String coolingType;
 
     public CoolingSystem(String name, String manufacturer, int fanSpeed, String coolingType) {
         super(name, manufacturer);
@@ -31,5 +33,32 @@ public class CoolingSystem extends ComputerComponent {
         System.out.println("taking fan speed to maximum: " + fanSpeed + "...");
     }
 
+    @Override
+    public void displayDetails() {
+        System.out.println("Your component " + name + " is manufactured by " + manufacturer);
+    }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        CoolingSystem that = (CoolingSystem) o;
+        return fanSpeed == that.fanSpeed && Objects.equals(coolingType, that.coolingType);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), fanSpeed, coolingType);
+    }
+
+    @Override
+    public String toString() {
+        return "CoolingSystem{" +
+                "fanSpeed=" + fanSpeed +
+                ", coolingType='" + coolingType + '\'' +
+                ", name='" + name + '\'' +
+                ", manufacturer='" + manufacturer + '\'' +
+                '}';
+    }
 }

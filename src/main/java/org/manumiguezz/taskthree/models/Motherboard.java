@@ -1,8 +1,10 @@
 package org.manumiguezz.taskthree.models;
 
+import java.util.Objects;
+
 public class Motherboard extends ComputerComponent {
-    private String chipset;
-    private String socketType;
+    protected String chipset;
+    protected String socketType;
 
     public Motherboard(String name, String manufacturer, String chipset, String socketType) {
         super(name, manufacturer);
@@ -24,5 +26,34 @@ public class Motherboard extends ComputerComponent {
 
     public void setSocketType(String socketType) {
         this.socketType = socketType;
+    }
+
+    @Override
+    public void displayDetails() {
+        System.out.println("Your component " + name + " is manufactured by " + manufacturer);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        Motherboard that = (Motherboard) o;
+        return Objects.equals(chipset, that.chipset) && Objects.equals(socketType, that.socketType);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), chipset, socketType);
+    }
+
+    @Override
+    public String toString() {
+        return "Motherboard{" +
+                "chipset='" + chipset + '\'' +
+                ", socketType='" + socketType + '\'' +
+                ", name='" + name + '\'' +
+                ", manufacturer='" + manufacturer + '\'' +
+                '}';
     }
 }

@@ -1,8 +1,10 @@
 package org.manumiguezz.taskthree.models;
 
+import java.util.Objects;
+
 public class Memory extends ComputerComponent {
-    private int sizeGb;
-    private String memoryType;
+    protected int sizeGb;
+    protected String memoryType;
 
     public Memory(String name, String manufacturer, int sizeGb, String memoryType) {
         super(name, manufacturer);
@@ -28,5 +30,34 @@ public class Memory extends ComputerComponent {
 
     public void usingMemory () {
         System.out.println("using the total capacity of " + sizeGb + "gb...");
+    }
+
+    @Override
+    public void displayDetails() {
+        System.out.println("Your component " + name + " is manufactured by " + manufacturer);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        Memory memory = (Memory) o;
+        return sizeGb == memory.sizeGb && Objects.equals(memoryType, memory.memoryType);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), sizeGb, memoryType);
+    }
+
+    @Override
+    public String toString() {
+        return "Memory{" +
+                "sizeGb=" + sizeGb +
+                ", memoryType='" + memoryType + '\'' +
+                ", name='" + name + '\'' +
+                ", manufacturer='" + manufacturer + '\'' +
+                '}';
     }
 }

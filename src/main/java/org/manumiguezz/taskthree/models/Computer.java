@@ -46,7 +46,7 @@ public class Computer {
 
     public void seeDetails (CoolingSystem coolingSystem, NetworkAdapter networkAdapter, GPU gpu, CPU cpu,
                             Memory memory, Motherboard motherboard, PowerSupply powerSupply, Storage storage) {
-        System.out.println("Info about each component");
+        System.out.println("Info about each component:");
         gpu.displayDetails();
         cpu.displayDetails();
         motherboard.displayDetails();

@@ -1,9 +1,11 @@
 package org.manumiguezz.taskthree.models;
 
+import java.util.Objects;
+
 public class PowerSupply extends ComputerComponent {
 
-    private int wattsCertificate;
-    private String powerSupplyType;
+    protected int wattsCertificate;
+    protected String powerSupplyType;
 
     public PowerSupply(String name, String manufacturer, int wattsCertificate, String powerSupplyType) {
         super(name, manufacturer);
@@ -25,5 +27,34 @@ public class PowerSupply extends ComputerComponent {
 
     public void setPowerSupplyType(String powerSupplyType) {
         this.powerSupplyType = powerSupplyType;
+    }
+
+    @Override
+    public void displayDetails() {
+        System.out.println("Your component " + name + " is manufactured by " + manufacturer);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        PowerSupply that = (PowerSupply) o;
+        return wattsCertificate == that.wattsCertificate && Objects.equals(powerSupplyType, that.powerSupplyType);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), wattsCertificate, powerSupplyType);
+    }
+
+    @Override
+    public String toString() {
+        return "PowerSupply{" +
+                "wattsCertificate=" + wattsCertificate +
+                ", powerSupplyType='" + powerSupplyType + '\'' +
+                ", name='" + name + '\'' +
+                ", manufacturer='" + manufacturer + '\'' +
+                '}';
     }
 }

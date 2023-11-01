@@ -21,8 +21,8 @@ public class Main {
 
         Computer myHomeComputer = new Computer(cpu, gpu, motherboard, memory, internalStorage, power, net, cool);
 
-        System.out.println("activities to do: \n 1. chatting \n 2. playing games \n 3. playing music \n 4. coding");
-        System.out.println("choose one with a number");
+        System.out.println("activities to do: \n 1. chatting \n 2. playing games \n 3. playing music \n 4. coding \n 5. display computer details");
+        System.out.println("choose one with a number:");
         int activity = 0;
         try {
             activity = scanner.nextInt();
@@ -40,8 +40,11 @@ public class Main {
                 case 4:
                     myHomeComputer.code(memory);
                     break;
+                case 5:
+                    myHomeComputer.seeDetails(cool, net, gpu, cpu, memory, motherboard, power, internalStorage);
+                    break;
                 default:
-                    System.out.println("Please choose a correct number (1-4).");
+                    System.out.println("Please choose a correct number (1-5).");
                     break;
             }
         } catch (Exception e) {
