@@ -7,6 +7,8 @@ public abstract class ComputerComponent {
     protected String manufacturer;
 
     public ComputerComponent(String name, String manufacturer) {
+        this.name = name;
+        this.manufacturer = manufacturer;
     }
 
     public String getName() {
