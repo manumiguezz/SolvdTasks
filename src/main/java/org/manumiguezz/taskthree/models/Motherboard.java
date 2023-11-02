@@ -34,6 +34,11 @@ public class Motherboard extends ComputerComponent {
     }
 
     @Override
+    public void usingComponent() {
+        System.out.println("Motherboard working...");
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;

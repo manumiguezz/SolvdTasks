@@ -28,7 +28,8 @@ public class GPU extends ComputerComponent {
         this.gpuType = gpuType;
     }
 
-    public void usingGpu () {
+    @Override
+    public void usingComponent() {
         System.out.println("using " + gpuType + "...");
     }
 

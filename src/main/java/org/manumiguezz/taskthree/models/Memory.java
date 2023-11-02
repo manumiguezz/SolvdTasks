@@ -28,13 +28,14 @@ public class Memory extends ComputerComponent {
         this.memoryType = memoryType;
     }
 
-    public void usingMemory () {
-        System.out.println("using the total capacity of " + sizeGb + "gb...");
-    }
-
     @Override
     public void displayDetails() {
         System.out.println("Your component " + name + " is manufactured by " + manufacturer);
+    }
+
+    @Override
+    public void usingComponent() {
+        System.out.println("using the total capacity of " + sizeGb + "gb...");
     }
 
     @Override

@@ -28,7 +28,8 @@ public class CPU extends ComputerComponent {
         this.socketType = socketType;
     }
 
-    public void usingCpu () {
+    @Override
+    public void usingComponent() {
         System.out.println("running cpu using a number of " + cores + "...");
     }
 

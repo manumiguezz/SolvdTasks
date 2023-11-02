@@ -28,13 +28,14 @@ public class NetworkAdapter extends ComputerComponent {
         this.ConnectionType = connectionType;
     }
 
-    public void usingNetwork () {
-        System.out.println("connecting to " + getConnectionType() + "network...");
-    }
-
     @Override
     public void displayDetails() {
         System.out.println("Your component " + name + " is manufactured by " + manufacturer);
+    }
+
+    @Override
+    public void usingComponent() {
+        System.out.println("connecting to " + getConnectionType() + "network...");
     }
 
     @Override

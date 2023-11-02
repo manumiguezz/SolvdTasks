@@ -29,6 +29,8 @@ public abstract class ComputerComponent {
 
     public abstract void displayDetails();
 
+    public abstract void usingComponent();
+
     @Override
     public String toString() {
         return "ComputerComponent{" +

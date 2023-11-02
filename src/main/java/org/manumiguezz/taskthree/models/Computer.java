@@ -21,31 +21,31 @@ public class Computer {
         this.coolingSystem = coolingSystem;
     }
 
-    public void playGames (CPU cpu, GPU gpu, CoolingSystem cool) {
-        cpu.usingCpu();
-        gpu.usingGpu();
-        cool.coolingSystemMax();
+    public void playGames (ComputerComponent cpu, ComputerComponent gpu, ComputerComponent cool) {
+        cpu.usingComponent();
+        gpu.usingComponent();
+        cool.usingComponent();
         System.out.println("playing games...");
     }
 
-    public void playMusic (CPU cpu, Memory memory) {
-        cpu.usingCpu();
-        memory.usingMemory();
+    public void playMusic (ComputerComponent cpu, ComputerComponent memory) {
+        cpu.usingComponent();
+        memory.usingComponent();
         System.out.println("playing music...");
     }
 
-    public void code (Memory memory) {
-        memory.usingMemory();
+    public void code (ComputerComponent memory) {
+        memory.usingComponent();
         System.out.println("coding...");
     }
 
-    public void chatting (NetworkAdapter networkAdapter) {
-        networkAdapter.usingNetwork();
+    public void chatting (ComputerComponent networkAdapter) {
+        networkAdapter.usingComponent();
         System.out.println("chatting");
     }
 
-    public void seeDetails (CoolingSystem coolingSystem, NetworkAdapter networkAdapter, GPU gpu, CPU cpu,
-                            Memory memory, Motherboard motherboard, PowerSupply powerSupply, Storage storage) {
+    public void seeDetails (ComputerComponent coolingSystem, ComputerComponent networkAdapter, ComputerComponent gpu, ComputerComponent cpu,
+                            ComputerComponent memory, ComputerComponent motherboard, ComputerComponent powerSupply, ComputerComponent storage) {
         System.out.println("Info about each component:");
         gpu.displayDetails();
         cpu.displayDetails();

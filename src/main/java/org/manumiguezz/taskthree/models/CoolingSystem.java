@@ -28,14 +28,15 @@ public class CoolingSystem extends ComputerComponent {
         this.coolingType = coolingType;
     }
 
-    public void coolingSystemMax() {
-        int maximumPerformance = fanSpeed + 2;
-        System.out.println("taking fan speed to maximum: " + fanSpeed + "...");
-    }
-
     @Override
     public void displayDetails() {
         System.out.println("Your component " + name + " is manufactured by " + manufacturer);
+    }
+
+    @Override
+    public void usingComponent() {
+        int maximumPerformance = fanSpeed + 2;
+        System.out.println("taking fan speed to maximum: " + fanSpeed + "...");
     }
 
     @Override
