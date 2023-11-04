@@ -34,7 +34,14 @@ public class MergeSort {
         int a = 0, b = 0, c = 0;
 
         while (a < leftSize && b < rightSize) {
-
+            if (leftHalf [a] <= rightHalf [b]) {
+                arrayInt [c] = leftHalf [a];
+                a++;
+            } else {
+                arrayInt [c] = rightHalf [b];
+                b++;
+            }
+            c++;
         }
     }
 }
