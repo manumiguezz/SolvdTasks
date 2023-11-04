@@ -28,6 +28,13 @@ public class MergeSort {
     }
 
     private static void merge(int[] arrayInt, int[] leftHalf, int[] rightHalf) {
+        int leftSize = leftHalf.length;
+        int rightSize = rightHalf.length;
 
+        int a = 0, b = 0, c = 0;
+
+        while (a < leftSize && b < rightSize) {
+
+        }
     }
 }
