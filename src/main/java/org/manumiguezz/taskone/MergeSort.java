@@ -43,5 +43,17 @@ public class MergeSort {
             }
             c++;
         }
+
+        while (a < leftSize) {
+            arrayInt [c] = leftHalf [a];
+            a++;
+            c++;
+        }
+
+        while (b < leftSize) {
+            arrayInt [c] = rightHalf [b];
+            b++;
+            c++;
+        }
     }
 }
