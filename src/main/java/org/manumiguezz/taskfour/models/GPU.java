@@ -2,7 +2,7 @@ package org.manumiguezz.taskfour.models;
 
 import java.util.Objects;
 
-public class GPU extends ComputerComponent {
+public class GPU extends ComputerComponent implements Overclockable, Maintainable{
     protected int memorySizeGB;
     protected String gpuType;
 
@@ -31,6 +31,21 @@ public class GPU extends ComputerComponent {
     @Override
     public void usingComponent() {
         System.out.println("using " + gpuType + "...");
+    }
+
+    @Override
+    public void overclock() {
+        System.out.println("overclock");
+    }
+
+    @Override
+    public void performMaintenance() {
+        System.out.println("performing maintenance");
+    }
+
+    @Override
+    public void checkStatus() {
+        System.out.println("checking...");
     }
 
     @Override

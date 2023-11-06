@@ -2,7 +2,7 @@ package org.manumiguezz.taskfour.models;
 
 import java.util.Objects;
 
-public class PowerSupply extends ComputerComponent {
+public class PowerSupply extends ComputerComponent implements Powerable, Maintainable{
 
     protected int wattsCertificate;
     protected String powerSupplyType;
@@ -61,5 +61,25 @@ public class PowerSupply extends ComputerComponent {
                 ", name='" + name + '\'' +
                 ", manufacturer='" + manufacturer + '\'' +
                 '}';
+    }
+
+    @Override
+    public void performMaintenance() {
+        System.out.println("performing maintenance");
+    }
+
+    @Override
+    public void checkStatus() {
+        System.out.println("checking...");
+    }
+
+    @Override
+    public void powerOn() {
+        System.out.println("starting up");
+    }
+
+    @Override
+    public void powerOff() {
+        System.out.println("shutting down");
     }
 }

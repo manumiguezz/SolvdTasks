@@ -2,7 +2,7 @@ package org.manumiguezz.taskfour.models;
 
 import java.util.Objects;
 
-public class CoolingSystem extends ComputerComponent {
+public class CoolingSystem extends ComputerComponent implements Maintainable{
     protected int fanSpeed;
     protected String coolingType;
 
@@ -61,5 +61,15 @@ public class CoolingSystem extends ComputerComponent {
                 ", name='" + name + '\'' +
                 ", manufacturer='" + manufacturer + '\'' +
                 '}';
+    }
+
+    @Override
+    public void performMaintenance() {
+        System.out.println("performing maintenance");
+    }
+
+    @Override
+    public void checkStatus() {
+        System.out.println("checking...");
     }
 }

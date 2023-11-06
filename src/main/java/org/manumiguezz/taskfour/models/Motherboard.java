@@ -2,7 +2,7 @@ package org.manumiguezz.taskfour.models;
 
 import java.util.Objects;
 
-public class Motherboard extends ComputerComponent {
+public class Motherboard extends ComputerComponent implements Maintainable {
     protected String chipset;
     protected String socketType;
 
@@ -36,6 +36,16 @@ public class Motherboard extends ComputerComponent {
     @Override
     public void usingComponent() {
         System.out.println("Motherboard working...");
+    }
+
+    @Override
+    public void performMaintenance() {
+        System.out.println("performing maintenance");
+    }
+
+    @Override
+    public void checkStatus() {
+        System.out.println("checking...");
     }
 
     @Override

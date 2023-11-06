@@ -2,7 +2,7 @@ package org.manumiguezz.taskfour.models;
 
 import java.util.Objects;
 
-public class NetworkAdapter extends ComputerComponent {
+public class NetworkAdapter extends ComputerComponent implements Connectable, Maintainable{
     protected int speed;
     protected String ConnectionType;
 
@@ -36,6 +36,26 @@ public class NetworkAdapter extends ComputerComponent {
     @Override
     public void usingComponent() {
         System.out.println("connecting to " + getConnectionType() + "network...");
+    }
+
+    @Override
+    public void connect() {
+        System.out.println("connecting to network");
+    }
+
+    @Override
+    public void disconnect() {
+        System.out.println("disconnecting from network");
+    }
+
+    @Override
+    public void performMaintenance() {
+        System.out.println("performing maintenance");
+    }
+
+    @Override
+    public void checkStatus() {
+        System.out.println("checking...");
     }
 
     @Override

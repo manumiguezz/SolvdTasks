@@ -2,7 +2,7 @@ package org.manumiguezz.taskfour.models;
 
 import java.util.Objects;
 
-public class CPU extends ComputerComponent {
+public class CPU extends ComputerComponent implements Overclockable, Maintainable {
     protected int cores;
     protected String socketType;
 
@@ -36,6 +36,21 @@ public class CPU extends ComputerComponent {
     @Override
     public void displayDetails() {
         System.out.println("Your component " + name + " is manufactured by " + manufacturer);
+    }
+
+    @Override
+    public void overclock() {
+        System.out.println("overclock");
+    }
+
+    @Override
+    public void performMaintenance() {
+        System.out.println("performing maintenance");
+    }
+
+    @Override
+    public void checkStatus() {
+        System.out.println("checking...");
     }
 
     @Override
