@@ -5,10 +5,19 @@ import java.util.Objects;
 public abstract class ComputerComponent {
     protected String name;
     protected String manufacturer;
+    private final int componentID;
+
+    static {
+        System.out.println("performing initialization tasks");
+    }
+
+    private static int totalComponents = 0;
 
     public ComputerComponent(String name, String manufacturer) {
+        totalComponents++;
         this.name = name;
         this.manufacturer = manufacturer;
+        this.componentID = totalComponents;
     }
 
     public String getName() {
@@ -25,6 +34,10 @@ public abstract class ComputerComponent {
 
     public void setManufacturer(String manufacturer) {
         this.manufacturer = manufacturer;
+    }
+
+    public static void driversInstall() {
+        System.out.println("installing drivers...");
     }
 
     public abstract void displayDetails();
@@ -52,3 +65,5 @@ public abstract class ComputerComponent {
         return Objects.hash(name, manufacturer);
     }
 }
+
+
