@@ -28,6 +28,10 @@ public class Motherboard extends ComputerComponent implements Maintainable {
         this.socketType = socketType;
     }
 
+    public final void controlBios(){
+        System.out.println("initializing bios...");
+    }
+
     @Override
     public void displayDetails() {
         System.out.println("Your component " + name + " is manufactured by " + manufacturer);

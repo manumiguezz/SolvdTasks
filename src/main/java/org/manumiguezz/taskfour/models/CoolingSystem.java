@@ -40,6 +40,16 @@ public class CoolingSystem extends ComputerComponent implements Maintainable{
     }
 
     @Override
+    public void performMaintenance() {
+        System.out.println("performing maintenance");
+    }
+
+    @Override
+    public void checkStatus() {
+        System.out.println("checking...");
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
@@ -61,15 +71,5 @@ public class CoolingSystem extends ComputerComponent implements Maintainable{
                 ", name='" + name + '\'' +
                 ", manufacturer='" + manufacturer + '\'' +
                 '}';
-    }
-
-    @Override
-    public void performMaintenance() {
-        System.out.println("performing maintenance");
-    }
-
-    @Override
-    public void checkStatus() {
-        System.out.println("checking...");
     }
 }

@@ -39,6 +39,26 @@ public class Storage extends ComputerComponent implements Storable, Maintainable
     }
 
     @Override
+    public void performMaintenance() {
+        System.out.println("performing maintenance");
+    }
+
+    @Override
+    public void checkStatus() {
+        System.out.println("checking...");
+    }
+
+    @Override
+    public void readData() {
+        System.out.println("reading...");
+    }
+
+    @Override
+    public void writeData() {
+        System.out.println("writing...");
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
@@ -60,25 +80,5 @@ public class Storage extends ComputerComponent implements Storable, Maintainable
                 ", name='" + name + '\'' +
                 ", manufacturer='" + manufacturer + '\'' +
                 '}';
-    }
-
-    @Override
-    public void performMaintenance() {
-        System.out.println("performing maintenance");
-    }
-
-    @Override
-    public void checkStatus() {
-        System.out.println("checking...");
-    }
-
-    @Override
-    public void readData() {
-        System.out.println("reading...");
-    }
-
-    @Override
-    public void writeData() {
-        System.out.println("writing...");
     }
 }
