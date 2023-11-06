@@ -1,4 +1,4 @@
-package org.manumiguezz.taskfour.models;
+package org.manumiguezz.taskfour.interfaces;
 
 public interface Connectable {
 

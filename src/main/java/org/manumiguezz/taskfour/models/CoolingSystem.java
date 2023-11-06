@@ -1,8 +1,11 @@
 package org.manumiguezz.taskfour.models;
 
+import org.manumiguezz.taskfour.interfaces.Boosteable;
+import org.manumiguezz.taskfour.interfaces.Maintainable;
+
 import java.util.Objects;
 
-public final class CoolingSystem extends ComputerComponent implements Maintainable{
+public final class CoolingSystem extends ComputerComponent implements Maintainable, Boosteable {
     protected int fanSpeed;
     protected String coolingType;
 
@@ -42,6 +45,11 @@ public final class CoolingSystem extends ComputerComponent implements Maintainab
     @Override
     public void performMaintenance() {
         System.out.println("performing maintenance");
+    }
+
+    @Override
+    public void boost() {
+        System.out.println("boosting...");
     }
 
     @Override

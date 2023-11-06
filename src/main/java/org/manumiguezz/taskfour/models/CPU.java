@@ -1,8 +1,12 @@
 package org.manumiguezz.taskfour.models;
 
+import org.manumiguezz.taskfour.interfaces.Boosteable;
+import org.manumiguezz.taskfour.interfaces.Maintainable;
+import org.manumiguezz.taskfour.interfaces.Overclockable;
+
 import java.util.Objects;
 
-public final class CPU extends ComputerComponent implements Overclockable, Maintainable {
+public final class CPU extends ComputerComponent implements Overclockable, Boosteable, Maintainable {
     protected int cores;
     protected String socketType;
 
@@ -46,6 +50,11 @@ public final class CPU extends ComputerComponent implements Overclockable, Maint
     @Override
     public void performMaintenance() {
         System.out.println("performing maintenance");
+    }
+
+    @Override
+    public void boost() {
+        System.out.println("boosting...");
     }
 
     @Override

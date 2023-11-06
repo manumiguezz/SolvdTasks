@@ -1,5 +1,8 @@
 package org.manumiguezz.taskfour.models;
 
+import org.manumiguezz.taskfour.interfaces.Maintainable;
+import org.manumiguezz.taskfour.interfaces.Storable;
+
 import java.util.Objects;
 
 public final class Storage extends ComputerComponent implements Storable, Maintainable {

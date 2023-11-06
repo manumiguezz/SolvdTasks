@@ -1,5 +1,7 @@
 package org.manumiguezz.taskfour.models;
 
+import org.manumiguezz.taskfour.interfaces.Maintainable;
+
 import java.util.Objects;
 
 public final class Motherboard extends ComputerComponent implements Maintainable {

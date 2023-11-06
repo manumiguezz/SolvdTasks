@@ -1,5 +1,7 @@
 package org.manumiguezz.taskfour.models;
 
+import org.manumiguezz.taskfour.interfaces.Powerable;
+
 public class Computer {
     private CPU cpu;
     private GPU gpu;
@@ -21,27 +23,39 @@ public class Computer {
         this.coolingSystem = coolingSystem;
     }
 
-    public void playGames (ComputerComponent cpu, ComputerComponent gpu, ComputerComponent cool) {
-        cpu.usingComponent();
-        gpu.usingComponent();
-        cool.usingComponent();
+    public void playGames (CPU cpu, GPU gpu, CoolingSystem cool, PowerSupply power) {
+        power.powerOn();
+        cool.boost();
+        cpu.overclock();
+        gpu.overclock();
         System.out.println("playing games...");
+        power.powerOff();
     }
 
-    public void playMusic (ComputerComponent cpu, ComputerComponent memory) {
-        cpu.usingComponent();
+    public void playMusic (CPU cpu, Memory memory, NetworkAdapter net, PowerSupply power) {
+        power.powerOn();
+        cpu.boost();
         memory.usingComponent();
+        net.connect();
         System.out.println("playing music...");
+        net.disconnect();
+        power.powerOff();
     }
 
-    public void code (ComputerComponent memory) {
-        memory.usingComponent();
+    public void code (Memory memory, CPU cpu, PowerSupply power) {
+        power.powerOn();
+        cpu.boost();
+        memory.writeData();
         System.out.println("coding...");
+        power.powerOff();
     }
 
-    public void chatting (ComputerComponent networkAdapter) {
-        networkAdapter.usingComponent();
+    public void chatting (NetworkAdapter networkAdapter, PowerSupply power) {
+        power.powerOn();
+        networkAdapter.connect();
         System.out.println("chatting");
+        networkAdapter.disconnect();
+        power.powerOff();
     }
 
     public void seeDetails (ComputerComponent coolingSystem, ComputerComponent networkAdapter, ComputerComponent gpu, ComputerComponent cpu,

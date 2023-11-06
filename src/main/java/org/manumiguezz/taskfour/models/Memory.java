@@ -1,8 +1,11 @@
 package org.manumiguezz.taskfour.models;
 
+import org.manumiguezz.taskfour.interfaces.Maintainable;
+import org.manumiguezz.taskfour.interfaces.Storable;
+
 import java.util.Objects;
 
-public final class Memory extends ComputerComponent implements Storable, Maintainable{
+public final class Memory extends ComputerComponent implements Storable, Maintainable {
     protected int sizeGb;
     protected String memoryType;
 

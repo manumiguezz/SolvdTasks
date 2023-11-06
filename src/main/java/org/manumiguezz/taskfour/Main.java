@@ -21,7 +21,8 @@ public class Main {
 
         Computer myHomeComputer = new Computer((CPU) cpu,(GPU) gpu,(Motherboard) motherboard,(Memory) memory,(Storage) internalStorage,(PowerSupply) power,(NetworkAdapter) net,(CoolingSystem) cool);
 
-        System.out.println("activities to do: \n 1. chatting \n 2. playing games \n 3. playing music \n 4. coding \n 5. display computer details");
+        System.out.println("activities to do: \n 1. chatting \n 2. playing games " +
+                "\n 3. playing music \n 4. coding \n 5. display computer details, and check status");
         System.out.println("choose one with a number:");
         int activity = 0;
         try {
@@ -29,16 +30,16 @@ public class Main {
 
             switch (activity) {
                 case 1:
-                    myHomeComputer.chatting(net);
+                    myHomeComputer.chatting((NetworkAdapter) net, (PowerSupply) power);
                     break;
                 case 2:
-                    myHomeComputer.playGames(cpu, gpu, cool);
+                    myHomeComputer.playGames((CPU) cpu, (GPU) gpu, (CoolingSystem) cool, (PowerSupply) power);
                     break;
                 case 3:
-                    myHomeComputer.playMusic(cpu, memory);
+                    myHomeComputer.playMusic((CPU) cpu, (Memory) memory, (NetworkAdapter) net, (PowerSupply) power);
                     break;
                 case 4:
-                    myHomeComputer.code(memory);
+                    myHomeComputer.code((Memory) memory, (CPU) cpu, (PowerSupply) power);
                     break;
                 case 5:
                     myHomeComputer.seeDetails(cool, net, gpu, cpu, memory, motherboard, power, internalStorage);

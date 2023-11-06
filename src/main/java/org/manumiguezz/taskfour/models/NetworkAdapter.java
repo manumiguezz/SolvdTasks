@@ -1,8 +1,11 @@
 package org.manumiguezz.taskfour.models;
 
+import org.manumiguezz.taskfour.interfaces.Connectable;
+import org.manumiguezz.taskfour.interfaces.Maintainable;
+
 import java.util.Objects;
 
-public final class NetworkAdapter extends ComputerComponent implements Connectable, Maintainable{
+public final class NetworkAdapter extends ComputerComponent implements Connectable, Maintainable {
     protected int speed;
     protected String ConnectionType;
 
