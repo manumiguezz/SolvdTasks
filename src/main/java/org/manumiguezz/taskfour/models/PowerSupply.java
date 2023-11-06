@@ -2,7 +2,7 @@ package org.manumiguezz.taskfour.models;
 
 import java.util.Objects;
 
-public class PowerSupply extends ComputerComponent implements Powerable, Maintainable{
+public final class PowerSupply extends ComputerComponent implements Powerable, Maintainable{
 
     protected int wattsCertificate;
     protected String powerSupplyType;

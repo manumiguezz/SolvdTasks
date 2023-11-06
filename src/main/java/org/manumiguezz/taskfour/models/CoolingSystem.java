@@ -2,7 +2,7 @@ package org.manumiguezz.taskfour.models;
 
 import java.util.Objects;
 
-public class CoolingSystem extends ComputerComponent implements Maintainable{
+public final class CoolingSystem extends ComputerComponent implements Maintainable{
     protected int fanSpeed;
     protected String coolingType;
 

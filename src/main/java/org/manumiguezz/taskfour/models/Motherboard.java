@@ -2,7 +2,7 @@ package org.manumiguezz.taskfour.models;
 
 import java.util.Objects;
 
-public class Motherboard extends ComputerComponent implements Maintainable {
+public final class Motherboard extends ComputerComponent implements Maintainable {
     protected String chipset;
     protected String socketType;
 

@@ -2,7 +2,7 @@ package org.manumiguezz.taskfour.models;
 
 import java.util.Objects;
 
-public class Memory extends ComputerComponent implements Storable, Maintainable{
+public final class Memory extends ComputerComponent implements Storable, Maintainable{
     protected int sizeGb;
     protected String memoryType;
 

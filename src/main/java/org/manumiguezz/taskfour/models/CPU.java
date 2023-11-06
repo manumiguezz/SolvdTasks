@@ -2,7 +2,7 @@ package org.manumiguezz.taskfour.models;
 
 import java.util.Objects;
 
-public class CPU extends ComputerComponent implements Overclockable, Maintainable {
+public final class CPU extends ComputerComponent implements Overclockable, Maintainable {
     protected int cores;
     protected String socketType;
 

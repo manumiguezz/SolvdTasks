@@ -2,7 +2,7 @@ package org.manumiguezz.taskfour.models;
 
 import java.util.Objects;
 
-public class GPU extends ComputerComponent implements Overclockable, Maintainable{
+public final class GPU extends ComputerComponent implements Overclockable, Maintainable{
     protected int memorySizeGB;
     protected String gpuType;
 
