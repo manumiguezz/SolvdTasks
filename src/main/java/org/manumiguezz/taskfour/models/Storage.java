@@ -2,7 +2,7 @@ package org.manumiguezz.taskfour.models;
 
 import java.util.Objects;
 
-public class Storage extends ComputerComponent {
+public final class Storage extends ComputerComponent implements Storable, Maintainable {
     protected int capacityGB;
     protected String storageType;
 
@@ -36,6 +36,26 @@ public class Storage extends ComputerComponent {
     @Override
     public void usingComponent() {
         System.out.println("Storage working...");
+    }
+
+    @Override
+    public void performMaintenance() {
+        System.out.println("performing maintenance");
+    }
+
+    @Override
+    public void checkStatus() {
+        System.out.println("checking...");
+    }
+
+    @Override
+    public void readData() {
+        System.out.println("reading...");
+    }
+
+    @Override
+    public void writeData() {
+        System.out.println("writing...");
     }
 
     @Override

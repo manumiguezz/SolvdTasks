@@ -2,7 +2,7 @@ package org.manumiguezz.taskfour.models;
 
 import java.util.Objects;
 
-public class Memory extends ComputerComponent {
+public final class Memory extends ComputerComponent implements Storable, Maintainable{
     protected int sizeGb;
     protected String memoryType;
 
@@ -36,6 +36,26 @@ public class Memory extends ComputerComponent {
     @Override
     public void usingComponent() {
         System.out.println("using the total capacity of " + sizeGb + "gb...");
+    }
+
+    @Override
+    public void performMaintenance() {
+        System.out.println("performing maintenance");
+    }
+
+    @Override
+    public void checkStatus() {
+        System.out.println("checking...");
+    }
+
+    @Override
+    public void readData() {
+        System.out.println("RAM reading...");
+    }
+
+    @Override
+    public void writeData() {
+        System.out.println("RAM writing...");
     }
 
     @Override
