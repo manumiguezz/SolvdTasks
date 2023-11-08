@@ -1,6 +1,6 @@
-package org.manumiguezz.taskfour;
+package org.manumiguezz.taskfive;
 
-import org.manumiguezz.taskfour.models.*;
+import org.manumiguezz.taskfive.models.*;
 
 import java.util.Scanner;
 

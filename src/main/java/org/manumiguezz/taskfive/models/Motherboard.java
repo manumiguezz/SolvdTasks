@@ -1,27 +1,25 @@
-package org.manumiguezz.taskfour.models;
+package org.manumiguezz.taskfive.models;
 
-import org.manumiguezz.taskfour.interfaces.Boosteable;
-import org.manumiguezz.taskfour.interfaces.Maintainable;
-import org.manumiguezz.taskfour.interfaces.Overclockable;
+import org.manumiguezz.taskfive.interfaces.Maintainable;
 
 import java.util.Objects;
 
-public final class CPU extends ComputerComponent implements Overclockable, Boosteable, Maintainable {
-    protected int cores;
+public final class Motherboard extends ComputerComponent implements Maintainable {
+    protected String chipset;
     protected String socketType;
 
-    public CPU(String name, String manufacturer, int cores, String socketType) {
+    public Motherboard(String name, String manufacturer, String chipset, String socketType) {
         super(name, manufacturer);
-        this.cores = cores;
+        this.chipset = chipset;
         this.socketType = socketType;
     }
 
-    public int getCores() {
-        return cores;
+    public String getChipset() {
+        return chipset;
     }
 
-    public void setCores(int cores) {
-        this.cores = cores;
+    public void setChipset(String chipset) {
+        this.chipset = chipset;
     }
 
     public String getSocketType() {
@@ -32,9 +30,8 @@ public final class CPU extends ComputerComponent implements Overclockable, Boost
         this.socketType = socketType;
     }
 
-    @Override
-    public void usingComponent() {
-        System.out.println("running cpu using a number of " + cores + "...");
+    public final void controlBios(){
+        System.out.println("initializing bios...");
     }
 
     @Override
@@ -43,18 +40,13 @@ public final class CPU extends ComputerComponent implements Overclockable, Boost
     }
 
     @Override
-    public void overclock() {
-        System.out.println("overclock");
+    public void usingComponent() {
+        System.out.println("Motherboard working...");
     }
 
     @Override
     public void performMaintenance() {
         System.out.println("performing maintenance");
-    }
-
-    @Override
-    public void boost() {
-        System.out.println("boosting...");
     }
 
     @Override
@@ -67,19 +59,19 @@ public final class CPU extends ComputerComponent implements Overclockable, Boost
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
-        CPU cpu = (CPU) o;
-        return cores == cpu.cores && Objects.equals(socketType, cpu.socketType);
+        Motherboard that = (Motherboard) o;
+        return Objects.equals(chipset, that.chipset) && Objects.equals(socketType, that.socketType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), cores, socketType);
+        return Objects.hash(super.hashCode(), chipset, socketType);
     }
 
     @Override
     public String toString() {
-        return "CPU{" +
-                "cores=" + cores +
+        return "Motherboard{" +
+                "chipset='" + chipset + '\'' +
                 ", socketType='" + socketType + '\'' +
                 ", name='" + name + '\'' +
                 ", manufacturer='" + manufacturer + '\'' +

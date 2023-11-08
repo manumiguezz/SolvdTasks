@@ -1,8 +1,8 @@
-package org.manumiguezz.taskfour.models;
+package org.manumiguezz.taskfive.models;
 
-import org.manumiguezz.taskfour.interfaces.Boosteable;
-import org.manumiguezz.taskfour.interfaces.Maintainable;
-import org.manumiguezz.taskfour.interfaces.Overclockable;
+import org.manumiguezz.taskfive.interfaces.Boosteable;
+import org.manumiguezz.taskfive.interfaces.Maintainable;
+import org.manumiguezz.taskfive.interfaces.Overclockable;
 
 import java.util.Objects;
 

@@ -1,6 +1,4 @@
-package org.manumiguezz.taskfour.models;
-
-import org.manumiguezz.taskfour.interfaces.Powerable;
+package org.manumiguezz.taskfive.models;
 
 public class Computer {
     private CPU cpu;

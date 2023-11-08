@@ -1,7 +1,7 @@
-package org.manumiguezz.taskfour.models;
+package org.manumiguezz.taskfive.models;
 
-import org.manumiguezz.taskfour.interfaces.Maintainable;
-import org.manumiguezz.taskfour.interfaces.Storable;
+import org.manumiguezz.taskfive.interfaces.Maintainable;
+import org.manumiguezz.taskfive.interfaces.Storable;
 
 import java.util.Objects;
 

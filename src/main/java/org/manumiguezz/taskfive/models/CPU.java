@@ -1,25 +1,27 @@
-package org.manumiguezz.taskfour.models;
+package org.manumiguezz.taskfive.models;
 
-import org.manumiguezz.taskfour.interfaces.Maintainable;
+import org.manumiguezz.taskfive.interfaces.Boosteable;
+import org.manumiguezz.taskfive.interfaces.Maintainable;
+import org.manumiguezz.taskfive.interfaces.Overclockable;
 
 import java.util.Objects;
 
-public final class Motherboard extends ComputerComponent implements Maintainable {
-    protected String chipset;
+public final class CPU extends ComputerComponent implements Overclockable, Boosteable, Maintainable {
+    protected int cores;
     protected String socketType;
 
-    public Motherboard(String name, String manufacturer, String chipset, String socketType) {
+    public CPU(String name, String manufacturer, int cores, String socketType) {
         super(name, manufacturer);
-        this.chipset = chipset;
+        this.cores = cores;
         this.socketType = socketType;
     }
 
-    public String getChipset() {
-        return chipset;
+    public int getCores() {
+        return cores;
     }
 
-    public void setChipset(String chipset) {
-        this.chipset = chipset;
+    public void setCores(int cores) {
+        this.cores = cores;
     }
 
     public String getSocketType() {
@@ -30,8 +32,9 @@ public final class Motherboard extends ComputerComponent implements Maintainable
         this.socketType = socketType;
     }
 
-    public final void controlBios(){
-        System.out.println("initializing bios...");
+    @Override
+    public void usingComponent() {
+        System.out.println("running cpu using a number of " + cores + "...");
     }
 
     @Override
@@ -40,13 +43,18 @@ public final class Motherboard extends ComputerComponent implements Maintainable
     }
 
     @Override
-    public void usingComponent() {
-        System.out.println("Motherboard working...");
+    public void overclock() {
+        System.out.println("overclock");
     }
 
     @Override
     public void performMaintenance() {
         System.out.println("performing maintenance");
+    }
+
+    @Override
+    public void boost() {
+        System.out.println("boosting...");
     }
 
     @Override
@@ -59,19 +67,19 @@ public final class Motherboard extends ComputerComponent implements Maintainable
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
-        Motherboard that = (Motherboard) o;
-        return Objects.equals(chipset, that.chipset) && Objects.equals(socketType, that.socketType);
+        CPU cpu = (CPU) o;
+        return cores == cpu.cores && Objects.equals(socketType, cpu.socketType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), chipset, socketType);
+        return Objects.hash(super.hashCode(), cores, socketType);
     }
 
     @Override
     public String toString() {
-        return "Motherboard{" +
-                "chipset='" + chipset + '\'' +
+        return "CPU{" +
+                "cores=" + cores +
                 ", socketType='" + socketType + '\'' +
                 ", name='" + name + '\'' +
                 ", manufacturer='" + manufacturer + '\'' +
