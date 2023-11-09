@@ -4,8 +4,13 @@ import org.manumiguezz.taskfive.exceptions.*;
 import org.manumiguezz.taskfive.models.*;
 
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.LogManager;
+import java.util.logging.Logger;
 
 public class Main {
+    private static final Logger logger = Logger.getLogger(Main.class.getName());
+
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
@@ -21,15 +26,18 @@ public class Main {
         ComputerComponent externalStorage = new Storage("WD elements 1TB", "WD", 1000, "External");
 
         Computer myHomeComputer = new Computer((CPU) cpu,(GPU) gpu,(Motherboard) motherboard,(Memory) memory,(Storage) internalStorage,(PowerSupply) power,(NetworkAdapter) net,(CoolingSystem) cool);
+        String filename = "IvanThanksForYourClasses.txt";
 
-        System.out.println("activities to do: \n 1. chatting \n 2. playing games " +
+        logger.info("starting computer activities...");
+
+        logger.info("activities to do: \n 1. chatting \n 2. playing games " +
                 "\n 3. playing music \n 4. coding \n 5. display computer details, and check status  " +
                 "\n 6. check temperature \n 7. validate component \n 8. check power status " +
-                "\n 9 check connection status \n 10. check storage");
-        System.out.println("choose one with a number:");
-        int activity = 0;
+                "\n 9 check connection status \n 10. check storage \n 11. read computer file");
+        logger.info("choose one with a number:");
+
         try {
-            activity = scanner.nextInt();
+            int activity = scanner.nextInt();
 
             switch (activity) {
                 case 1:
@@ -51,44 +59,55 @@ public class Main {
                     try {
                         myHomeComputer.checkTemperature(80);
                     } catch (OverheatingException e) {
-                        System.out.println("Overheating detected: " + e.getMessage());
+
+                        logger.warning("Overheating detected: " + e.getMessage());
                     }
                     break;
                 case 7:
                     try {
                         myHomeComputer.validateComponent("Invalid", "Attributes", -5);
                     } catch (InvalidComponentException e) {
-                        System.out.println("Invalid component detected: " + e.getMessage());
+                        logger.severe("Invalid component detected: " + e.getMessage());
                     }
                     break;
                 case 8:
                     try {
                         myHomeComputer.checkPowerStatus(false);
                     } catch (PowerFailureException e) {
-                        System.out.println("Power failure detected: " + e.getMessage());
+                        logger.severe("Power failure detected: " + e.getMessage());
                     }
                     break;
                 case 9:
                     try {
                         myHomeComputer.checkConnection(false);
                     } catch (ConnectionErrorException e) {
-                        System.out.println("Connection error detected: " + e.getMessage());
+                        logger.severe("Connection error detected: " + e.getMessage());
                     }
                     break;
                 case 10:
                     try {
                         myHomeComputer.checkStorage(50);
                     } catch (InsufficientStorageException e) {
-                        System.out.println("Insufficient storage space detected: " + e.getMessage());
+                        logger.warning("Insufficient storage space detected: " + e.getMessage());
+                    }
+                    break;
+                case 11:
+                    try {
+                        myHomeComputer.readFromFile(filename);
+                    } catch (Exception e) {
+                        logger.log(Level.SEVERE, "An error occurred while reading the file: " + e.getMessage(), e);
                     }
                     break;
                 default:
-                    System.out.println("Please choose a correct number (1-10).");
+                    logger.info("Please choose a correct number (1-11).");
                     break;
             }
         } catch (Exception e) {
-            System.out.println("Invalid input. Please enter a valid number.");
+            logger.warning("Invalid input. Please enter a valid number.");
         }
+
+        logger.info("Please choose a correct number (1-11).");
+        scanner.close();
 
     }
 }
