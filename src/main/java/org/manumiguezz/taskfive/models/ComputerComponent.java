@@ -7,10 +7,6 @@ public abstract class ComputerComponent {
     protected String manufacturer;
     private final int componentID;
 
-    static {
-        System.out.println("performing initialization tasks first");
-    }
-
     private static int totalComponents = 0;
 
     public ComputerComponent(String name, String manufacturer) {

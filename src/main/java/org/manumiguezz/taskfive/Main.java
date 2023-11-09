@@ -7,7 +7,7 @@ import org.manumiguezz.taskfive.models.*;
 import java.util.Scanner;
 
 public class Main {
-    private static Logger logger = (Logger) LogManager.getLogger(Main.class);
+    private static final Logger logger = (Logger) LogManager.getLogger(Main.class);
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
@@ -71,7 +71,7 @@ public class Main {
                     try {
                         myHomeComputer.checkPowerStatus(false);
                     } catch (PowerFailureException e) {
-                        logger.warn("Power failure detected: " + e.getMessage());
+                        logger.fatal("Power failure detected: " + e.getMessage());
                     }
                     break;
                 case 9:
