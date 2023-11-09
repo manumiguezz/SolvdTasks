@@ -1,0 +1,15 @@
+2023-11-09 19:47:34,371 INFO o.m.t.Main [main] starting computer activities...
+2023-11-09 19:47:34,374 INFO o.m.t.Main [main] activities to do: 
+ 1. chatting 
+ 2. playing games 
+ 3. playing music 
+ 4. coding 
+ 5. display computer details, and check status  
+ 6. check temperature 
+ 7. validate component 
+ 8. check power status 
+ 9 check connection status 
+ 10. check storage 
+ 11. read computer file
+2023-11-09 19:47:34,375 INFO o.m.t.Main [main] choose one with a number:
+2023-11-09 19:47:42,607 INFO o.m.t.Main [main] computer has turned off...
