@@ -1,5 +1,6 @@
 package org.manumiguezz.taskfive.models;
 
+import org.manumiguezz.taskfive.exceptions.OverheatingException;
 import org.manumiguezz.taskfive.interfaces.Boosteable;
 import org.manumiguezz.taskfive.interfaces.Maintainable;
 
@@ -8,6 +9,7 @@ import java.util.Objects;
 public final class CoolingSystem extends ComputerComponent implements Maintainable, Boosteable {
     protected int fanSpeed;
     protected String coolingType;
+
 
     public CoolingSystem(String name, String manufacturer, int fanSpeed, String coolingType) {
         super(name, manufacturer);

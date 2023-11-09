@@ -1,6 +1,11 @@
 package org.manumiguezz.taskfive.models;
 
+import org.manumiguezz.taskfive.exceptions.InvalidComponentException;
+import org.manumiguezz.taskfive.exceptions.OverheatingException;
+
 public class Computer {
+
+    private static final int maximumTemperature = 80;
     private CPU cpu;
     private GPU gpu;
     private Motherboard motherboard;
@@ -19,6 +24,18 @@ public class Computer {
         this.powerSupply = powerSupply;
         this.networkAdapter = networkAdapter;
         this.coolingSystem = coolingSystem;
+    }
+
+    public void checkTemperature(int temperature) throws OverheatingException {
+        if (temperature > maximumTemperature) {
+            throw new OverheatingException("Component temperature is too high: " + temperature + "°C");
+        }
+    }
+
+    public void validateComponent(String name, String manufacturer, int value) throws InvalidComponentException {
+        if (name == null || name.isBlank() || manufacturer == null || manufacturer.isBlank() || value <= 0) {
+            throw new InvalidComponentException("Invalid component attributes provided.");
+        }
     }
 
     public void playGames (CPU cpu, GPU gpu, CoolingSystem cool, PowerSupply power) {

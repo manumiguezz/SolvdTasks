@@ -1,5 +1,7 @@
 package org.manumiguezz.taskfive;
 
+import org.manumiguezz.taskfive.exceptions.InvalidComponentException;
+import org.manumiguezz.taskfive.exceptions.OverheatingException;
 import org.manumiguezz.taskfive.models.*;
 
 import java.util.Scanner;
@@ -22,7 +24,8 @@ public class Main {
         Computer myHomeComputer = new Computer((CPU) cpu,(GPU) gpu,(Motherboard) motherboard,(Memory) memory,(Storage) internalStorage,(PowerSupply) power,(NetworkAdapter) net,(CoolingSystem) cool);
 
         System.out.println("activities to do: \n 1. chatting \n 2. playing games " +
-                "\n 3. playing music \n 4. coding \n 5. display computer details, and check status");
+                "\n 3. playing music \n 4. coding \n 5. display computer details, and check status  " +
+                "\n 6. check temperature \n 7. validate component \n 8.");
         System.out.println("choose one with a number:");
         int activity = 0;
         try {
@@ -44,6 +47,19 @@ public class Main {
                 case 5:
                     myHomeComputer.seeDetails(cool, net, gpu, cpu, memory, motherboard, power, internalStorage);
                     break;
+                case 6:
+                    try {
+                        myHomeComputer.checkTemperature(80);
+                    } catch (OverheatingException e) {
+                        System.out.println("Overheating detected: " + e.getMessage());
+                    }
+                    break;
+                case 7:
+                    try {
+                        myHomeComputer.validateComponent("Invalid", "Attributes", -5);
+                    } catch (InvalidComponentException e) {
+                        System.out.println("Invalid component detected: " + e.getMessage());
+                    }
                 default:
                     System.out.println("Please choose a correct number (1-5).");
                     break;
