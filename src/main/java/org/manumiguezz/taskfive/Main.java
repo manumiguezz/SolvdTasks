@@ -1,7 +1,9 @@
 package org.manumiguezz.taskfive;
 
+import org.manumiguezz.taskfive.exceptions.ConnectionErrorException;
 import org.manumiguezz.taskfive.exceptions.InvalidComponentException;
 import org.manumiguezz.taskfive.exceptions.OverheatingException;
+import org.manumiguezz.taskfive.exceptions.PowerFailureException;
 import org.manumiguezz.taskfive.models.*;
 
 import java.util.Scanner;
@@ -25,7 +27,8 @@ public class Main {
 
         System.out.println("activities to do: \n 1. chatting \n 2. playing games " +
                 "\n 3. playing music \n 4. coding \n 5. display computer details, and check status  " +
-                "\n 6. check temperature \n 7. validate component \n 8.");
+                "\n 6. check temperature \n 7. validate component \n 8. check power status " +
+                "\n 9 check connection status \n 10. ");
         System.out.println("choose one with a number:");
         int activity = 0;
         try {
@@ -59,6 +62,18 @@ public class Main {
                         myHomeComputer.validateComponent("Invalid", "Attributes", -5);
                     } catch (InvalidComponentException e) {
                         System.out.println("Invalid component detected: " + e.getMessage());
+                    }
+                case 8:
+                    try {
+                        myHomeComputer.checkPowerStatus(false);
+                    } catch (PowerFailureException e) {
+                        System.out.println("Power failure detected: " + e.getMessage());
+                    }
+                case 9:
+                    try {
+                        myHomeComputer.checkConnection(false);
+                    } catch (ConnectionErrorException e) {
+                        System.out.println("Connection error detected: " + e.getMessage());
                     }
                 default:
                     System.out.println("Please choose a correct number (1-5).");

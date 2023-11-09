@@ -1,7 +1,6 @@
 package org.manumiguezz.taskfive.models;
 
-import org.manumiguezz.taskfive.exceptions.InvalidComponentException;
-import org.manumiguezz.taskfive.exceptions.OverheatingException;
+import org.manumiguezz.taskfive.exceptions.*;
 
 public class Computer {
 
@@ -36,6 +35,26 @@ public class Computer {
         if (name == null || name.isBlank() || manufacturer == null || manufacturer.isBlank() || value <= 0) {
             throw new InvalidComponentException("Invalid component attributes provided.");
         }
+    }
+
+    public void checkPowerStatus(boolean isPowerOn) throws PowerFailureException {
+        if (!isPowerOn) {
+            throw new PowerFailureException("Power failure detected.");
+        }
+    }
+
+    public void checkConnection(boolean isConnected) throws ConnectionErrorException {
+        if (!isConnected) {
+            throw new ConnectionErrorException("Connection error detected.");
+        }
+    }
+
+    public void checkStorage(int availableSpace) throws InsufficientStorageException {
+        int requiredSpace = 100; // Consider 100 units as required space
+        if (availableSpace < requiredSpace) {
+            throw new InsufficientStorageException("Insufficient storage space detected.");
+        }
+        // Other logic
     }
 
     public void playGames (CPU cpu, GPU gpu, CoolingSystem cool, PowerSupply power) {
