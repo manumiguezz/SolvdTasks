@@ -50,11 +50,10 @@ public class Computer {
     }
 
     public void checkStorage(int availableSpace) throws InsufficientStorageException {
-        int requiredSpace = 100; // Consider 100 units as required space
+        int requiredSpace = 100;
         if (availableSpace < requiredSpace) {
             throw new InsufficientStorageException("Insufficient storage space detected.");
         }
-        // Other logic
     }
 
     public void playGames (CPU cpu, GPU gpu, CoolingSystem cool, PowerSupply power) {

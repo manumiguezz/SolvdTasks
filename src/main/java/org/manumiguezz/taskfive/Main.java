@@ -1,9 +1,6 @@
 package org.manumiguezz.taskfive;
 
-import org.manumiguezz.taskfive.exceptions.ConnectionErrorException;
-import org.manumiguezz.taskfive.exceptions.InvalidComponentException;
-import org.manumiguezz.taskfive.exceptions.OverheatingException;
-import org.manumiguezz.taskfive.exceptions.PowerFailureException;
+import org.manumiguezz.taskfive.exceptions.*;
 import org.manumiguezz.taskfive.models.*;
 
 import java.util.Scanner;
@@ -28,7 +25,7 @@ public class Main {
         System.out.println("activities to do: \n 1. chatting \n 2. playing games " +
                 "\n 3. playing music \n 4. coding \n 5. display computer details, and check status  " +
                 "\n 6. check temperature \n 7. validate component \n 8. check power status " +
-                "\n 9 check connection status \n 10. ");
+                "\n 9 check connection status \n 10. check storage");
         System.out.println("choose one with a number:");
         int activity = 0;
         try {
@@ -75,8 +72,14 @@ public class Main {
                     } catch (ConnectionErrorException e) {
                         System.out.println("Connection error detected: " + e.getMessage());
                     }
+                case 10:
+                    try {
+                        myHomeComputer.checkStorage(50);
+                    } catch (InsufficientStorageException e) {
+                        System.out.println("Insufficient storage space detected: " + e.getMessage());
+                    }
                 default:
-                    System.out.println("Please choose a correct number (1-5).");
+                    System.out.println("Please choose a correct number (1-10).");
                     break;
             }
         } catch (Exception e) {
