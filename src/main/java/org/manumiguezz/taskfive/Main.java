@@ -60,24 +60,28 @@ public class Main {
                     } catch (InvalidComponentException e) {
                         System.out.println("Invalid component detected: " + e.getMessage());
                     }
+                    break;
                 case 8:
                     try {
                         myHomeComputer.checkPowerStatus(false);
                     } catch (PowerFailureException e) {
                         System.out.println("Power failure detected: " + e.getMessage());
                     }
+                    break;
                 case 9:
                     try {
                         myHomeComputer.checkConnection(false);
                     } catch (ConnectionErrorException e) {
                         System.out.println("Connection error detected: " + e.getMessage());
                     }
+                    break;
                 case 10:
                     try {
                         myHomeComputer.checkStorage(50);
                     } catch (InsufficientStorageException e) {
                         System.out.println("Insufficient storage space detected: " + e.getMessage());
                     }
+                    break;
                 default:
                     System.out.println("Please choose a correct number (1-10).");
                     break;

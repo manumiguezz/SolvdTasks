@@ -2,6 +2,10 @@ package org.manumiguezz.taskfive.models;
 
 import org.manumiguezz.taskfive.exceptions.*;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
 public class Computer {
 
     private static final int maximumTemperature = 80;
@@ -53,6 +57,17 @@ public class Computer {
         int requiredSpace = 100;
         if (availableSpace < requiredSpace) {
             throw new InsufficientStorageException("Insufficient storage space detected.");
+        }
+    }
+
+    public void readFromFile(String filename) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(filename))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                System.out.println(line);
+            }
+        } catch (IOException e) {
+            System.out.println("An error occurred while reading the file: " + e.getMessage());
         }
     }
 
