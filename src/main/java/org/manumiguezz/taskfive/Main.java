@@ -1,16 +1,13 @@
 package org.manumiguezz.taskfive;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.core.Logger;
 import org.manumiguezz.taskfive.exceptions.*;
 import org.manumiguezz.taskfive.models.*;
-
 import java.util.Scanner;
-import java.util.logging.Level;
-import java.util.logging.LogManager;
-import java.util.logging.Logger;
 
 public class Main {
-    private static final Logger logger = Logger.getLogger(Main.class.getName());
-
+    private static Logger logger = (Logger) LogManager.getLogger(Main.class);
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
@@ -60,42 +57,42 @@ public class Main {
                         myHomeComputer.checkTemperature(80);
                     } catch (OverheatingException e) {
 
-                        logger.warning("Overheating detected: " + e.getMessage());
+                        logger.warn("Overheating detected: " + e.getMessage());
                     }
                     break;
                 case 7:
                     try {
                         myHomeComputer.validateComponent("Invalid", "Attributes", -5);
                     } catch (InvalidComponentException e) {
-                        logger.severe("Invalid component detected: " + e.getMessage());
+                        logger.warn("Invalid component detected: " + e.getMessage());
                     }
                     break;
                 case 8:
                     try {
                         myHomeComputer.checkPowerStatus(false);
                     } catch (PowerFailureException e) {
-                        logger.severe("Power failure detected: " + e.getMessage());
+                        logger.warn("Power failure detected: " + e.getMessage());
                     }
                     break;
                 case 9:
                     try {
                         myHomeComputer.checkConnection(false);
                     } catch (ConnectionErrorException e) {
-                        logger.severe("Connection error detected: " + e.getMessage());
+                        logger.warn("Connection error detected: " + e.getMessage());
                     }
                     break;
                 case 10:
                     try {
                         myHomeComputer.checkStorage(50);
                     } catch (InsufficientStorageException e) {
-                        logger.warning("Insufficient storage space detected: " + e.getMessage());
+                        logger.warn("Insufficient storage space detected: " + e.getMessage());
                     }
                     break;
                 case 11:
                     try {
                         myHomeComputer.readFromFile(filename);
                     } catch (Exception e) {
-                        logger.log(Level.SEVERE, "An error occurred while reading the file: " + e.getMessage(), e);
+                        logger.warn("An error occurred while reading the file: " + e.getMessage(), e);
                     }
                     break;
                 default:
@@ -103,11 +100,13 @@ public class Main {
                     break;
             }
         } catch (Exception e) {
-            logger.warning("Invalid input. Please enter a valid number.");
+            logger.warn("Invalid input. Please enter a valid number.");
+        } finally {
+            logger.info("computer has turned off...");
+            scanner.close();
         }
 
-        logger.info("Please choose a correct number (1-11).");
-        scanner.close();
+
 
     }
 }
