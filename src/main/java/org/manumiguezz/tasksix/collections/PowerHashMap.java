@@ -19,4 +19,17 @@ public class PowerHashMap {
     public void deletePowerSupply(String key, PowerSupply powerSupply) {
         powerSupplies.remove(key, powerSupply);
     }
+
+    public boolean containsPowerSupply(PowerSupply powerSupply) {
+        return powerSupplies.containsValue(powerSupply);
+    }
+
+    public int getPowerSupplyCount() {
+        return powerSupplies.size();
+    }
+
+    public void clearPowerSupplies() {
+        powerSupplies.clear();
+    }
+
 }
