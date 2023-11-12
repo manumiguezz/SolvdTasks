@@ -15,9 +15,17 @@ public class MemoryHashSet {
     public void addMemory(Memory memory) {
         memories.add(memory);
     }
-
     public void deleteMemory(Memory memory) {
         memories.remove(memory);
     }
+
+    public Set<Memory> getAllMemories() {
+        return new HashSet<>(memories); // Return a new set to avoid exposing the internal set directly
+    }
+
+    public boolean containsMemory(Memory memory) {
+        return memories.contains(memory);
+    }
+
 
 }
