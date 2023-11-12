@@ -5,10 +5,10 @@ import org.manumiguezz.tasksix.models.PowerSupply;
 import java.util.HashMap;
 import java.util.Map;
 
-public class PowerMap {
+public class PowerHashMap {
     private Map<String, PowerSupply> powerSupplies;
 
-    public PowerMap() {
+    public PowerHashMap() {
         this.powerSupplies = new HashMap<>();
     }
 
