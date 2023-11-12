@@ -2,6 +2,7 @@ package org.manumiguezz.tasksix;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.core.Logger;
+import org.manumiguezz.tasksix.collections.ComputerComponentLinkedList;
 import org.manumiguezz.tasksix.exceptions.*;
 import org.manumiguezz.tasksix.models.*;
 
@@ -25,6 +26,16 @@ public class Main {
 
         Computer myHomeComputer = new Computer((CPU) cpu,(GPU) gpu,(Motherboard) motherboard,(Memory) memory,(Storage) internalStorage,(PowerSupply) power,(NetworkAdapter) net,(CoolingSystem) cool);
         String filename = "IvanThanksForYourClasses.txt";
+
+        ComputerComponentLinkedList<ComputerComponent> computerComponentList = new ComputerComponentLinkedList<>();
+        computerComponentList.add(cpu);
+        computerComponentList.add(gpu);
+        computerComponentList.add(memory);
+        computerComponentList.add(cool);
+        computerComponentList.add(motherboard);
+        computerComponentList.add(net);
+        computerComponentList.add(power);
+        computerComponentList.add(internalStorage);
 
         logger.info("starting computer activities...");
 
@@ -52,6 +63,7 @@ public class Main {
                     break;
                 case 5:
                     myHomeComputer.seeDetails(cool, net, gpu, cpu, memory, motherboard, power, internalStorage);
+                    computerComponentList.display();
                     break;
                 case 6:
                     try {
