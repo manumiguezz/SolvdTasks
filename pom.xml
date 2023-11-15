@@ -80,7 +80,7 @@
     <distributionManagement>
         <repository>
             <id>SolvdTasks</id>
-            <url>F:\Coding\JavaProjects\Solvd\SolvdTasks</url>
+            <url>file://F:/Coding/JavaProjects/Solvd/SolvdTasks/deploy</url>
         </repository>
     </distributionManagement>
 
