@@ -10,4 +10,12 @@ public enum Component {
     Component(Boolean usable) {
         this.usable = usable;
     }
+
+    public Boolean getUsable() {
+        return usable;
+    }
+
+    public void setUsable(Boolean usable) {
+        this.usable = usable;
+    }
 }
