@@ -1,5 +1,7 @@
 package org.manumiguezz.tasknine;
 
+import java.util.function.Function;
+
 public enum StorageDevice {
     HDD("Hard Disk Drive", 1024),
     SSD("Solid State Drive", 512);
@@ -26,5 +28,9 @@ public enum StorageDevice {
 
     public boolean isFastStorage() {
         return this == SSD;
+    }
+
+    public void checkStorageDevice(Function<StorageDevice, String> checkType) {
+        System.out.println(checkType.apply(this));
     }
 }
