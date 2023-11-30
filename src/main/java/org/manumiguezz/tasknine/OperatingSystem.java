@@ -1,5 +1,7 @@
 package org.manumiguezz.tasknine;
 
+import java.util.function.UnaryOperator;
+
 public enum OperatingSystem {
     WINDOWS("Windows", "GUI"),
     LINUX("Linux", "Command Line"),
@@ -27,5 +29,9 @@ public enum OperatingSystem {
 
     public boolean isUserFriendly() {
         return this == WINDOWS || this == MAC; // Considering Windows and macOS as user-friendly
+    }
+
+    public void modifyInfo(UnaryOperator<String> modifyType) {
+        System.out.println("Modified OS name: " + modifyType.apply(name));
     }
 }
