@@ -1,4 +1,4 @@
-package org.manumiguezz.tasknine;
+package org.manumiguezz.tasknine.enums;
 
 import java.util.function.Predicate;
 import java.util.function.UnaryOperator;

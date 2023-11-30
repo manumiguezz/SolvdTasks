@@ -1,5 +1,7 @@
-package org.manumiguezz.tasknine;
+package org.manumiguezz.tasknine.enums;
 
+import org.manumiguezz.tasknine.interfaces.ExtendedFunction;
+import org.manumiguezz.tasknine.interfaces.MyFunction;
 import java.util.function.BiFunction;
 import java.util.function.Predicate;
 
@@ -32,5 +34,15 @@ public enum ProcessorType {
     public void concatenateBrand(BiFunction<String, String, String> concatenateFunction, String additionalString) {
         String result = concatenateFunction.apply(brand, additionalString);
         System.out.println("Concatenated String: " + result);
+    }
+
+    public void analyzePerformance(MyFunction<ProcessorType, String> performanceAnalyzer) {
+        String performance = performanceAnalyzer.apply(this);
+        System.out.println("Performance analysis for " + brand + " processor: " + performance);
+    }
+
+    public void benchmark(ExtendedFunction<ProcessorType, String, Integer> benchmarkFunction, String software, String resolution) {
+        int score = benchmarkFunction.apply(this, software, resolution);
+        System.out.println("Benchmark score for " + brand + " processor running " + software + " at " + resolution + ": " + score);
     }
 }

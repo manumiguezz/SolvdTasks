@@ -1,6 +1,8 @@
 package org.manumiguezz.tasknine;
-import java.util.function.Function;
-import java.util.function.Supplier;
+
+import org.manumiguezz.tasknine.enums.OperatingSystem;
+import org.manumiguezz.tasknine.enums.ProcessorType;
+import org.manumiguezz.tasknine.enums.StorageDevice;
 
 public class main {
 

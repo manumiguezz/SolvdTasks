@@ -1,4 +1,4 @@
-package org.manumiguezz.tasknine;
+package org.manumiguezz.tasknine.enums;
 
 import java.util.function.BiConsumer;
 
