@@ -23,4 +23,8 @@ public enum ConnectionType {
     public void displayDetails() {
         System.out.println("Connection Type: " + type + ", Wireless: " + isWireless);
     }
+
+    public boolean isSecure() {
+        return this == WIFI;
+    }
 }

@@ -24,4 +24,8 @@ public enum OperatingSystem {
     public void displayInfo() {
         System.out.println("OS: " + name + ", Interface: " + interfaceType);
     }
+
+    public boolean isUserFriendly() {
+        return this == WINDOWS || this == MAC; // Considering Windows and macOS as user-friendly
+    }
 }

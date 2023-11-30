@@ -23,4 +23,8 @@ public enum StorageDevice {
     public void printSpecs() {
         System.out.println("Type: " + type + ", Capacity: " + capacityGB + "GB");
     }
+
+    public boolean isFastStorage() {
+        return this == SSD;
+    }
 }
