@@ -1,5 +1,6 @@
 package org.manumiguezz.tasknine;
 
+import java.util.function.BiFunction;
 import java.util.function.Predicate;
 
 public enum ProcessorType {
@@ -26,5 +27,10 @@ public enum ProcessorType {
         } else {
             System.out.println(brand + " processor does not meet the criteria.");
         }
+    }
+
+    public void concatenateBrand(BiFunction<String, String, String> concatenateFunction, String additionalString) {
+        String result = concatenateFunction.apply(brand, additionalString);
+        System.out.println("Concatenated String: " + result);
     }
 }
