@@ -1,5 +1,7 @@
 package org.manumiguezz.tasknine;
 
+import java.util.function.BiConsumer;
+
 public enum ConnectionType {
     WIFI("Wireless", true),
     ETHERNET("Wired", false);
@@ -26,5 +28,9 @@ public enum ConnectionType {
 
     public boolean isSecure() {
         return this == WIFI;
+    }
+
+    public void analyzeConnection(BiConsumer<ConnectionType, Boolean> analyzeType) {
+        analyzeType.accept(this, isWireless);
     }
 }
