@@ -1,5 +1,7 @@
 package org.manumiguezz.tasknine;
 
+import java.util.function.BiFunction;
+
 public enum ExternalDevices {
     MOUSE("Mouse", "Pointing Device"),
     KEYBOARD("Keyboard", "Input Device"),
@@ -27,5 +29,9 @@ public enum ExternalDevices {
 
     public boolean isInputDevice() {
         return this == MOUSE || this == KEYBOARD;
+    }
+
+    public void processInfo(BiFunction<String, String, String> processType) {
+        System.out.println(processType.apply(name, deviceType));
     }
 }
