@@ -1,5 +1,6 @@
 package org.manumiguezz.tasknine;
 
+import java.util.function.Predicate;
 import java.util.function.UnaryOperator;
 
 public enum OperatingSystem {
@@ -33,5 +34,9 @@ public enum OperatingSystem {
 
     public void modifyInfo(UnaryOperator<String> modifyType) {
         System.out.println("Modified OS name: " + modifyType.apply(name));
+    }
+
+    public void checkStringLength(Predicate<String> stringLengthPredicate, String str) {
+        System.out.println("Is length greater than five? " + stringLengthPredicate.test(str));
     }
 }
