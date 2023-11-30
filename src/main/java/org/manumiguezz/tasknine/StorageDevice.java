@@ -1,5 +1,6 @@
 package org.manumiguezz.tasknine;
 
+import java.util.function.Consumer;
 import java.util.function.Function;
 
 public enum StorageDevice {
@@ -32,5 +33,9 @@ public enum StorageDevice {
 
     public void checkStorageDevice(Function<StorageDevice, String> checkType) {
         System.out.println(checkType.apply(this));
+    }
+
+    public void printArrayElements(Consumer<Object[]> printArrayConsumer, Object[] array) {
+        printArrayConsumer.accept(array);
     }
 }
