@@ -2,9 +2,10 @@ package org.manumiguezz.taskten;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.core.Logger;
-import org.manumiguezz.tasksix.collections.ComputerComponentLinkedList;
-import org.manumiguezz.tasksix.exceptions.*;
-import org.manumiguezz.tasksix.models.*;
+import org.manumiguezz.taskten.collections.ComputerComponentLinkedList;
+import org.manumiguezz.taskten.exceptions.*;
+import org.manumiguezz.taskten.models.*;
+import org.manumiguezz.taskten.collections.MotherboardList;
 
 import java.util.Scanner;
 
@@ -118,7 +119,17 @@ public class Main {
             scanner.close();
         }
 
+        try {
+            System.out.println("Using ComputerComponentLinkedList:");
+            ComputerComponentLinkedList<ComputerComponent> componentLinkedList = new ComputerComponentLinkedList<>();
+            componentLinkedList.useReflection();
 
+            System.out.println("\nUsing MotherboardList:");
+            MotherboardList motherboardList = new MotherboardList();
+            motherboardList.useReflection();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
     }
 }

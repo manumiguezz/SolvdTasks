@@ -2,7 +2,7 @@ package org.manumiguezz.taskten.models;
 
 import java.util.Objects;
 
-public abstract class ComputerComponent {
+public abstract class ComputerComponent extends org.manumiguezz.tasksix.models.ComputerComponent {
     protected String name;
     protected String manufacturer;
     private final int componentID;
