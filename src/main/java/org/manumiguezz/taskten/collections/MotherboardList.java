@@ -1,7 +1,10 @@
 package org.manumiguezz.taskten.collections;
 
 import org.manumiguezz.taskten.models.Motherboard;
-
+import java.lang.reflect.Constructor;
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
+import java.lang.reflect.Modifier;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -47,5 +50,35 @@ public class MotherboardList {
     public Map<String, List<Motherboard>> groupByManufacturer() {
         return motherboards.stream()
                 .collect(Collectors.groupingBy(Motherboard::getManufacturer));
+    }
+
+    public void useReflection() throws Exception {
+        Class<?> motherboardClass = Motherboard.class;
+
+        Field[] fields = motherboardClass.getDeclaredFields();
+        for (Field field : fields) {
+            System.out.println("Field: " + field.getName());
+            System.out.println("Type: " + field.getType());
+            System.out.println("Modifiers: " + Modifier.toString(field.getModifiers()));
+        }
+
+        Constructor<?>[] constructors = motherboardClass.getConstructors();
+        for (Constructor<?> constructor : constructors) {
+            System.out.println("Constructor: " + constructor.getName());
+            System.out.println("Modifiers: " + Modifier.toString(constructor.getModifiers()));
+        }
+
+        Method[] methods = motherboardClass.getDeclaredMethods();
+        for (Method method : methods) {
+            System.out.println("Method: " + method.getName());
+            System.out.println("Return Type: " + method.getReturnType());
+            System.out.println("Modifiers: " + Modifier.toString(method.getModifiers()));
+        }
+
+        Constructor<?> constructor = motherboardClass.getConstructor();
+        Object motherboardObject = constructor.newInstance();
+
+        Method someMethod = motherboardClass.getDeclaredMethod("someMethod");
+        someMethod.invoke(motherboardObject);
     }
 }
