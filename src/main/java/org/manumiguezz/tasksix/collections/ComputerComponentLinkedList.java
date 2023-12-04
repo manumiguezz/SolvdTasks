@@ -1,9 +1,12 @@
 package org.manumiguezz.tasksix.collections;
-
 import org.manumiguezz.tasksix.models.ComputerComponent;
 
-public class ComputerComponentLinkedList<T extends ComputerComponent> {
+import java.util.LinkedList;
+import java.util.List;
+import java.util.stream.Collectors;
 
+public class ComputerComponentLinkedList<T extends ComputerComponent> {
+    private LinkedList<T> components = new LinkedList<>();
     private Node<T> head;
     private int size;
 
@@ -24,6 +27,12 @@ public class ComputerComponentLinkedList<T extends ComputerComponent> {
             current.setNext(newNode);
         }
         size++;
+    }
+
+    public List<T> getComponentsByManufacturer(String manufacturer) {
+        return components.stream()
+                .filter(component -> ((ComputerComponent) component).getManufacturer().equals(manufacturer))
+                .collect(Collectors.toList());
     }
 
     public void display() {
