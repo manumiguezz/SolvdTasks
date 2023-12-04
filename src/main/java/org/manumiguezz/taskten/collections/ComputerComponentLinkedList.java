@@ -1,14 +1,12 @@
 package org.manumiguezz.taskten.collections;
 
 import org.manumiguezz.tasksix.models.ComputerComponent;
-
 import java.util.LinkedList;
 import java.util.List;
-import java.util.function.Predicate;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class ComputerComponentLinkedList<T extends ComputerComponent> {
+    private LinkedList<T> components = new LinkedList<>();
     private Node<T> head;
     private int size;
 
@@ -29,42 +27,45 @@ public class ComputerComponentLinkedList<T extends ComputerComponent> {
             current.setNext(newNode);
         }
         size++;
+        components.add(data);
     }
 
     public List<T> getComponentsByManufacturer(String manufacturer) {
-        return componentsAsStream()
+        return components.stream()
                 .filter(component -> component.getManufacturer().equals(manufacturer))
                 .collect(Collectors.toList());
     }
 
-    public int size() {
-        return size;
+    public long countComponentsByType(Class<?> type) {
+        return components.stream()
+                .filter(component -> type.isInstance(component))
+                .count();
     }
 
-    public List<T> collectToList() {
-        return componentsAsStream().collect(Collectors.toList());
+    public List<String> mapComponentNames() {
+        return components.stream()
+                .map(ComputerComponent::getName)
+                .collect(Collectors.toList());
     }
 
-    public long countComponents() {
-        return componentsAsStream().count();
+    public T findAnyComponentByCondition(boolean condition) {
+        return components.stream()
+                .filter(component -> )
+                .findAny()
+                .orElse(null);
     }
 
-    public boolean anyMatch(Predicate<T> predicate) {
-        return componentsAsStream().anyMatch(predicate);
-    }
-
-    private LinkedList<T> componentsToList() {
-        LinkedList<T> list = new LinkedList<>();
+    public void display() {
         Node<T> current = head;
         while (current != null) {
-            list.add(current.getData());
+            System.out.print(current.getData() + " -> ");
             current = current.getNext();
         }
-        return list;
+        System.out.println("null");
     }
 
-    private Stream<T> componentsAsStream() {
-        return componentsToList().stream();
+    public int size() {
+        return size;
     }
 
     private static class Node<T> {
