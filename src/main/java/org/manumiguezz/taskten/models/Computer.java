@@ -1,6 +1,6 @@
 package org.manumiguezz.taskten.models;
 
-import org.manumiguezz.tasksix.exceptions.*;
+import org.manumiguezz.taskten.exceptions.*;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

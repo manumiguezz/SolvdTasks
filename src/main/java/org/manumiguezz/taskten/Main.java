@@ -68,7 +68,7 @@ public class Main {
                     break;
                 case 6:
                     try {
-                        myHomeComputer.checkTemperature(80);
+                        myHomeComputer.checkTemperature(90);
                     } catch (OverheatingException e) {
                         logger.warn("Overheating detected: " + e.getMessage());
                     }
