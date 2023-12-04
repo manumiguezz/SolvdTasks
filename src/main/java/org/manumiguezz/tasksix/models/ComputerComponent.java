@@ -8,6 +8,7 @@ public abstract class ComputerComponent {
     private final int componentID;
 
     private static int totalComponents = 0;
+    private int price;
 
     public ComputerComponent(String name, String manufacturer) {
         totalComponents++;
@@ -30,6 +31,14 @@ public abstract class ComputerComponent {
 
     public void setManufacturer(String manufacturer) {
         this.manufacturer = manufacturer;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
     }
 
     public static void driversInstall() {

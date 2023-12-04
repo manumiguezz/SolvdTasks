@@ -1,6 +1,7 @@
 package org.manumiguezz.taskten.collections;
 
 import org.manumiguezz.tasksix.models.ComputerComponent;
+
 import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -50,7 +51,7 @@ public class ComputerComponentLinkedList<T extends ComputerComponent> {
 
     public T findAnyComponentByCondition(boolean condition) {
         return components.stream()
-                .filter(component -> )
+                .filter(component -> component.getPrice() > 1000)
                 .findAny()
                 .orElse(null);
     }
