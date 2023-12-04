@@ -2,11 +2,11 @@ package org.manumiguezz.taskten.models;
 
 import java.util.Objects;
 
-public abstract class ComputerComponent extends org.manumiguezz.tasksix.models.ComputerComponent {
+public abstract class ComputerComponent {
     protected String name;
     protected String manufacturer;
+    private int price;
     private final int componentID;
-
     private static int totalComponents = 0;
 
     public ComputerComponent(String name, String manufacturer) {
@@ -30,6 +30,14 @@ public abstract class ComputerComponent extends org.manumiguezz.tasksix.models.C
 
     public void setManufacturer(String manufacturer) {
         this.manufacturer = manufacturer;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
     }
 
     public static void driversInstall() {
