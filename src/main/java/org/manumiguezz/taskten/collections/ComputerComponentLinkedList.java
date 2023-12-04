@@ -1,7 +1,10 @@
 package org.manumiguezz.taskten.collections;
 
 import org.manumiguezz.tasksix.models.ComputerComponent;
-
+import java.lang.reflect.Constructor;
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
+import java.lang.reflect.Modifier;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -89,5 +92,35 @@ public class ComputerComponentLinkedList<T extends ComputerComponent> {
         public void setNext(Node<T> next) {
             this.next = next;
         }
+    }
+
+    public void useReflection() throws Exception {
+        Class<?> computerComponentClass = ComputerComponent.class;
+
+        Field[] fields = computerComponentClass.getDeclaredFields();
+        for (Field field : fields) {
+            System.out.println("Field: " + field.getName());
+            System.out.println("Type: " + field.getType());
+            System.out.println("Modifiers: " + Modifier.toString(field.getModifiers()));
+        }
+
+        Constructor<?>[] constructors = computerComponentClass.getConstructors();
+        for (Constructor<?> constructor : constructors) {
+            System.out.println("Constructor: " + constructor.getName());
+            System.out.println("Modifiers: " + Modifier.toString(constructor.getModifiers()));
+        }
+
+        Method[] methods = computerComponentClass.getDeclaredMethods();
+        for (Method method : methods) {
+            System.out.println("Method: " + method.getName());
+            System.out.println("Return Type: " + method.getReturnType());
+            System.out.println("Modifiers: " + Modifier.toString(method.getModifiers()));
+        }
+
+        Constructor<?> constructor = computerComponentClass.getConstructor();
+        Object computerComponentObject = constructor.newInstance();
+
+        Method someMethod = computerComponentClass.getDeclaredMethod("someMethod");
+        someMethod.invoke(computerComponentObject);
     }
 }
