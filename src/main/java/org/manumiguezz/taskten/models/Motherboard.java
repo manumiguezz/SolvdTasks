@@ -7,6 +7,8 @@ import java.util.Objects;
 public final class Motherboard extends ComputerComponent implements Maintainable {
     protected String chipset;
     protected String socketType;
+    private int id;
+    private String type;
 
     public Motherboard(String name, String manufacturer, String chipset, String socketType) {
         super(name, manufacturer);
@@ -28,6 +30,22 @@ public final class Motherboard extends ComputerComponent implements Maintainable
 
     public void setSocketType(String socketType) {
         this.socketType = socketType;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 
     public final void controlBios(){

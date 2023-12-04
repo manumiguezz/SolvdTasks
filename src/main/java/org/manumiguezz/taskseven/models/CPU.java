@@ -2,7 +2,7 @@ package org.manumiguezz.taskseven.models;
 
 import org.manumiguezz.taskseven.interfaces.Boosteable;
 import org.manumiguezz.taskseven.interfaces.Maintainable;
-import org.manumiguezz.tasksix.interfaces.Overclockable;
+import org.manumiguezz.taskten.interfaces.Overclockable;
 
 import java.util.Objects;
 

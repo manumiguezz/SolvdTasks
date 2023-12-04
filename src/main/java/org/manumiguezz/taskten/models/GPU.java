@@ -1,9 +1,8 @@
 package org.manumiguezz.taskten.models;
 
-import org.manumiguezz.tasksix.interfaces.Boosteable;
-import org.manumiguezz.tasksix.interfaces.Maintainable;
-import org.manumiguezz.tasksix.interfaces.Overclockable;
-
+import org.manumiguezz.taskten.interfaces.Boosteable;
+import org.manumiguezz.taskten.interfaces.Maintainable;
+import org.manumiguezz.taskten.interfaces.Overclockable;
 import java.util.Objects;
 
 public final class GPU extends ComputerComponent implements Overclockable, Boosteable, Maintainable {
