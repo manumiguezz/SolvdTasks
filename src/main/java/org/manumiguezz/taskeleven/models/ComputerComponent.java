@@ -9,6 +9,8 @@ public abstract class ComputerComponent {
     private final int componentID;
     private static int totalComponents = 0;
 
+    private ConnectionPool connectionPool;
+
     public ComputerComponent(String name, String manufacturer) {
         totalComponents++;
         this.name = name;
@@ -38,6 +40,10 @@ public abstract class ComputerComponent {
 
     public void setPrice(int price) {
         this.price = price;
+    }
+
+    public void setConnectionPool(ConnectionPool pool) {
+        this.connectionPool = pool;
     }
 
     public static void driversInstall() {
