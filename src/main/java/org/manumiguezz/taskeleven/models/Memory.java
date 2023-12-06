@@ -1,7 +1,7 @@
 package org.manumiguezz.taskeleven.models;
 
-import org.manumiguezz.tasksix.interfaces.Maintainable;
-import org.manumiguezz.tasksix.interfaces.Storable;
+import org.manumiguezz.taskeleven.interfaces.Maintainable;
+import org.manumiguezz.taskeleven.interfaces.Storable;
 
 import java.util.Objects;
 

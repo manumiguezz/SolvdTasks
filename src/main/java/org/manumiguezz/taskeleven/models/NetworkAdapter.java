@@ -1,7 +1,7 @@
 package org.manumiguezz.taskeleven.models;
 
-import org.manumiguezz.tasksix.interfaces.Connectable;
-import org.manumiguezz.tasksix.interfaces.Maintainable;
+import org.manumiguezz.taskeleven.interfaces.Connectable;
+import org.manumiguezz.taskeleven.interfaces.Maintainable;
 
 import java.util.Objects;
 

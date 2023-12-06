@@ -1,6 +1,6 @@
 package org.manumiguezz.taskeleven.collections;
 
-import org.manumiguezz.taskten.models.ComputerComponent;
+import org.manumiguezz.taskeleven.models.ComputerComponent;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;

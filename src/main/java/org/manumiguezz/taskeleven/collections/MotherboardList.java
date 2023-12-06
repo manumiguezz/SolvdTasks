@@ -1,6 +1,6 @@
 package org.manumiguezz.taskeleven.collections;
 
-import org.manumiguezz.taskten.models.Motherboard;
+import org.manumiguezz.taskeleven.models.Motherboard;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
