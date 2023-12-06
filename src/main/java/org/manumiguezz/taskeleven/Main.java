@@ -3,9 +3,9 @@ package org.manumiguezz.taskeleven;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.core.Logger;
 import org.manumiguezz.taskeleven.models.*;
-import org.manumiguezz.taskten.collections.ComputerComponentLinkedList;
-import org.manumiguezz.taskten.collections.MotherboardList;
-import org.manumiguezz.taskten.exceptions.*;
+import org.manumiguezz.taskeleven.collections.ComputerComponentLinkedList;
+import org.manumiguezz.taskeleven.collections.MotherboardList;
+import org.manumiguezz.taskeleven.exceptions.*;
 
 import java.util.Scanner;
 
