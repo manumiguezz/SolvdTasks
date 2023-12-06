@@ -86,4 +86,13 @@ public final class NetworkAdapter extends ComputerComponent implements Connectab
                 ", manufacturer='" + manufacturer + '\'' +
                 '}';
     }
+
+    public void performNetworkActivity() {
+        try {
+            Connection connection = connectionPool.getConnection();
+            connectionPool.releaseConnection(connection);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
 }
