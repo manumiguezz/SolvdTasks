@@ -43,7 +43,26 @@ public final class NetworkAdapter extends ComputerComponent implements Connectab
 
     @Override
     public void connect() {
-        System.out.println("connecting to network");
+        int availableConnections = 5;
+        int threadsRequestingConnection = 7;
+
+        for (int i = 0; i < threadsRequestingConnection; i++) {
+            if (availableConnections > 0) {
+                new Thread(() -> {
+                    try {
+                        System.out.println("Connecting to the network...");
+                        Thread.sleep(1000);
+                        System.out.println("Connected to the network.");
+                        disconnect();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }).start();
+                availableConnections--;
+            } else {
+                System.out.println("Waiting for the next available connection...");
+            }
+        }
     }
 
     @Override
