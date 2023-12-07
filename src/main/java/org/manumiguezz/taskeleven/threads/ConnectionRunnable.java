@@ -1,7 +1,7 @@
 package org.manumiguezz.taskeleven.threads;
 
-import org.manumiguezz.taskeleven.connectionpool.Connection;
-import org.manumiguezz.taskeleven.connectionpool.ConnectionPool;
+import org.manumiguezz.taskeleven.models.Connection;
+import org.manumiguezz.taskeleven.utils.ConnectionPool;
 
 public class ConnectionRunnable implements Runnable {
     private ConnectionPool connectionPool;

@@ -1,5 +1,8 @@
 package org.manumiguezz.taskeleven.utils;
 
+import org.manumiguezz.taskeleven.models.Connection;
+
+import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 
 public class ConnectionPool {
