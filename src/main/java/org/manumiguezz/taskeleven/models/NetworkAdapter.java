@@ -72,7 +72,9 @@ public final class NetworkAdapter extends ComputerComponent implements Connectab
         for (int i = 0; i < connectedClients; i++) {
             new Thread(() -> {
                 try {
-
+                    System.out.println("Disconnecting from the network...");
+                    Thread.sleep(500);
+                    System.out.println("Disconnected from the network.");
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
