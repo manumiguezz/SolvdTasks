@@ -6,6 +6,7 @@ import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 
 public class ConnectionPool {
+    private static ConnectionPool instance = new ConnectionPool();
     private BlockingQueue<Connection> pool;
 
     private ConnectionPool() {
@@ -13,6 +14,10 @@ public class ConnectionPool {
         for (int i = 0; i < 5; i++) {
             pool.offer(new Connection());
         }
+    }
+
+    public static ConnectionPool getInstance() {
+        return instance;
     }
 
     public Connection getConnection() throws InterruptedException {

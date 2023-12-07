@@ -6,12 +6,21 @@ import org.manumiguezz.taskeleven.models.*;
 import org.manumiguezz.taskeleven.collections.ComputerComponentLinkedList;
 import org.manumiguezz.taskeleven.collections.MotherboardList;
 import org.manumiguezz.taskeleven.exceptions.*;
+import org.manumiguezz.taskeleven.threads.ConnectionRunnable;
+import org.manumiguezz.taskeleven.utils.ConnectionPool;
 
 import java.util.Scanner;
 
 public class Main {
     private static final Logger logger = (Logger) LogManager.getLogger(Main.class);
     public static void main(String[] args) {
+
+        ConnectionPool connectionPool = ConnectionPool.getInstance();
+
+        for (int i = 0; i < 5; i++) {
+            Thread thread = new Thread(new ConnectionRunnable(connectionPool));
+            thread.start();
+        }
 
         Scanner scanner = new Scanner(System.in);
 
