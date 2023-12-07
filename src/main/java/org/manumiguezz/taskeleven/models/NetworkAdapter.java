@@ -67,7 +67,17 @@ public final class NetworkAdapter extends ComputerComponent implements Connectab
 
     @Override
     public void disconnect() {
-        System.out.println("disconnecting from network");
+        int connectedClients = 5;
+
+        for (int i = 0; i < connectedClients; i++) {
+            new Thread(() -> {
+                try {
+
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }).start();
+        }
     }
 
     @Override
