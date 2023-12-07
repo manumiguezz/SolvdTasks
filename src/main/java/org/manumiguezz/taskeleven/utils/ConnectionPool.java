@@ -1,38 +1,26 @@
-package org.manumiguezz.taskeleven.utils;
+package org.manumiguezz.taskeleven.connectionpool;
 
-import org.manumiguezz.taskeleven.models.Connection;
-import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.LinkedBlockingQueue;
 
 public class ConnectionPool {
-    private final BlockingQueue<Connection> pool;
+    private BlockingQueue<Connection> pool;
 
-    private ConnectionPool(int size) {
-        this.pool = new ArrayBlockingQueue<>(size);
-        initializePool(size);
-    }
+    // Implement a lazy-initialized, thread-safe singleton instance of the pool
 
-    private void initializePool(int size) {
-        for (int i = 0; i < size; i++) {
-            Connection connection = createConnection();
-            pool.offer(connection);
+    private ConnectionPool() {
+        pool = new LinkedBlockingQueue<>(5);
+        for (int i = 0; i < 5; i++) {
+            pool.offer(new Connection());
         }
     }
 
-    public static ConnectionPool createConnectionPool(int size) {
-        return new ConnectionPool(size);
-    }
-
+    // Method to get a connection from the pool
     public Connection getConnection() throws InterruptedException {
-        // Retrieve a connection from the pool
-        return pool.take();
+        return pool.take(); // Blocking call, waits if the pool is empty
     }
 
-    public void releaseConnection(Connection connection) {
+    public void returnConnection(Connection connection) {
         pool.offer(connection);
-    }
-
-    private Connection createConnection() {
-        return new Connection("url", "username", "password");
     }
 }

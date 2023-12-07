@@ -34,12 +34,4 @@ public class Connection {
     public void setPassword(String password) {
         this.password = password;
     }
-
-    public void open() {
-        System.out.println("Connection opened.");
-    }
-
-    public void close() {
-        System.out.println("Connection closed.");
-    }
 }

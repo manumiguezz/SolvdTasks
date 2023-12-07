@@ -2,14 +2,12 @@ package org.manumiguezz.taskeleven.models;
 
 import org.manumiguezz.taskeleven.interfaces.Connectable;
 import org.manumiguezz.taskeleven.interfaces.Maintainable;
-import org.manumiguezz.taskeleven.utils.ConnectionPool;
 
 import java.util.Objects;
 
 public final class NetworkAdapter extends ComputerComponent implements Connectable, Maintainable {
     protected int speed;
     protected String ConnectionType;
-    private ConnectionPool connectionPool = ConnectionPool.getInstance();
 
     public NetworkAdapter(String name, String manufacturer, int speed, String connectionType) {
         super(name, manufacturer);
@@ -85,14 +83,5 @@ public final class NetworkAdapter extends ComputerComponent implements Connectab
                 ", name='" + name + '\'' +
                 ", manufacturer='" + manufacturer + '\'' +
                 '}';
-    }
-
-    public void performNetworkActivity() {
-        try {
-            Connection connection = connectionPool.getConnection();
-            connectionPool.releaseConnection(connection);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
     }
 }
