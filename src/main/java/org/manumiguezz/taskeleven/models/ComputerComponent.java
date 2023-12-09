@@ -16,6 +16,13 @@ public abstract class ComputerComponent {
         this.componentID = totalComponents;
     }
 
+    public ComputerComponent() {
+        totalComponents++;
+        this.name = "Default Name";
+        this.manufacturer = "Default Manufacturer";
+        this.componentID = totalComponents;
+    }
+
     public String getName() {
         return name;
     }
