@@ -1,5 +1,5 @@
-2023-12-07 02:48:26,440 INFO o.m.t.Main [main] starting computer activities...
-2023-12-07 02:48:26,452 INFO o.m.t.Main [main] activities to do: 
+2023-12-08 22:09:52,400 INFO o.m.t.Main [main] starting computer activities...
+2023-12-08 22:09:52,413 INFO o.m.t.Main [main] activities to do: 
  1. chatting 
  2. playing games 
  3. playing music 
@@ -11,5 +11,6 @@
  9 check connection status 
  10. check storage 
  11. read computer file
-2023-12-07 02:48:26,452 INFO o.m.t.Main [main] choose one with a number:
-2023-12-07 02:48:41,901 INFO o.m.t.Main [main] computer has turned off...
+2023-12-08 22:09:52,413 INFO o.m.t.Main [main] choose one with a number:
+2023-12-08 22:09:57,485 WARN o.m.t.Main [main] Invalid component detected: Invalid component attributes provided.
+2023-12-08 22:09:57,485 INFO o.m.t.Main [main] computer has turned off...
