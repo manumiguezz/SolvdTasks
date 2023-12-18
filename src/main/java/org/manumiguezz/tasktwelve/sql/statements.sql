@@ -53,5 +53,8 @@ DELETE FROM CPU WHERE computer_id = 3;
 DELETE FROM CPU WHERE computer_id = 4;
 DELETE FROM CPU WHERE computer_id = 2;
 
-
-
+ALTER TABLE Computer ADD COLUMN purchase_date DATE;
+ALTER TABLE Memory MODIFY COLUMN memory_type VARCHAR(100);
+ALTER TABLE CPU CHANGE COLUMN cpu_model cpu_type VARCHAR(50);
+ALTER TABLE Memory ADD CONSTRAINT fk_computer FOREIGN KEY (computer_id) REFERENCES Computer(computer_id);
+ALTER TABLE Computer DROP COLUMN cooling_system_id;
