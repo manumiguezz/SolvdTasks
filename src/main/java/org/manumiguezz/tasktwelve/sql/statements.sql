@@ -85,3 +85,13 @@ FULL OUTER JOIN GPU ON CPU.computer_id = GPU.computer_id;
 SELECT * FROM Computer
 JOIN Memory ON Computer.computer_id = Memory.computer_id
 WHERE Memory.memory_capacity > 16;
+
+SELECT COUNT(*)
+FROM Computer;
+
+SELECT cooling_system_type, COUNT(*) FROM CoolingSystem
+GROUP BY cooling_system_type;
+
+SELECT cooling_system_type, COUNT(*) FROM CoolingSystem
+GROUP BY cooling_system_type
+HAVING COUNT(*) > 1;
