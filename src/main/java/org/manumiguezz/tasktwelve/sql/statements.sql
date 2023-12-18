@@ -69,3 +69,19 @@ LEFT JOIN GPU ON Computer.computer_id = GPU.computer_id
 LEFT JOIN Memory ON Computer.computer_id = Memory.computer_id
 LEFT JOIN NetworkAdapter ON Computer.computer_id = NetworkAdapter.computer_id
 LEFT JOIN Storage ON Computer.computer_id = Storage.computer_id;
+
+SELECT * FROM Computer
+LEFT JOIN Motherboard ON Computer.motherboard_id = Motherboard.motherboard_id;
+
+SELECT * FROM Computer
+RIGHT JOIN PowerSupply ON Computer.power_supply_id = PowerSupply.power_supply_id;
+
+SELECT * FROM Computer
+INNER JOIN CoolingSystem ON Computer.cooling_system_id = CoolingSystem.cooling_system_id;
+
+SELECT * FROM CPU
+FULL OUTER JOIN GPU ON CPU.computer_id = GPU.computer_id;
+
+SELECT * FROM Computer
+JOIN Memory ON Computer.computer_id = Memory.computer_id
+WHERE Memory.memory_capacity > 16;
