@@ -25,7 +25,10 @@ INSERT INTO Storage (storage_type, storage_capacity, computer_id) VALUES ('HDD',
 UPDATE GPU SET gpu_model = 'Nvidia GeForce RTX 3080' WHERE computer_id = 1;
 UPDATE GPU SET gpu_model = 'AMD Radeon RX 5700' WHERE computer_id = 2;
 UPDATE CPU SET cpu_model = 'Intel Core i7' WHERE cpu_id = 1;
+UPDATE CPU SET cpu_model = 'AMD Ryzen 9' WHERE cpu_id = 2;
 UPDATE Memory SET memory_capacity = 64 WHERE memory_id = 2;
+UPDATE Memory SET memory_capacity = 32 WHERE memory_id = 1;
 UPDATE Motherboard SET motherboard_model = 'ASUS ROG Strix Z590-E' WHERE motherboard_id = 1;
 UPDATE PowerSupply SET power_supply_model = 'Corsair RM850x' WHERE power_supply_id = 2;
 UPDATE Storage SET storage_capacity = 2000 WHERE storage_id = 2;
+UPDATE Connection SET connection_type = 'Ethernet and Wi-Fi' WHERE connection_id = 1;
