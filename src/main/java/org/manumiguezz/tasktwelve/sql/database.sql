@@ -10,8 +10,11 @@ CREATE TABLE Computer (
 );
 
 CREATE TABLE ComputerComponent (
-    component_id INT PRIMARY KEY AUTO_INCREMENT,
-    component_name VARCHAR(50)
+    computer_id INT,
+    component_id INT,
+    PRIMARY KEY (computer_id, component_id),
+    FOREIGN KEY (computer_id) REFERENCES Computer(computer_id),
+    FOREIGN KEY (component_id) REFERENCES Component(component_id)
 );
 
 CREATE TABLE Connection (
