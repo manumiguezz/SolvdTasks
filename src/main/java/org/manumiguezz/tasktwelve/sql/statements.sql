@@ -58,3 +58,14 @@ ALTER TABLE Memory MODIFY COLUMN memory_type VARCHAR(100);
 ALTER TABLE CPU CHANGE COLUMN cpu_model cpu_type VARCHAR(50);
 ALTER TABLE Memory ADD CONSTRAINT fk_computer FOREIGN KEY (computer_id) REFERENCES Computer(computer_id);
 ALTER TABLE Computer DROP COLUMN cooling_system_id;
+
+SELECT *
+FROM Computer
+LEFT JOIN Motherboard ON Computer.motherboard_id = Motherboard.motherboard_id
+LEFT JOIN PowerSupply ON Computer.power_supply_id = PowerSupply.power_supply_id
+LEFT JOIN CoolingSystem ON Computer.cooling_system_id = CoolingSystem.cooling_system_id
+LEFT JOIN CPU ON Computer.computer_id = CPU.computer_id
+LEFT JOIN GPU ON Computer.computer_id = GPU.computer_id
+LEFT JOIN Memory ON Computer.computer_id = Memory.computer_id
+LEFT JOIN NetworkAdapter ON Computer.computer_id = NetworkAdapter.computer_id
+LEFT JOIN Storage ON Computer.computer_id = Storage.computer_id;
