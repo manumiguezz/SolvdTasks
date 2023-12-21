@@ -14,4 +14,6 @@ public interface ComputerPeripheralDAO {
     void update(ComputerPeripheral computerPeripheral);
 
     void delete(int computerId, int peripheralId);
+
+    List<ComputerPeripheral> findByComputerId(int computerId);
 }

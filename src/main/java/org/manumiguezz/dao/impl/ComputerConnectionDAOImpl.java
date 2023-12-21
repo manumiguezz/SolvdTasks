@@ -90,4 +90,25 @@ public class ComputerConnectionDAOImpl implements ComputerConnectionDAO {
             e.printStackTrace();
         }
     }
+
+    @Override
+    public List<ComputerConnection> findByComputerId(int computerId) {
+        List<ComputerConnection> computerConnections = new ArrayList<>();
+        String query = "SELECT * FROM ComputerConnection WHERE computer_id = ?";
+        try (PreparedStatement statement = connection.prepareStatement(query)) {
+            statement.setInt(1, computerId);
+            try (ResultSet resultSet = statement.executeQuery()) {
+                while (resultSet.next()) {
+                    ComputerConnection computerConnection = new ComputerConnection(
+                            resultSet.getInt("computer_id"),
+                            resultSet.getInt("connection_id")
+                    );
+                    computerConnections.add(computerConnection);
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return computerConnections;
+    }
 }

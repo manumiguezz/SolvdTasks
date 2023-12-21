@@ -1,17 +1,42 @@
 package org.manumiguezz.service;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.core.Logger;
+import org.manumiguezz.Main;
+import org.manumiguezz.dao.ComputerDAO;
 import org.manumiguezz.models.Computer;
 
 import java.util.List;
 
-public interface ComputerService {
-    Computer findComputerById(int id);
+public class ComputerService {
+    private static final Logger logger = (Logger) LogManager.getLogger(Main.class);
+    private final ComputerDAO computerDAO;
 
-    List<Computer> findAllComputers();
+    public ComputerService(ComputerDAO computerDAO) {
+        this.computerDAO = computerDAO;
+    }
 
-    void addNewComputer(Computer computer);
+    public Computer findComputerById(int id) {
+        return computerDAO.findById(id);
+    }
 
-    void updateComputer(Computer computer);
+    public List<Computer> findAllComputers() {
+        return computerDAO.findAll();
+    }
 
-    void removeComputer(int id);
+    public void addNewComputer(Computer computer) {
+        computerDAO.create(computer);
+    }
+
+    public void updateComputer(Computer computer) {
+        computerDAO.update(computer);
+    }
+
+    public void removeComputer(int id) {
+        computerDAO.delete(id);
+    }
+
+    public List<Computer> findComputersByBrand(String brand) {
+        return computerDAO.findByBrand(brand);
+    }
 }

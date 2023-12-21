@@ -14,4 +14,6 @@ public interface ComputerConnectionDAO {
     void update(ComputerConnection computerConnection);
 
     void delete(int id, int connectionId);
+
+    List<ComputerConnection> findByComputerId(int computerId);
 }

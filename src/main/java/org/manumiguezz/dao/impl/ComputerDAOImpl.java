@@ -101,4 +101,28 @@ public class ComputerDAOImpl implements ComputerDAO {
             e.printStackTrace();
         }
     }
+
+    @Override
+    public List<Computer> findByBrand(String brand) {
+        List<Computer> computers = new ArrayList<>();
+        String query = "SELECT * FROM Computer WHERE brand = ?";
+        try (PreparedStatement statement = connection.prepareStatement(query)) {
+            statement.setString(1, brand);
+            try (ResultSet resultSet = statement.executeQuery()) {
+                while (resultSet.next()) {
+                    Computer computer = new Computer(
+                            resultSet.getInt("id"),
+                            resultSet.getString("brand"),
+                            resultSet.getInt("motherboardId"),
+                            resultSet.getInt("powerSupplyId"),
+                            resultSet.getInt("coolingSystemId")
+                    );
+                    computers.add(computer);
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return computers;
+    }
 }

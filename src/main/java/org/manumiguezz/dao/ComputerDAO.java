@@ -14,4 +14,6 @@ public interface ComputerDAO {
     void update(Computer computer);
 
     void delete(int id);
+
+    List<Computer> findByBrand(String brand);
 }

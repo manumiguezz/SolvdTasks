@@ -1,18 +1,46 @@
 package org.manumiguezz.service;
 
+import org.manumiguezz.dao.ComputerPeripheralDAO;
 import org.manumiguezz.models.ComputerPeripheral;
 
 import java.util.List;
 
-public interface ComputerPeripheralService {
-    ComputerPeripheral findComputerPeripheralById(int computerId, int peripheralId);
+public class ComputerPeripheralService {
+    private final ComputerPeripheralDAO computerPeripheralDAO;
 
-    List<ComputerPeripheral> findAllComputerPeripherals();
+    public ComputerPeripheralService(ComputerPeripheralDAO computerPeripheralDAO) {
+        this.computerPeripheralDAO = computerPeripheralDAO;
+    }
 
-    void addNewComputerPeripheral(ComputerPeripheral computerPeripheral);
+    public ComputerPeripheral findComputerPeripheralById(int computerId, int peripheralId) {
+        return computerPeripheralDAO.findById(computerId, peripheralId);
+    }
 
-    void updateComputerPeripheral(ComputerPeripheral computerPeripheral);
+    public List<ComputerPeripheral> findAllComputerPeripherals() {
+        return computerPeripheralDAO.findAll();
+    }
 
-    void removeComputerPeripheral(int computerId, int peripheralId);
-    // Other business logic methods related to ComputerPeripheral entity
+    public void addNewComputerPeripheral(ComputerPeripheral computerPeripheral) {
+        computerPeripheralDAO.create(computerPeripheral);
+    }
+
+    public void updateComputerPeripheral(ComputerPeripheral computerPeripheral) {
+        computerPeripheralDAO.update(computerPeripheral);
+    }
+
+    public void removeComputerPeripheral(int computerId, int peripheralId) {
+        computerPeripheralDAO.delete(computerId, peripheralId);
+    }
+
+
+    public List<ComputerPeripheral> findPeripheralsByComputerId(int computerId) {
+        return computerPeripheralDAO.findByComputerId(computerId);
+    }
+
+    public void removeAllPeripheralsForComputer(int computerId) {
+        List<ComputerPeripheral> peripherals = computerPeripheralDAO.findByComputerId(computerId);
+        for (ComputerPeripheral peripheral : peripherals) {
+            computerPeripheralDAO.delete(computerId, peripheral.getPeripheralId());
+        }
+    }
 }

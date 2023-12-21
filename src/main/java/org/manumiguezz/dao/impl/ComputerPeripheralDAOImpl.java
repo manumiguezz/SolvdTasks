@@ -92,4 +92,25 @@ public class ComputerPeripheralDAOImpl implements ComputerPeripheralDAO {
             e.printStackTrace();
         }
     }
+
+    @Override
+    public List<ComputerPeripheral> findByComputerId(int computerId) {
+        List<ComputerPeripheral> peripherals = new ArrayList<>();
+        String query = "SELECT * FROM ComputerPeripheral WHERE computer_id = ?";
+        try (PreparedStatement statement = connection.prepareStatement(query)) {
+            statement.setInt(1, computerId);
+            try (ResultSet resultSet = statement.executeQuery()) {
+                while (resultSet.next()) {
+                    ComputerPeripheral peripheral = new ComputerPeripheral(
+                            resultSet.getInt("computer_id"),
+                            resultSet.getInt("peripheral_id")
+                    );
+                    peripherals.add(peripheral);
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return peripherals;
+    }
 }
