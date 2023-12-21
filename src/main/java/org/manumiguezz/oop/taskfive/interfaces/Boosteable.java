@@ -1,4 +1,4 @@
-package org.manumiguezz.taskseven.interfaces;
+package org.manumiguezz.oop.taskfive.interfaces;
 
 public interface Boosteable {
 
