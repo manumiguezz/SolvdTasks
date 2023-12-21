@@ -1,3 +1,56 @@
+CREATE TABLE Motherboard (
+    motherboard_id INT PRIMARY KEY AUTO_INCREMENT,
+    motherboard_model VARCHAR(50)
+);
+
+CREATE TABLE PowerSupply (
+    power_supply_id INT PRIMARY KEY AUTO_INCREMENT,
+    power_supply_model VARCHAR(50)
+);
+
+CREATE TABLE CoolingSystem (
+    cooling_system_id INT PRIMARY KEY AUTO_INCREMENT,
+    cooling_system_type VARCHAR(50)
+);
+
+CREATE TABLE CPU (
+    cpu_id INT PRIMARY KEY AUTO_INCREMENT,
+    cpu_model VARCHAR(50)
+);
+
+CREATE TABLE GPU (
+    gpu_id INT PRIMARY KEY AUTO_INCREMENT,
+    gpu_model VARCHAR(50)
+);
+
+CREATE TABLE Memory (
+    memory_id INT PRIMARY KEY AUTO_INCREMENT,
+    memory_type VARCHAR(50),
+    memory_capacity INT
+);
+
+CREATE TABLE NetworkAdapter (
+    network_adapter_id INT PRIMARY KEY AUTO_INCREMENT,
+    adapter_model VARCHAR(50)
+);
+
+CREATE TABLE Storage (
+    storage_id INT PRIMARY KEY AUTO_INCREMENT,
+    storage_type VARCHAR(50),
+    storage_capacity INT
+);
+
+CREATE TABLE Peripheral (
+    peripheral_id INT PRIMARY KEY AUTO_INCREMENT,
+    peripheral_type VARCHAR(50),
+    peripheral_model VARCHAR(50)
+);
+
+CREATE TABLE Connection (
+    connection_id INT PRIMARY KEY AUTO_INCREMENT,
+    connection_type VARCHAR(50)
+);
+
 CREATE TABLE Computer (
     computer_id INT PRIMARY KEY AUTO_INCREMENT,
     computer_name VARCHAR(50),
@@ -9,67 +62,18 @@ CREATE TABLE Computer (
     FOREIGN KEY (cooling_system_id) REFERENCES CoolingSystem(cooling_system_id)
 );
 
-CREATE TABLE ComputerComponent (
+CREATE TABLE ComputerConnection (
     computer_id INT,
-    component_id INT,
-    PRIMARY KEY (computer_id, component_id),
+    connection_id INT,
+    PRIMARY KEY (computer_id, connection_id),
     FOREIGN KEY (computer_id) REFERENCES Computer(computer_id),
-    FOREIGN KEY (component_id) REFERENCES Component(component_id)
+    FOREIGN KEY (connection_id) REFERENCES Connection(connection_id)
 );
 
-CREATE TABLE Connection (
-    connection_id INT PRIMARY KEY AUTO_INCREMENT,
-    connection_type VARCHAR(50)
-);
-
-CREATE TABLE CoolingSystem (
-    cooling_system_id INT PRIMARY KEY AUTO_INCREMENT,
-    cooling_system_type VARCHAR(50)
-);
-
-CREATE TABLE CPU (
-    cpu_id INT PRIMARY KEY AUTO_INCREMENT,
-    cpu_model VARCHAR(50),
+CREATE TABLE ComputerPeripheral (
     computer_id INT,
-    FOREIGN KEY (computer_id) REFERENCES Computer(computer_id)
-);
-
-CREATE TABLE GPU (
-    gpu_id INT PRIMARY KEY AUTO_INCREMENT,
-    gpu_model VARCHAR(50),
-    computer_id INT,
-    FOREIGN KEY (computer_id) REFERENCES Computer(computer_id)
-);
-
-CREATE TABLE Memory (
-    memory_id INT PRIMARY KEY AUTO_INCREMENT,
-    memory_type VARCHAR(50),
-    memory_capacity INT,
-    computer_id INT,
-    FOREIGN KEY (computer_id) REFERENCES Computer(computer_id)
-);
-
-CREATE TABLE Motherboard (
-    motherboard_id INT PRIMARY KEY AUTO_INCREMENT,
-    motherboard_model VARCHAR(50)
-);
-
-CREATE TABLE NetworkAdapter (
-    network_adapter_id INT PRIMARY KEY AUTO_INCREMENT,
-    adapter_model VARCHAR(50),
-    computer_id INT,
-    FOREIGN KEY (computer_id) REFERENCES Computer(computer_id)
-);
-
-CREATE TABLE PowerSupply (
-    power_supply_id INT PRIMARY KEY AUTO_INCREMENT,
-    power_supply_model VARCHAR(50)
-);
-
-CREATE TABLE Storage (
-    storage_id INT PRIMARY KEY AUTO_INCREMENT,
-    storage_type VARCHAR(50),
-    storage_capacity INT,
-    computer_id INT,
-    FOREIGN KEY (computer_id) REFERENCES Computer(computer_id)
+    peripheral_id INT,
+    PRIMARY KEY (computer_id, peripheral_id),
+    FOREIGN KEY (computer_id) REFERENCES Computer(computer_id),
+    FOREIGN KEY (peripheral_id) REFERENCES Peripheral(peripheral_id)
 );

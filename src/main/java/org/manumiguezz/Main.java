@@ -10,8 +10,6 @@ public class Main {
     private static final Logger logger = (Logger) LogManager.getLogger(Main.class);
     public static void main(String[] args) {
 
-        ConnectionPool connectionPool = ConnectionPool.getInstance();
-
         Scanner scanner = new Scanner(System.in);
 
     }
