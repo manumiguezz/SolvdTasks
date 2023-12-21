@@ -52,5 +52,16 @@ public class ConnectionPool {
         return connection;
     }
 
+    public synchronized static boolean releaseConnection(Connection connection) {
+        if (usedConnections.remove(connection)) {
+            connectionPool.add(connection);
+            return true;
+        }
+        return false;
+    }
+
+    public static int getPoolSize() {
+        return connectionPool.size();
+    }
 
 }
