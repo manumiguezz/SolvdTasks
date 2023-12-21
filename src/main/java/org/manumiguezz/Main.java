@@ -16,11 +16,6 @@ public class Main {
 
         ConnectionPool connectionPool = ConnectionPool.getInstance();
 
-        for (int i = 0; i < 5; i++) {
-            Thread thread = new Thread(new ConnectionRunnable(connectionPool));
-            thread.start();
-        }
-
         Scanner scanner = new Scanner(System.in);
 
         ComputerComponent cpu = new CPU("Intel I9", "Intel", 9, "LGA1151");
