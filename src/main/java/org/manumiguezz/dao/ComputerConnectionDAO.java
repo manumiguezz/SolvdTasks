@@ -5,7 +5,7 @@ import org.manumiguezz.models.ComputerConnection;
 import java.util.List;
 
 public interface ComputerConnectionDAO {
-    ComputerConnection findById(int id);
+    ComputerConnection findById(int id, int connectionId);
 
     List<ComputerConnection> findAll();
 
@@ -13,5 +13,5 @@ public interface ComputerConnectionDAO {
 
     void update(ComputerConnection computerConnection);
 
-    void delete(int id);
+    void delete(int id, int connectionId);
 }

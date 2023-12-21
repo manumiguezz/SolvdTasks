@@ -18,7 +18,7 @@ public class ComputerConnectionDAOImpl implements ComputerConnectionDAO {
     }
 
     @Override
-    public ComputerConnection findById(int id) {
+    public ComputerConnection findById(int id, int connectionId) {
         ComputerConnection computerConnection = null;
         String query = "SELECT * FROM ComputerConnection WHERE connection_id = ?";
         try (PreparedStatement statement = connection.prepareStatement(query)) {
@@ -81,7 +81,7 @@ public class ComputerConnectionDAOImpl implements ComputerConnectionDAO {
     }
 
     @Override
-    public void delete(int id) {
+    public void delete(int id, int connectionId) {
         String query = "DELETE FROM ComputerConnection WHERE connection_id = ?";
         try (PreparedStatement statement = connection.prepareStatement(query)) {
             statement.setInt(1, id);
