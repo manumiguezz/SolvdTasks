@@ -1,0 +1,34 @@
+<mapper namespace="org.manumiguezz.dao.ComputerPeripheralMapper">
+
+    <resultMap id="ComputerPeripheralResultMap" type="org.manumiguezz.models.ComputerPeripheral">
+        <id property="computerId" column="computer_id"/>
+        <id property="peripheralId" column="peripheral_id"/>
+        <result property="someProperty" column="some_column"/>
+    </resultMap>
+
+    <select id="findById" parameterType="map" resultMap="ComputerPeripheralResultMap">
+        SELECT * FROM ComputerPeripheral WHERE computer_id = #{id} AND peripheral_id = #{peripheralId}
+    </select>
+
+    <select id="findAll" resultMap="ComputerPeripheralResultMap">
+        SELECT * FROM ComputerPeripheral
+    </select>
+
+    <insert id="create" parameterType="org.manumiguezz.models.ComputerPeripheral">
+        INSERT INTO ComputerPeripheral (computer_id, peripheral_id, some_column)
+        VALUES (#{computerId}, #{peripheralId}, #{someProperty})
+    </insert>
+
+    <update id="update" parameterType="org.manumiguezz.models.ComputerPeripheral">
+        UPDATE ComputerPeripheral SET some_column = #{someProperty} WHERE computer_id = #{computerId} AND peripheral_id = #{peripheralId}
+    </update>
+
+    <delete id="delete" parameterType="map">
+        DELETE FROM ComputerPeripheral WHERE computer_id = #{id} AND peripheral_id = #{peripheralId}
+    </delete>
+
+    <select id="findByComputerId" parameterType="int" resultMap="ComputerPeripheralResultMap">
+        SELECT * FROM ComputerPeripheral WHERE computer_id = #{computerId}
+    </select>
+
+</mapper>
