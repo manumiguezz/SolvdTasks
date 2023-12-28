@@ -1,0 +1,27 @@
+<mapper namespace="org.manumiguezz.dao.ComputerConnectionMapper">
+    <resultMap id="computerConnectionResult" type="org.manumiguezz.models.ComputerConnection">
+        <id property="id" column="connection_id"/>
+    </resultMap>
+
+    <select id="findById" resultType="org.manumiguezz.models.ComputerConnection">
+        SELECT * FROM ComputerConnection WHERE connection_id = #{id}
+    </select>
+
+    <select id="findAll" resultType="org.manumiguezz.models.ComputerConnection">
+        SELECT * FROM ComputerConnection
+    </select>
+
+    <insert id="create">
+        INSERT INTO ComputerConnection (connection_id, other_column)
+        VALUES (#{id}, #{otherProperty})
+    </insert>
+
+    <update id="update">
+        UPDATE ComputerConnection SET other_column = #{otherProperty} WHERE connection_id = #{id}
+    </update>
+
+    <delete id="delete">
+        DELETE FROM ComputerConnection WHERE connection_id = #{id}
+    </delete>
+
+</mapper>

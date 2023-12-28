@@ -1,72 +1,44 @@
 package org.manumiguezz.dao.mybatis;
 
-import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
-import org.apache.ibatis.session.SqlSessionFactory;
-import org.apache.ibatis.session.SqlSessionFactoryBuilder;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.manumiguezz.dao.ComputerDAO;
 import org.manumiguezz.models.Computer;
-
-import java.io.IOException;
-import java.io.Reader;
 import java.util.List;
 
 public class ComputerDAOImpl implements ComputerDAO {
-    private static final Logger LOGGER = LogManager.getLogger(UserDAO.class);
-    private static SqlSession sqlSession;
-    private static final SqlSessionFactory sqlSessionFactory;
-    private static Reader reader = null;
-    private static ComputerDAO computerMapper;
+    private final SqlSession sqlSession;
 
-    static {
-        try {
-            reader = Resources.getResourceAsReader("mybatis.config.xml");
-        } catch (IOException e) {
-            LOGGER.info(e);
-        }
-        sqlSessionFactory = new SqlSessionFactoryBuilder().build(reader);
+    public ComputerDAOImpl(SqlSession sqlSession) {
+        this.sqlSession = sqlSession;
     }
 
     @Override
-    public Computer getEntityById(int id) {
-        computerMapper = sqlSessionFactory.openSession().getMapper(IComputerDao.class);
-        Computer computer = computerMapper.getEntityById(id);
-        return computer;
+    public Computer findById(int id) {
+        return sqlSession.selectOne("org.manumiguezz.dao.mapper.ComputerMapper.findById", id);
     }
 
     @Override
-    public void insertEntity(Computer computer) {
-        try {
-            sqlSession = sqlSessionFactory.openSession();
-            sqlSession.insert("insertEntity", computer);
-            sqlSession.commit();
-        } finally {
-            sqlSession.close();
-        }
+    public List<Computer> findAll() {
+        return sqlSession.selectList("org.manumiguezz.dao.mapper.ComputerMapper.findAll");
     }
 
     @Override
-    public void updateEntity(Computer computer) {
-        try {
-            sqlSession = sqlSessionFactory.openSession();
-            sqlSession.update("updateEntity", computer);
-            sqlSession.commit();
-        } finally {
-            sqlSession.close();
-        }
+    public void create(Computer computer) {
+        sqlSession.insert("org.manumiguezz.dao.mapper.ComputerMapper.create", computer);
     }
 
     @Override
-    public void removeEntity(int id) {
-        computerMapper = sqlSessionFactory.openSession().getMapper(IComputerDao.class);
-        computerMapper.removeEntity(id);
+    public void update(Computer computer) {
+        sqlSession.update("org.manumiguezz.dao.mapper.ComputerMapper.update", computer);
     }
 
     @Override
-    public List<Computer> getEntities() {
-        computerMapper = sqlSessionFactory.openSession().getMapper(IComputerDao.class);
-        List<Computer> list = computerMapper.getEntities();
-        return list;
+    public void delete(int id) {
+        sqlSession.delete("org.manumiguezz.dao.mapper.ComputerMapper.delete", id);
     }
+
+    @Override
+    public List<Computer> findByBrand(String brand) {
+        return sqlSession.selectList("org.manumiguezz.dao.mapper.ComputerMapper.findByMotherboardId", brand);
+    }
+}
