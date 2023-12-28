@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:element name="computers">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="cpu" type="cpuType" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element name="gpu" type="gpuType" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element name="memory" type="memoryType" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element name="storage" type="storageType" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element name="computer" type="computerType" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="cpuType">
+        <xs:sequence>
+            <xs:element name="cpu_id" type="xs:int"/>
+            <xs:element name="cpu_model" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="gpuType">
+        <xs:sequence>
+            <xs:element name="gpu_id" type="xs:int"/>
+            <xs:element name="gpu_model" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="memoryType">
+        <xs:sequence>
+            <xs:element name="memory_id" type="xs:int"/>
+            <xs:element name="memory_type" type="xs:string"/>
+            <xs:element name="memory_capacity" type="xs:int"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="storageType">
+        <xs:sequence>
+            <xs:element name="storage_id" type="xs:int"/>
+            <xs:element name="storage_type" type="xs:string"/>
+            <xs:element name="storage_capacity" type="xs:int"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="computerType">
+        <xs:sequence>
+            <xs:element name="computer_id" type="xs:int"/>
+            <xs:element name="computer_name" type="xs:string"/>
+            <xs:element name="motherboard_id" type="xs:int"/>
+            <xs:element name="power_supply_id" type="xs:int"/>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>
