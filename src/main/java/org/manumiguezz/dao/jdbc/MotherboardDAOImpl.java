@@ -1,7 +1,7 @@
-package org.manumiguezz.dao.impl;
+package org.manumiguezz.dao.jdbc;
 
-import org.manumiguezz.dao.PowerSupplyDAO;
-import org.manumiguezz.models.PowerSupply;
+import org.manumiguezz.dao.MotherboardDAO;
+import org.manumiguezz.models.Motherboard;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -10,58 +10,57 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PowerSupplyDAOImpl implements PowerSupplyDAO {
+public class MotherboardDAOImpl implements MotherboardDAO {
     private final Connection connection;
 
-    public PowerSupplyDAOImpl(Connection connection) {
+    public MotherboardDAOImpl(Connection connection) {
         this.connection = connection;
     }
 
     @Override
-    public PowerSupply findById(int id) {
-        PowerSupply powerSupply = null;
-        String query = "SELECT * FROM PowerSupply WHERE power_supply_id = ?";
+    public Motherboard findById(int id) {
+        Motherboard motherboard = null;
+        String query = "SELECT * FROM Motherboard WHERE motherboard_id = ?";
         try (PreparedStatement statement = connection.prepareStatement(query)) {
             statement.setInt(1, id);
             try (ResultSet resultSet = statement.executeQuery()) {
                 if (resultSet.next()) {
-                    powerSupply = new PowerSupply(
-                            resultSet.getInt("power_supply_id"),
-                            resultSet.getString("power_supply_model")
+                    motherboard = new Motherboard(
+                            resultSet.getInt("motherboard_id"),
+                            resultSet.getString("motherboard_model")
                     );
                 }
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return powerSupply;
+        return motherboard;
     }
 
     @Override
-    public List<PowerSupply> findAll() {
-        List<PowerSupply> powerSupplies = new ArrayList<>();
-        String query = "SELECT * FROM PowerSupply";
+    public List<Motherboard> findAll() {
+        List<Motherboard> motherboards = new ArrayList<>();
+        String query = "SELECT * FROM Motherboard";
         try (PreparedStatement statement = connection.prepareStatement(query);
              ResultSet resultSet = statement.executeQuery()) {
             while (resultSet.next()) {
-                PowerSupply powerSupply = new PowerSupply(
-                        resultSet.getInt("power_supply_id"),
-                        resultSet.getString("power_supply_model")
+                Motherboard motherboard = new Motherboard(
+                        resultSet.getInt("motherboard_id"),
+                        resultSet.getString("motherboard_model")
                 );
-                powerSupplies.add(powerSupply);
+                motherboards.add(motherboard);
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return powerSupplies;
+        return motherboards;
     }
 
     @Override
-    public void create(PowerSupply powerSupply) {
-        String query = "INSERT INTO PowerSupply (power_supply_id, power_supply_model) VALUES (?, ?)";
+    public void create(Motherboard motherboard) {
+        String query = "INSERT INTO Motherboard (motherboard_model) VALUES (?)";
         try (PreparedStatement statement = connection.prepareStatement(query)) {
-            statement.setInt(1, powerSupply.getPowerSupplyId());
-            statement.setString(2, powerSupply.getPowerSupplyModel());
+            statement.setString(1, motherboard.getMotherboardModel());
             statement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -69,11 +68,11 @@ public class PowerSupplyDAOImpl implements PowerSupplyDAO {
     }
 
     @Override
-    public void update(PowerSupply powerSupply) {
-        String query = "UPDATE PowerSupply SET power_supply_model = ? WHERE power_supply_id = ?";
+    public void update(Motherboard motherboard) {
+        String query = "UPDATE Motherboard SET motherboard_model = ? WHERE motherboard_id = ?";
         try (PreparedStatement statement = connection.prepareStatement(query)) {
-            statement.setString(1, powerSupply.getPowerSupplyModel());
-            statement.setInt(2, powerSupply.getPowerSupplyId());
+            statement.setString(1, motherboard.getMotherboardModel());
+            statement.setInt(2, motherboard.getMotherboardId());
             statement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -82,7 +81,7 @@ public class PowerSupplyDAOImpl implements PowerSupplyDAO {
 
     @Override
     public void delete(int id) {
-        String query = "DELETE FROM PowerSupply WHERE power_supply_id = ?";
+        String query = "DELETE FROM Motherboard WHERE motherboard_id = ?";
         try (PreparedStatement statement = connection.prepareStatement(query)) {
             statement.setInt(1, id);
             statement.executeUpdate();

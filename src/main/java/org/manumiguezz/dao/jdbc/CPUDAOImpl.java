@@ -1,7 +1,7 @@
-package org.manumiguezz.dao.impl;
+package org.manumiguezz.dao.jdbc;
 
-import org.manumiguezz.dao.MotherboardDAO;
-import org.manumiguezz.models.Motherboard;
+import org.manumiguezz.dao.CPUDAO;
+import org.manumiguezz.models.CPU;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -10,57 +10,58 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MotherboardDAOImpl implements MotherboardDAO {
+public class CPUDAOImpl implements CPUDAO {
     private final Connection connection;
 
-    public MotherboardDAOImpl(Connection connection) {
+    public CPUDAOImpl(Connection connection) {
         this.connection = connection;
     }
 
     @Override
-    public Motherboard findById(int id) {
-        Motherboard motherboard = null;
-        String query = "SELECT * FROM Motherboard WHERE motherboard_id = ?";
+    public CPU findById(int id) {
+        CPU cpu = null;
+        String query = "SELECT * FROM CPU WHERE cpu_id = ?";
         try (PreparedStatement statement = connection.prepareStatement(query)) {
             statement.setInt(1, id);
             try (ResultSet resultSet = statement.executeQuery()) {
                 if (resultSet.next()) {
-                    motherboard = new Motherboard(
-                            resultSet.getInt("motherboard_id"),
-                            resultSet.getString("motherboard_model")
+                    cpu = new CPU(
+                            resultSet.getInt("cpu_id"),
+                            resultSet.getString("cpu_model")
                     );
                 }
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return motherboard;
+        return cpu;
     }
 
     @Override
-    public List<Motherboard> findAll() {
-        List<Motherboard> motherboards = new ArrayList<>();
-        String query = "SELECT * FROM Motherboard";
+    public List<CPU> findAll() {
+        List<CPU> cpus = new ArrayList<>();
+        String query = "SELECT * FROM CPU";
         try (PreparedStatement statement = connection.prepareStatement(query);
              ResultSet resultSet = statement.executeQuery()) {
             while (resultSet.next()) {
-                Motherboard motherboard = new Motherboard(
-                        resultSet.getInt("motherboard_id"),
-                        resultSet.getString("motherboard_model")
+                CPU cpu = new CPU(
+                        resultSet.getInt("cpu_id"),
+                        resultSet.getString("cpu_model")
                 );
-                motherboards.add(motherboard);
+                cpus.add(cpu);
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return motherboards;
+        return cpus;
     }
 
     @Override
-    public void create(Motherboard motherboard) {
-        String query = "INSERT INTO Motherboard (motherboard_model) VALUES (?)";
+    public void create(CPU cpu) {
+        String query = "INSERT INTO CPU (cpu_id, cpu_model) VALUES (?, ?)";
         try (PreparedStatement statement = connection.prepareStatement(query)) {
-            statement.setString(1, motherboard.getMotherboardModel());
+            statement.setInt(1, cpu.getCpuId());
+            statement.setString(2, cpu.getCpuModel());
             statement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -68,11 +69,11 @@ public class MotherboardDAOImpl implements MotherboardDAO {
     }
 
     @Override
-    public void update(Motherboard motherboard) {
-        String query = "UPDATE Motherboard SET motherboard_model = ? WHERE motherboard_id = ?";
+    public void update(CPU cpu) {
+        String query = "UPDATE CPU SET cpu_model = ? WHERE cpu_id = ?";
         try (PreparedStatement statement = connection.prepareStatement(query)) {
-            statement.setString(1, motherboard.getMotherboardModel());
-            statement.setInt(2, motherboard.getMotherboardId());
+            statement.setString(1, cpu.getCpuModel());
+            statement.setInt(2, cpu.getCpuId());
             statement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -81,7 +82,7 @@ public class MotherboardDAOImpl implements MotherboardDAO {
 
     @Override
     public void delete(int id) {
-        String query = "DELETE FROM Motherboard WHERE motherboard_id = ?";
+        String query = "DELETE FROM CPU WHERE cpu_id = ?";
         try (PreparedStatement statement = connection.prepareStatement(query)) {
             statement.setInt(1, id);
             statement.executeUpdate();

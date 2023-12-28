@@ -1,4 +1,4 @@
-package org.manumiguezz.dao.impl;
+package org.manumiguezz.dao.jdbc;
 
 import org.manumiguezz.dao.ComputerConnectionDAO;
 import org.manumiguezz.models.ComputerConnection;

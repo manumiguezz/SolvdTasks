@@ -1,4 +1,4 @@
-package org.manumiguezz.dao.impl;
+package org.manumiguezz.dao.jdbc;
 
 import org.manumiguezz.dao.GPUDAO;
 import org.manumiguezz.models.GPU;
