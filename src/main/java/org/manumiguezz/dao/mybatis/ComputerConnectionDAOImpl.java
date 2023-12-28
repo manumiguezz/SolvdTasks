@@ -14,31 +14,46 @@ public class ComputerConnectionDAOImpl implements ComputerConnectionDAO {
 
     @Override
     public ComputerConnection findById(int id, int connectionId) {
-        return sqlSession.selectOne("org.manumiguezz.dao.ComputerConnectionMapper.findById", id);
+        try (SqlSession session = sqlSession) {
+            return session.selectOne("org.manumiguezz.dao.ComputerConnectionMapper.findById", id);
+        }
     }
 
     @Override
     public List<ComputerConnection> findAll() {
-        return sqlSession.selectList("org.manumiguezz.dao.ComputerConnectionMapper.findAll");
+        try (SqlSession session = sqlSession) {
+            return session.selectList("org.manumiguezz.dao.ComputerConnectionMapper.findAll");
+        }
     }
 
     @Override
     public void create(ComputerConnection computerConnection) {
-        sqlSession.insert("org.manumiguezz.dao.ComputerConnectionMapper.create", computerConnection);
+        try (SqlSession session = sqlSession) {
+            session.insert("org.manumiguezz.dao.ComputerConnectionMapper.create", computerConnection);
+            session.commit();
+        }
     }
 
     @Override
     public void update(ComputerConnection computerConnection) {
-        sqlSession.update("org.manumiguezz.dao.ComputerConnectionMapper.update", computerConnection);
+        try (SqlSession session = sqlSession) {
+            session.update("org.manumiguezz.dao.ComputerConnectionMapper.update", computerConnection);
+            session.commit();
+        }
     }
 
     @Override
     public void delete(int id, int connectionId) {
-        sqlSession.delete("org.manumiguezz.dao.ComputerConnectionMapper.delete", id);
+        try (SqlSession session = sqlSession) {
+            session.delete("org.manumiguezz.dao.ComputerConnectionMapper.delete", id);
+            session.commit();
+        }
     }
 
     @Override
     public List<ComputerConnection> findByComputerId(int computerId) {
-        return sqlSession.selectList("org.manumiguezz.dao.ComputerConnectionMapper.findByComputerId", computerId);
+        try (SqlSession session = sqlSession) {
+            return session.selectList("org.manumiguezz.dao.ComputerConnectionMapper.findByComputerId", computerId);
+        }
     }
 }
