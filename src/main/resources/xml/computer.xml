@@ -12,6 +12,18 @@
         <CoolingSystem> cooling_system_id="1" cooling_system_type="liquid cooling"</CoolingSystem>
     </CoolingSystems>
 
+    <Memories>
+        <Memory> memory_id="1" memory_type="DDR4"</Memory>
+    </Memories>
+
+    <Memories>
+        <Memory> memory_id="1" memory_type="DDR4"</Memory>
+    </Memories>
+
+    <NetworkAdapters>
+        <NetworkAdapter> network_adapter_id="1" network_adapter_type="Ethernet Card"</NetworkAdapter>
+    </NetworkAdapters>
+
     <CPUs>
         <CPU> cpu_id="1" cpu_model="Ryzen 7"</CPU>
     </CPUs>

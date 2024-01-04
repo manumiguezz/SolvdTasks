@@ -3,7 +3,15 @@
     <xs:complexType name="computer">
     </xs:complexType>
 
-    <xs:complexType name="components">
+    <xs:complexType name="MotherboardType">
+        <xs:sequence>
+            <xs:element name="motherboard" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:attribute name="motherboard_id" type="xs:int"/>
+                    <xs:attribute name="motherboard_model" type="xs:string"/>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
     </xs:complexType>
 
 </xs:schema>
