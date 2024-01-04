@@ -1,5 +1,18 @@
 
-<computer>
-    <components>
-    </components>
-</computer>
+<computers>
+    <motherboards>
+        <motherboard> motherboard_id="1" motherboard_model="AMD X670"</motherboard>
+    </motherboards>
+
+    <powerSupplies>
+        <PowerSupply> power_supply_id="1" power_supply_model="Corsair VS450"</PowerSupply>
+    </powerSupplies>
+
+    <CoolingSystems>
+        <CoolingSystem> cooling_system_id="1" cooling_system_type="liquid cooling"</CoolingSystem>
+    </CoolingSystems>
+
+    <CoolingSystems>
+        <CoolingSystem> cooling_system_id="1" cooling_system_type="liquid cooling"</CoolingSystem>
+    </CoolingSystems>
+</computers>
