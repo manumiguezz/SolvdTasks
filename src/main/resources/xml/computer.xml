@@ -12,7 +12,11 @@
         <CoolingSystem> cooling_system_id="1" cooling_system_type="liquid cooling"</CoolingSystem>
     </CoolingSystems>
 
-    <CoolingSystems>
-        <CoolingSystem> cooling_system_id="1" cooling_system_type="liquid cooling"</CoolingSystem>
-    </CoolingSystems>
+    <CPUs>
+        <CPU> cpu_id="1" cpu_model="Ryzen 7"</CPU>
+    </CPUs>
+
+    <GPUs>
+        <GPU> gpu_id="1" gpu_model="AMD Radeon RX 6600"</GPU>
+    </GPUs>
 </computers>
