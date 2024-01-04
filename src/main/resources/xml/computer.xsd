@@ -14,4 +14,76 @@
         </xs:sequence>
     </xs:complexType>
 
+    <xs:complexType name="PowerSupplyType">
+        <xs:sequence>
+            <xs:element name="power_supply" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:attribute name="power_supply_id" type="xs:int"/>
+                    <xs:attribute name="power_supply_model" type="xs:string"/>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="CoolingSystemType">
+        <xs:sequence>
+            <xs:element name="cooling_system" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:attribute name="cooling_system_id" type="xs:int"/>
+                    <xs:attribute name="cooling_system_model" type="xs:string"/>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="MemoryType">
+        <xs:sequence>
+            <xs:element name="memory" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:attribute name="memory_id" type="xs:int"/>
+                    <xs:attribute name="memory_model" type="xs:string"/>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="NetworkAdapterType">
+        <xs:sequence>
+            <xs:element name="network_adapter" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:attribute name="network_adapter_id" type="xs:int"/>
+                    <xs:attribute name="network_adapter_model" type="xs:string"/>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="CpuType">
+        <xs:sequence>
+            <xs:element name="cpu" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:attribute name="cpu_id" type="xs:int"/>
+                    <xs:attribute name="cpu_model" type="xs:string"/>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="GpuType">
+        <xs:sequence>
+            <xs:element name="gpu" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:attribute name="gpu_id" type="xs:int"/>
+                    <xs:attribute name="gpu_model" type="xs:string"/>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+
+
+
+
+
+
 </xs:schema>

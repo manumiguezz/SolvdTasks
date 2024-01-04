@@ -16,10 +16,6 @@
         <Memory> memory_id="1" memory_type="DDR4"</Memory>
     </Memories>
 
-    <Memories>
-        <Memory> memory_id="1" memory_type="DDR4"</Memory>
-    </Memories>
-
     <NetworkAdapters>
         <NetworkAdapter> network_adapter_id="1" network_adapter_type="Ethernet Card"</NetworkAdapter>
     </NetworkAdapters>
