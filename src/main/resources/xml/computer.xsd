@@ -1,7 +1,26 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
-    <xs:complexType name="computer">
-    </xs:complexType>
+    <xs:element name="computers">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="motherboards"/>
+                <xs:element ref="powerSupplies"/>
+                <xs:element ref="coolingSystems"/>
+                <xs:element ref="memories"/>
+                <xs:element ref="networkAdapters"/>
+                <xs:element ref="CPUs"/>
+                <xs:element ref="GPUs"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="motherboards" type="MotherboardType"/>
+    <xs:element name="powerSupplies" type="PowerSupplyType"/>
+    <xs:element name="coolingSystems" type="CoolingSystemType"/>
+    <xs:element name="memories" type="MemoryType"/>
+    <xs:element name="networkAdapters" type="NetworkAdapterType"/>
+    <xs:element name="CPUs" type="CpuType"/>
+    <xs:element name="GPUs" type="GpuType"/>
 
     <xs:complexType name="MotherboardType">
         <xs:sequence>
