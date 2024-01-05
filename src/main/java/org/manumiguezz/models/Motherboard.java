@@ -1,6 +1,9 @@
 package org.manumiguezz.models;
 
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlRootElement;
 
+@XmlRootElement
 public class Motherboard {
     private int motherboardId;
     private String motherboardModel;
@@ -10,6 +13,7 @@ public class Motherboard {
         this.motherboardModel = motherboardModel;
     }
 
+    @XmlAttribute
     public int getMotherboardId() {
         return motherboardId;
     }
@@ -18,6 +22,7 @@ public class Motherboard {
         this.motherboardId = motherboardId;
     }
 
+    @XmlAttribute
     public String getMotherboardModel() {
         return motherboardModel;
     }
