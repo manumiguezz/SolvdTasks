@@ -1,5 +1,8 @@
 package org.manumiguezz.models;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement
 public class Storage {
     private int storageId;
     private String storageType;

@@ -1,5 +1,9 @@
 package org.manumiguezz.models;
 
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement
 public class CoolingSystem {
     private int coolingSystemId;
     private String coolingSystemType;
@@ -9,6 +13,7 @@ public class CoolingSystem {
         this.coolingSystemType = coolingSystemType;
     }
 
+    @XmlAttribute
     public int getCoolingSystemId() {
         return coolingSystemId;
     }
@@ -17,6 +22,7 @@ public class CoolingSystem {
         this.coolingSystemId = coolingSystemId;
     }
 
+    @XmlAttribute
     public String getCoolingSystemType() {
         return coolingSystemType;
     }
