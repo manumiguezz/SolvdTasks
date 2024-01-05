@@ -1,6 +1,8 @@
 package org.manumiguezz.models;
 
 import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlElementWrapper;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
@@ -11,12 +13,21 @@ public class Computer {
     private int powerSupplyId;
     private int coolingSystemId;
 
-    public Computer(int computerId, String computerName, int motherboardId, int powerSupplyId, int coolingSystemId) {
+    private int memoryId;
+    private int networkAdapterId;
+    private int cpuId;
+    private int gpuId;
+
+    public Computer(int computerId, String computerName, int motherboardId, int powerSupplyId, int coolingSystemId, int memoryId, int networkAdapterId, int cpuId, int gpuId) {
         this.computerId = computerId;
         this.computerName = computerName;
         this.motherboardId = motherboardId;
         this.powerSupplyId = powerSupplyId;
         this.coolingSystemId = coolingSystemId;
+        this.memoryId = memoryId;
+        this.networkAdapterId = networkAdapterId;
+        this.cpuId = cpuId;
+        this.gpuId = gpuId;
     }
 
     @XmlAttribute
@@ -37,7 +48,8 @@ public class Computer {
         this.computerName = computerName;
     }
 
-    @XmlAttribute
+    @XmlElementWrapper(name = "motherboards")
+    @XmlElement(name = "motherboard")
     public int getMotherboardId() {
         return motherboardId;
     }
@@ -46,7 +58,8 @@ public class Computer {
         this.motherboardId = motherboardId;
     }
 
-    @XmlAttribute
+    @XmlElementWrapper(name = "powerSupplies")
+    @XmlElement(name = "powerSupply")
     public int getPowerSupplyId() {
         return powerSupplyId;
     }
@@ -55,12 +68,53 @@ public class Computer {
         this.powerSupplyId = powerSupplyId;
     }
 
-    @XmlAttribute
+    @XmlElementWrapper(name = "coolingSystems")
+    @XmlElement(name = "coolingSystem")
     public int getCoolingSystemId() {
         return coolingSystemId;
     }
 
     public void setCoolingSystemId(int coolingSystemId) {
         this.coolingSystemId = coolingSystemId;
+    }
+
+    @XmlElementWrapper(name = "memories")
+    @XmlElement(name = "memory")
+    public int getMemoryId() {
+        return memoryId;
+    }
+
+    public void setMemoryId(int memoryId) {
+        this.memoryId = memoryId;
+    }
+
+    @XmlElementWrapper(name = "networkAdapters")
+    @XmlElement(name = "networkAdapters")
+    public int getNetworkAdapterId() {
+        return networkAdapterId;
+    }
+
+    public void setNetworkAdapterId(int networkAdapterId) {
+        this.networkAdapterId = networkAdapterId;
+    }
+
+    @XmlElementWrapper(name = "cpus")
+    @XmlElement(name = "cpu")
+    public int getCpuId() {
+        return cpuId;
+    }
+
+    public void setCpuId(int cpuId) {
+        this.cpuId = cpuId;
+    }
+
+    @XmlElementWrapper(name = "gpus")
+    @XmlElement(name = "gpu")
+    public int getGpuId() {
+        return gpuId;
+    }
+
+    public void setGpuId(int gpuId) {
+        this.gpuId = gpuId;
     }
 }
