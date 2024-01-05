@@ -1,5 +1,6 @@
 package org.manumiguezz.models;
 
+
 public class Motherboard {
     private int motherboardId;
     private String motherboardModel;
