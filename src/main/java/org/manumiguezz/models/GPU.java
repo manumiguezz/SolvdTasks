@@ -1,5 +1,6 @@
 package org.manumiguezz.models;
 
+import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
@@ -12,6 +13,7 @@ public class GPU {
         this.gpuModel = gpuModel;
     }
 
+    @XmlAttribute
     public int getGpuId() {
         return gpuId;
     }
@@ -20,6 +22,7 @@ public class GPU {
         this.gpuId = gpuId;
     }
 
+    @XmlAttribute
     public String getGpuModel() {
         return gpuModel;
     }

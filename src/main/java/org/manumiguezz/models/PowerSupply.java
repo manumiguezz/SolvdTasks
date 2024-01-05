@@ -1,5 +1,6 @@
 package org.manumiguezz.models;
 
+import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
@@ -12,6 +13,7 @@ public class PowerSupply {
         this.powerSupplyModel = powerSupplyModel;
     }
 
+    @XmlAttribute
     public int getPowerSupplyId() {
         return powerSupplyId;
     }
@@ -20,6 +22,7 @@ public class PowerSupply {
         this.powerSupplyId = powerSupplyId;
     }
 
+    @XmlAttribute
     public String getPowerSupplyModel() {
         return powerSupplyModel;
     }

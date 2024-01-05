@@ -1,5 +1,6 @@
 package org.manumiguezz.models;
 
+import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
@@ -18,6 +19,7 @@ public class Computer {
         this.coolingSystemId = coolingSystemId;
     }
 
+    @XmlAttribute
     public int getComputerId() {
         return computerId;
     }
@@ -26,6 +28,7 @@ public class Computer {
         this.computerId = computerId;
     }
 
+    @XmlAttribute
     public String getComputerName() {
         return computerName;
     }
@@ -34,6 +37,7 @@ public class Computer {
         this.computerName = computerName;
     }
 
+    @XmlAttribute
     public int getMotherboardId() {
         return motherboardId;
     }
@@ -42,6 +46,7 @@ public class Computer {
         this.motherboardId = motherboardId;
     }
 
+    @XmlAttribute
     public int getPowerSupplyId() {
         return powerSupplyId;
     }
@@ -50,6 +55,7 @@ public class Computer {
         this.powerSupplyId = powerSupplyId;
     }
 
+    @XmlAttribute
     public int getCoolingSystemId() {
         return coolingSystemId;
     }

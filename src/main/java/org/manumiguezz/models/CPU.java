@@ -1,5 +1,6 @@
 package org.manumiguezz.models;
 
+import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
@@ -12,6 +13,7 @@ public class CPU {
         this.cpuModel = cpuModel;
     }
 
+    @XmlAttribute
     public int getCpuId() {
         return cpuId;
     }
@@ -20,6 +22,7 @@ public class CPU {
         this.cpuId = cpuId;
     }
 
+    @XmlAttribute
     public String getCpuModel() {
         return cpuModel;
     }

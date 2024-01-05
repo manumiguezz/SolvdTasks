@@ -1,5 +1,6 @@
 package org.manumiguezz.models;
 
+import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
@@ -14,6 +15,7 @@ public class Storage {
         this.storageCapacity = capacity;
     }
 
+    @XmlAttribute
     public int getStorageId() {
         return storageId;
     }
@@ -22,6 +24,7 @@ public class Storage {
         this.storageId = storageId;
     }
 
+    @XmlAttribute
     public String getStorageType() {
         return storageType;
     }

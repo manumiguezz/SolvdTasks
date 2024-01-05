@@ -1,5 +1,6 @@
 package org.manumiguezz.models;
 
+import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
@@ -14,6 +15,7 @@ public class Memory {
         this.memoryCapacity = memoryCapacity;
     }
 
+    @XmlAttribute
     public int getMemoryId() {
         return memoryId;
     }
@@ -22,6 +24,7 @@ public class Memory {
         this.memoryId = memoryId;
     }
 
+    @XmlAttribute
     public String getMemoryType() {
         return memoryType;
     }
