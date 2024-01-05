@@ -1,7 +1,7 @@
 
 <computers>
     <motherboards>
-        <motherboard> motherboard_id="1" motherboard_model="AMD X670"</motherboard>
+        <motherboard> motherboard_id="1" motherboard_model="AMD X680"</motherboard>
     </motherboards>
 
     <powerSupplies>
@@ -21,10 +21,10 @@
     </NetworkAdapters>
 
     <CPUs>
-        <CPU> cpu_id="1" cpu_model="Ryzen 7"</CPU>
+        <CPU> cpu_id="1" cpu_model="Ryzen 9"</CPU>
     </CPUs>
 
     <GPUs>
-        <GPU> gpu_id="1" gpu_model="AMD Radeon RX 6600"</GPU>
+        <GPU> gpu_id="1" gpu_model="AMD Radeon RX 6700"</GPU>
     </GPUs>
 </computers>
