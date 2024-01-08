@@ -1,12 +1,9 @@
 package org.manumiguezz.models;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.*;
 
 @XmlRootElement
-@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(propOrder = {"cpu_id", "cpu_model"})
 public class CPU {
     private int cpuId;
     private String cpuModel;
@@ -18,7 +15,7 @@ public class CPU {
         this.cpuModel = cpuModel;
     }
 
-    @XmlAttribute
+    @XmlAttribute(name = "cpu_id")
     public int getCpuId() {
         return cpuId;
     }
@@ -27,7 +24,7 @@ public class CPU {
         this.cpuId = cpuId;
     }
 
-    @XmlAttribute
+    @XmlAttribute(name = "cpu_model")
     public String getCpuModel() {
         return cpuModel;
     }

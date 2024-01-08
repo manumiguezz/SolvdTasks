@@ -1,12 +1,9 @@
 package org.manumiguezz.models;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.*;
 
 @XmlRootElement
-@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(propOrder = {"storage_id", "storage_type"})
 public class Storage {
     private int storageId;
     private String storageType;
@@ -20,7 +17,7 @@ public class Storage {
         this.storageCapacity = capacity;
     }
 
-    @XmlAttribute
+    @XmlAttribute(name = "storage_id")
     public int getStorageId() {
         return storageId;
     }
@@ -29,7 +26,7 @@ public class Storage {
         this.storageId = storageId;
     }
 
-    @XmlAttribute
+    @XmlAttribute(name = "storage_type")
     public String getStorageType() {
         return storageType;
     }

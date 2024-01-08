@@ -1,12 +1,9 @@
 package org.manumiguezz.models;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.*;
 
 @XmlRootElement
-@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(propOrder = {"gpu_id", "gpu_model"})
 public class GPU {
     private int gpuId;
     private String gpuModel;
@@ -18,7 +15,7 @@ public class GPU {
         this.gpuModel = gpuModel;
     }
 
-    @XmlAttribute
+    @XmlAttribute(name = "gpu_id")
     public int getGpuId() {
         return gpuId;
     }
@@ -27,7 +24,7 @@ public class GPU {
         this.gpuId = gpuId;
     }
 
-    @XmlAttribute
+    @XmlAttribute(name = "gpu_model")
     public String getGpuModel() {
         return gpuModel;
     }

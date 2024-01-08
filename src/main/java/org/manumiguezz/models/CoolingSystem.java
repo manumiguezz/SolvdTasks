@@ -1,12 +1,9 @@
 package org.manumiguezz.models;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.*;
 
 @XmlRootElement
-@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(propOrder = {"cooling_system_id", "cooling_system_type"})
 public class CoolingSystem {
     private int coolingSystemId;
     private String coolingSystemType;
@@ -18,7 +15,7 @@ public class CoolingSystem {
         this.coolingSystemType = coolingSystemType;
     }
 
-    @XmlAttribute
+    @XmlAttribute(name = "cooling_system_id")
     public int getCoolingSystemId() {
         return coolingSystemId;
     }
@@ -27,7 +24,7 @@ public class CoolingSystem {
         this.coolingSystemId = coolingSystemId;
     }
 
-    @XmlAttribute
+    @XmlAttribute(name = "cooling_system_type")
     public String getCoolingSystemType() {
         return coolingSystemType;
     }

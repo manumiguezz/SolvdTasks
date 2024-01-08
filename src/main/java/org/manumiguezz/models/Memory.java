@@ -1,12 +1,9 @@
 package org.manumiguezz.models;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.*;
 
 @XmlRootElement
-@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(propOrder = {"memory_id", "memory_type"})
 public class Memory {
     private int memoryId;
     private String memoryType;
@@ -20,7 +17,7 @@ public class Memory {
         this.memoryCapacity = memoryCapacity;
     }
 
-    @XmlAttribute
+    @XmlAttribute(name = "memory_id")
     public int getMemoryId() {
         return memoryId;
     }
@@ -29,7 +26,7 @@ public class Memory {
         this.memoryId = memoryId;
     }
 
-    @XmlAttribute
+    @XmlAttribute(name = "memory_type")
     public String getMemoryType() {
         return memoryType;
     }

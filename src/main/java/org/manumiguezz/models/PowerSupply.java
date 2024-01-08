@@ -1,12 +1,9 @@
 package org.manumiguezz.models;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.*;
 
 @XmlRootElement
-@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(propOrder = {"power_supply_id", "power_supply_model"})
 public class PowerSupply {
     private int powerSupplyId;
     private String powerSupplyModel;
@@ -18,7 +15,7 @@ public class PowerSupply {
         this.powerSupplyModel = powerSupplyModel;
     }
 
-    @XmlAttribute
+    @XmlAttribute(name = "power_supply_id")
     public int getPowerSupplyId() {
         return powerSupplyId;
     }
@@ -27,7 +24,7 @@ public class PowerSupply {
         this.powerSupplyId = powerSupplyId;
     }
 
-    @XmlAttribute
+    @XmlAttribute(name = "power_supply_model")
     public String getPowerSupplyModel() {
         return powerSupplyModel;
     }
