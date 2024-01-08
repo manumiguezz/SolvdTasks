@@ -11,6 +11,8 @@ public class Motherboard {
     private int motherboardId;
     private String motherboardModel;
 
+    public Motherboard() {}
+
     public Motherboard(int motherboardId, String motherboardModel) {
         this.motherboardId = motherboardId;
         this.motherboardModel = motherboardModel;

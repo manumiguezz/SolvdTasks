@@ -18,6 +18,8 @@ public class Computer {
     private int cpuId;
     private int gpuId;
 
+    public Computer() {}
+
     public Computer(int computerId, String computerName, int motherboardId, int powerSupplyId, int coolingSystemId, int memoryId, int networkAdapterId, int cpuId, int gpuId) {
         this.computerId = computerId;
         this.computerName = computerName;

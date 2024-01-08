@@ -12,6 +12,8 @@ public class Memory {
     private String memoryType;
     private int memoryCapacity;
 
+    public Memory() {}
+
     public Memory(int memoryId, String memoryType, int memoryCapacity) {
         this.memoryId = memoryId;
         this.memoryType = memoryType;

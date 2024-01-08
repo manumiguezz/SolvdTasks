@@ -11,6 +11,8 @@ public class GPU {
     private int gpuId;
     private String gpuModel;
 
+    public GPU() {}
+
     public GPU(int gpuId, String gpuModel) {
         this.gpuId = gpuId;
         this.gpuModel = gpuModel;

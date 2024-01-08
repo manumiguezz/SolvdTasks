@@ -11,6 +11,8 @@ public class CPU {
     private int cpuId;
     private String cpuModel;
 
+    public CPU() {}
+
     public CPU(int cpuId, String cpuModel) {
         this.cpuId = cpuId;
         this.cpuModel = cpuModel;

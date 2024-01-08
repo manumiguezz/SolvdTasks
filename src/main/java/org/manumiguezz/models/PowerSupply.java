@@ -11,6 +11,8 @@ public class PowerSupply {
     private int powerSupplyId;
     private String powerSupplyModel;
 
+    public PowerSupply() {}
+
     public PowerSupply(int powerSupplyId, String powerSupplyModel) {
         this.powerSupplyId = powerSupplyId;
         this.powerSupplyModel = powerSupplyModel;

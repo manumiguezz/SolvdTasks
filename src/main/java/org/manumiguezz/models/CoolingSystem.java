@@ -11,6 +11,8 @@ public class CoolingSystem {
     private int coolingSystemId;
     private String coolingSystemType;
 
+    public CoolingSystem() {}
+
     public CoolingSystem(int coolingSystemId, String coolingSystemType) {
         this.coolingSystemId = coolingSystemId;
         this.coolingSystemType = coolingSystemType;
