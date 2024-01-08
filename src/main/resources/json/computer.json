@@ -20,6 +20,27 @@
     }
   ],
   "memories": [
-
+    {
+      "memory_id": 1,
+      "memory_type": "DDR4"
+    }
+  ],
+  "networkAdapters": [
+    {
+      "network_adapter_id": 1,
+      "network_adapter_type": "Ethernet Card"
+    }
+  ],
+  "cpus": [
+    {
+      "cpu_id": 1,
+      "cpu_model": "Ryzen 9"
+    }
+  ],
+  "gpus": [
+    {
+      "gpu_id": 1,
+      "gpu_model": "AMD Radeon RX 6700"
+    }
   ]
 }
