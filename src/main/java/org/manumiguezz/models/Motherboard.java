@@ -1,12 +1,9 @@
 package org.manumiguezz.models;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.*;
 
 @XmlRootElement
-@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(propOrder = {"motherboard_id", "motherboard_model"})
 public class Motherboard {
     private int motherboardId;
     private String motherboardModel;
@@ -18,7 +15,7 @@ public class Motherboard {
         this.motherboardModel = motherboardModel;
     }
 
-    @XmlAttribute
+    @XmlAttribute(name = "motherboard_id")
     public int getMotherboardId() {
         return motherboardId;
     }
@@ -27,7 +24,7 @@ public class Motherboard {
         this.motherboardId = motherboardId;
     }
 
-    @XmlAttribute
+    @XmlAttribute(name = "motherboard_model")
     public String getMotherboardModel() {
         return motherboardModel;
     }

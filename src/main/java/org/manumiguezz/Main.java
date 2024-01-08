@@ -14,22 +14,13 @@ import java.util.Scanner;
 
 public class Main {
     private static final Logger logger = (Logger) LogManager.getLogger(Main.class);
-    public static void main(String[] args) {
+    public static void main(String[] args) throws JAXBException {
         Scanner scanner = new Scanner(System.in);
-    }
 
-    public Computer parseXMLStringToComputerObject(String xmlString) {
-        try {
-            JAXBContext context = JAXBContext.newInstance(Computer.class, Motherboard.class);
-            Unmarshaller unmarshaller = context.createUnmarshaller();
+        JAXBContext context = JAXBContext.newInstance(Computer.class);
+        Unmarshaller unmarshaller = context.createUnmarshaller();
+        Computer computer = (Computer) unmarshaller.unmarshal(new File("src/main/resources/xml/computer.xml"));
 
-            StringReader reader = new StringReader(xmlString);
-            Computer computer = (Computer) unmarshaller.unmarshal(reader);
-
-            return computer;
-        } catch (JAXBException e) {
-            e.printStackTrace();
-        }
-        return null;
+        System.out.println("name" + computer.getComputerName());
     }
 }

@@ -1,5 +1,5 @@
 
-<computers>
+<computer>
     <motherboards>
         <motherboard> motherboard_id="1" motherboard_model="AMD X680"</motherboard>
     </motherboards>
@@ -27,4 +27,4 @@
     <GPUs>
         <GPU> gpu_id="1" gpu_model="AMD Radeon RX 6700"</GPU>
     </GPUs>
-</computers>
+</computer>
