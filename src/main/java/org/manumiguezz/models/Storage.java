@@ -12,6 +12,8 @@ public class Storage {
     private String storageType;
     private int storageCapacity;
 
+    public Storage() {}
+
     public Storage(int storageId, String storageType, int capacity) {
         this.storageId = storageId;
         this.storageType = storageType;
