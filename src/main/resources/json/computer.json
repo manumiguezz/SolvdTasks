@@ -1,3 +1,25 @@
 {
+  "Computer_id": 1,
+  "Computer_name": "manu",
+  "motherboards": [
+    {
+      "motherboard_id": 1,
+      "motherboard_model": "AMD X680"
+    }
+  ],
+  "powerSupplies": [
+    {
+      "power_supply_id": 1,
+      "power_supply_model": "Corsair VS450"
+    }
+  ],
+  "coolingSystems": [
+    {
+      "cooling_system_id": 1,
+      "cooling_system_type": "liquid cooling"
+    }
+  ],
+  "memories": [
 
+  ]
 }

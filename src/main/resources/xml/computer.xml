@@ -12,19 +12,19 @@
         <CoolingSystem> cooling_system_id="1" cooling_system_type="liquid cooling"</CoolingSystem>
     </CoolingSystems>
 
-    <Memories>
+    <memories>
         <Memory> memory_id="1" memory_type="DDR4"</Memory>
-    </Memories>
+    </memories>
 
-    <NetworkAdapters>
+    <networkAdapters>
         <NetworkAdapter> network_adapter_id="1" network_adapter_type="Ethernet Card"</NetworkAdapter>
-    </NetworkAdapters>
+    </networkAdapters>
 
-    <CPUs>
-        <CPU> cpu_id="1" cpu_model="Ryzen 9"</CPU>
-    </CPUs>
+    <cpus>
+        <cpu> cpu_id="1" cpu_model="Ryzen 9"</cpu>
+    </cpus>
 
-    <GPUs>
-        <GPU> gpu_id="1" gpu_model="AMD Radeon RX 6700"</GPU>
-    </GPUs>
+    <gpus>
+        <gpu> gpu_id="1" gpu_model="AMD Radeon RX 6700"</gpu>
+    </gpus>
 </computer>
