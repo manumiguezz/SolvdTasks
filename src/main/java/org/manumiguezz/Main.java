@@ -1,5 +1,6 @@
 package org.manumiguezz;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.core.Logger;
 import org.manumiguezz.models.Computer;
@@ -22,5 +23,10 @@ public class Main {
         Computer computer = (Computer) unmarshaller.unmarshal(new File("src/main/resources/xml/computer.xml"));
 
         System.out.println("name" + computer.getComputerName());
+
+
+        String filePath = "src/main";
+        ObjectMapper objectMapper = new ObjectMapper();
+
     }
 }

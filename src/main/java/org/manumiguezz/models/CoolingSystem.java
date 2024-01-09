@@ -1,5 +1,7 @@
 package org.manumiguezz.models;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import javax.xml.bind.annotation.*;
 
 @XmlRootElement
@@ -15,6 +17,7 @@ public class CoolingSystem {
         this.coolingSystemType = coolingSystemType;
     }
 
+    @JsonProperty
     @XmlAttribute(name = "cooling_system_id")
     public int getCoolingSystemId() {
         return coolingSystemId;
@@ -24,6 +27,7 @@ public class CoolingSystem {
         this.coolingSystemId = coolingSystemId;
     }
 
+    @JsonProperty
     @XmlAttribute(name = "cooling_system_type")
     public String getCoolingSystemType() {
         return coolingSystemType;

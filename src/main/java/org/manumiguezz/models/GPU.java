@@ -1,5 +1,7 @@
 package org.manumiguezz.models;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import javax.xml.bind.annotation.*;
 
 @XmlRootElement
@@ -15,6 +17,7 @@ public class GPU {
         this.gpuModel = gpuModel;
     }
 
+    @JsonProperty
     @XmlAttribute(name = "gpu_id")
     public int getGpuId() {
         return gpuId;
@@ -24,6 +27,7 @@ public class GPU {
         this.gpuId = gpuId;
     }
 
+    @JsonProperty
     @XmlAttribute(name = "gpu_model")
     public String getGpuModel() {
         return gpuModel;

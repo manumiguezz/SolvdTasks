@@ -1,5 +1,7 @@
 package org.manumiguezz.models;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import javax.xml.bind.annotation.*;
 
 @XmlRootElement
@@ -15,6 +17,7 @@ public class PowerSupply {
         this.powerSupplyModel = powerSupplyModel;
     }
 
+    @JsonProperty
     @XmlAttribute(name = "power_supply_id")
     public int getPowerSupplyId() {
         return powerSupplyId;
@@ -24,6 +27,7 @@ public class PowerSupply {
         this.powerSupplyId = powerSupplyId;
     }
 
+    @JsonProperty
     @XmlAttribute(name = "power_supply_model")
     public String getPowerSupplyModel() {
         return powerSupplyModel;

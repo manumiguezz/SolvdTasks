@@ -1,5 +1,7 @@
 package org.manumiguezz.models;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import javax.xml.bind.annotation.*;
 
 @XmlRootElement
@@ -15,6 +17,7 @@ public class CPU {
         this.cpuModel = cpuModel;
     }
 
+    @JsonProperty
     @XmlAttribute(name = "cpu_id")
     public int getCpuId() {
         return cpuId;
@@ -24,6 +27,7 @@ public class CPU {
         this.cpuId = cpuId;
     }
 
+    @JsonProperty
     @XmlAttribute(name = "cpu_model")
     public String getCpuModel() {
         return cpuModel;

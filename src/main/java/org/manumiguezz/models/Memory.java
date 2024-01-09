@@ -1,5 +1,7 @@
 package org.manumiguezz.models;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import javax.xml.bind.annotation.*;
 
 @XmlRootElement
@@ -17,6 +19,7 @@ public class Memory {
         this.memoryCapacity = memoryCapacity;
     }
 
+    @JsonProperty
     @XmlAttribute(name = "memory_id")
     public int getMemoryId() {
         return memoryId;
@@ -26,6 +29,7 @@ public class Memory {
         this.memoryId = memoryId;
     }
 
+    @JsonProperty
     @XmlAttribute(name = "memory_type")
     public String getMemoryType() {
         return memoryType;

@@ -1,5 +1,8 @@
 package org.manumiguezz.models;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import org.json.JSONPropertyName;
+
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElementWrapper;
@@ -32,6 +35,7 @@ public class Computer {
         this.gpuId = gpuId;
     }
 
+    @JsonProperty
     @XmlAttribute
     public int getComputerId() {
         return computerId;
@@ -41,6 +45,7 @@ public class Computer {
         this.computerId = computerId;
     }
 
+    @JsonProperty
     @XmlAttribute
     public String getComputerName() {
         return computerName;

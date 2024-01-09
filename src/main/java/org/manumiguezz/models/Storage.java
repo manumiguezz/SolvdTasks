@@ -1,5 +1,7 @@
 package org.manumiguezz.models;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import javax.xml.bind.annotation.*;
 
 @XmlRootElement
@@ -17,6 +19,7 @@ public class Storage {
         this.storageCapacity = capacity;
     }
 
+    @JsonProperty
     @XmlAttribute(name = "storage_id")
     public int getStorageId() {
         return storageId;
@@ -26,6 +29,7 @@ public class Storage {
         this.storageId = storageId;
     }
 
+    @JsonProperty
     @XmlAttribute(name = "storage_type")
     public String getStorageType() {
         return storageType;
