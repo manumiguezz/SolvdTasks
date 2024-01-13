@@ -1,8 +1,5 @@
 package org.manumiguezz.service;
 
-import org.manumiguezz.dao.ComputerPeripheralDAO;
-import org.manumiguezz.models.ComputerPeripheral;
-
 import java.util.List;
 
 public class ComputerPeripheralService {

@@ -6,7 +6,7 @@ import javax.xml.bind.annotation.*;
 
 @XmlRootElement
 @XmlType(propOrder = {"gpu_id", "gpu_model"})
-public class GPU {
+public class GPU implements Component{
     private int gpuId;
     private String gpuModel;
 
@@ -35,5 +35,15 @@ public class GPU {
 
     public void setGpuModel(String gpuModel) {
         this.gpuModel = gpuModel;
+    }
+
+    @Override
+    public int getId() {
+        return gpuId;
+    }
+
+    @Override
+    public String getModel() {
+        return gpuModel;
     }
 }

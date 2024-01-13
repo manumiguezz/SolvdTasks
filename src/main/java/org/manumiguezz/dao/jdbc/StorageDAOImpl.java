@@ -63,7 +63,7 @@ public class StorageDAOImpl implements StorageDAO {
         String query = "INSERT INTO Storage (storage_id, storage_type, storage_capacity) VALUES (?, ?, ?)";
         try (PreparedStatement statement = connection.prepareStatement(query)) {
             statement.setInt(1, storage.getStorageId());
-            statement.setString(2, storage.getStorageType());
+            statement.setString(2, storage.getStorageModel());
             statement.setInt(3, storage.getStorageCapacity());
             statement.executeUpdate();
         } catch (SQLException e) {
@@ -75,7 +75,7 @@ public class StorageDAOImpl implements StorageDAO {
     public void update(Storage storage) {
         String query = "UPDATE Storage SET storage_type = ?, storage_capacity = ? WHERE storage_id = ?";
         try (PreparedStatement statement = connection.prepareStatement(query)) {
-            statement.setString(1, storage.getStorageType());
+            statement.setString(1, storage.getStorageModel());
             statement.setInt(2, storage.getStorageCapacity());
             statement.setInt(3, storage.getStorageId());
             statement.executeUpdate();

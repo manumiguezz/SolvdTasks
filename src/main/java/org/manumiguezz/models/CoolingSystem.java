@@ -6,15 +6,15 @@ import javax.xml.bind.annotation.*;
 
 @XmlRootElement
 @XmlType(propOrder = {"cooling_system_id", "cooling_system_type"})
-public class CoolingSystem {
+public class CoolingSystem implements Component{
     private int coolingSystemId;
-    private String coolingSystemType;
+    private String coolingSystemModel;
 
     public CoolingSystem() {}
 
     public CoolingSystem(int coolingSystemId, String coolingSystemType) {
         this.coolingSystemId = coolingSystemId;
-        this.coolingSystemType = coolingSystemType;
+        this.coolingSystemModel = coolingSystemType;
     }
 
     @JsonProperty
@@ -29,11 +29,21 @@ public class CoolingSystem {
 
     @JsonProperty
     @XmlAttribute(name = "cooling_system_type")
-    public String getCoolingSystemType() {
-        return coolingSystemType;
+    public String getCoolingSystemModel() {
+        return coolingSystemModel;
     }
 
-    public void setCoolingSystemType(String coolingSystemType) {
-        this.coolingSystemType = coolingSystemType;
+    public void setCoolingSystemModel(String coolingSystemModel) {
+        this.coolingSystemModel = coolingSystemModel;
+    }
+
+    @Override
+    public int getId() {
+        return coolingSystemId;
+    }
+
+    @Override
+    public String getModel() {
+        return coolingSystemModel;
     }
 }

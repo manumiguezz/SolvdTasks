@@ -6,17 +6,15 @@ import javax.xml.bind.annotation.*;
 
 @XmlRootElement
 @XmlType(propOrder = {"storage_id", "storage_type"})
-public class Storage {
+public class Storage implements Component{
     private int storageId;
-    private String storageType;
-    private int storageCapacity;
+    private String storageModel;
 
     public Storage() {}
 
     public Storage(int storageId, String storageType, int capacity) {
         this.storageId = storageId;
-        this.storageType = storageType;
-        this.storageCapacity = capacity;
+        this.storageModel = storageType;
     }
 
     @JsonProperty
@@ -31,19 +29,21 @@ public class Storage {
 
     @JsonProperty
     @XmlAttribute(name = "storage_type")
-    public String getStorageType() {
-        return storageType;
+    public String getStorageModel() {
+        return storageModel;
     }
 
-    public void setStorageType(String storageType) {
-        this.storageType = storageType;
+    public void setStorageModel(String storageModel) {
+        this.storageModel = storageModel;
     }
 
-    public int getStorageCapacity() {
-        return storageCapacity;
+    @Override
+    public int getId() {
+        return storageId;
     }
 
-    public void setStorageCapacity(int storageCapacity) {
-        this.storageCapacity = storageCapacity;
+    @Override
+    public String getModel() {
+        return storageModel;
     }
 }

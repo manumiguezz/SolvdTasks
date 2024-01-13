@@ -61,7 +61,7 @@ public class CoolingSystemDAOImpl implements CoolingSystemDAO {
         String query = "INSERT INTO CoolingSystem (cooling_system_id, cooling_system_type) VALUES (?, ?)";
         try (PreparedStatement statement = connection.prepareStatement(query)) {
             statement.setInt(1, coolingSystem.getCoolingSystemId());
-            statement.setString(2, coolingSystem.getCoolingSystemType());
+            statement.setString(2, coolingSystem.getCoolingSystemModel());
             statement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -72,7 +72,7 @@ public class CoolingSystemDAOImpl implements CoolingSystemDAO {
     public void update(CoolingSystem coolingSystem) {
         String query = "UPDATE CoolingSystem SET cooling_system_type = ? WHERE cooling_system_id = ?";
         try (PreparedStatement statement = connection.prepareStatement(query)) {
-            statement.setString(1, coolingSystem.getCoolingSystemType());
+            statement.setString(1, coolingSystem.getCoolingSystemModel());
             statement.setInt(2, coolingSystem.getCoolingSystemId());
             statement.executeUpdate();
         } catch (SQLException e) {

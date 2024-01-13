@@ -6,7 +6,7 @@ import javax.xml.bind.annotation.*;
 
 @XmlRootElement
 @XmlType(propOrder = {"motherboard_id", "motherboard_model"})
-public class Motherboard {
+public class Motherboard implements Component{
     private int motherboardId;
     private String motherboardModel;
 
@@ -35,5 +35,15 @@ public class Motherboard {
 
     public void setMotherboardModel(String motherboardModel) {
         this.motherboardModel = motherboardModel;
+    }
+
+    @Override
+    public int getId() {
+        return motherboardId;
+    }
+
+    @Override
+    public String getModel() {
+        return motherboardModel;
     }
 }

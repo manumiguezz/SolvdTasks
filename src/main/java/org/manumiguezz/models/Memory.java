@@ -6,17 +6,15 @@ import javax.xml.bind.annotation.*;
 
 @XmlRootElement
 @XmlType(propOrder = {"memory_id", "memory_type"})
-public class Memory {
+public class Memory implements Component{
     private int memoryId;
-    private String memoryType;
-    private int memoryCapacity;
+    private String memoryModel;
 
     public Memory() {}
 
     public Memory(int memoryId, String memoryType, int memoryCapacity) {
         this.memoryId = memoryId;
-        this.memoryType = memoryType;
-        this.memoryCapacity = memoryCapacity;
+        this.memoryModel = memoryType;
     }
 
     @JsonProperty
@@ -31,19 +29,21 @@ public class Memory {
 
     @JsonProperty
     @XmlAttribute(name = "memory_type")
-    public String getMemoryType() {
-        return memoryType;
+    public String getMemoryModel() {
+        return memoryModel;
     }
 
-    public void setMemoryType(String memoryType) {
-        this.memoryType = memoryType;
+    public void setMemoryModel(String memoryModel) {
+        this.memoryModel = memoryModel;
     }
 
-    public int getMemoryCapacity() {
-        return memoryCapacity;
+    @Override
+    public int getId() {
+        return memoryId;
     }
 
-    public void setMemoryCapacity(int memoryCapacity) {
-        this.memoryCapacity = memoryCapacity;
+    @Override
+    public String getModel() {
+        return memoryModel;
     }
 }

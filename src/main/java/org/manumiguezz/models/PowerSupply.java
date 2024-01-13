@@ -6,7 +6,7 @@ import javax.xml.bind.annotation.*;
 
 @XmlRootElement
 @XmlType(propOrder = {"power_supply_id", "power_supply_model"})
-public class PowerSupply {
+public class PowerSupply implements Component{
     private int powerSupplyId;
     private String powerSupplyModel;
 
@@ -35,5 +35,15 @@ public class PowerSupply {
 
     public void setPowerSupplyModel(String powerSupplyModel) {
         this.powerSupplyModel = powerSupplyModel;
+    }
+
+    @Override
+    public int getId() {
+        return powerSupplyId;
+    }
+
+    @Override
+    public String getModel() {
+        return powerSupplyModel;
     }
 }

@@ -6,7 +6,7 @@ import javax.xml.bind.annotation.*;
 
 @XmlRootElement
 @XmlType(propOrder = {"cpu_id", "cpu_model"})
-public class CPU {
+public class CPU implements Component{
     private int cpuId;
     private String cpuModel;
 
@@ -35,5 +35,15 @@ public class CPU {
 
     public void setCpuModel(String cpuModel) {
         this.cpuModel = cpuModel;
+    }
+
+    @Override
+    public int getId() {
+        return cpuId;
+    }
+
+    @Override
+    public String getModel() {
+        return cpuModel;
     }
 }
