@@ -1,5 +1,6 @@
 package org.manumiguezz.factory;
+import org.manumiguezz.models.Component;
 
 public interface ComponentFactory {
-    Component createComponent();
+    Component createComponent(int id, String model);
 }
