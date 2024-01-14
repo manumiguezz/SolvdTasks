@@ -3,28 +3,29 @@ package org.manumiguezz.factory;
 import org.manumiguezz.models.*;
 
 public class IntelComputer implements ComputerFactory{
+
     @Override
-    public IntelCPU createCPU() {
+    public CPUInterface createCPU() {
         return new IntelCPU();
     }
 
     @Override
     public GPU createGPU() {
-        return null;
+        return new GPU();
     }
 
     @Override
     public Motherboard createMotherboard() {
-        return null;
+        return new Motherboard();
     }
 
     @Override
     public Memory createMemory() {
-        return null;
+        return new Memory();
     }
 
     @Override
     public Storage createStorage() {
-        return null;
+        return new Storage();
     }
 }

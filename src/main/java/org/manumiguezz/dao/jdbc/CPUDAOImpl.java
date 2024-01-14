@@ -1,7 +1,7 @@
 package org.manumiguezz.dao.jdbc;
 
 import org.manumiguezz.dao.CPUDAO;
-import org.manumiguezz.models.IntelCPU;
+import org.manumiguezz.models.AmdCPU;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -18,14 +18,14 @@ public class CPUDAOImpl implements CPUDAO {
     }
 
     @Override
-    public IntelCPU findById(int id) {
-        IntelCPU cpu = null;
+    public AmdCPU findById(int id) {
+        AmdCPU cpu = null;
         String query = "SELECT * FROM CPU WHERE cpu_id = ?";
         try (PreparedStatement statement = connection.prepareStatement(query)) {
             statement.setInt(1, id);
             try (ResultSet resultSet = statement.executeQuery()) {
                 if (resultSet.next()) {
-                    cpu = new IntelCPU(
+                    cpu = new AmdCPU(
                             resultSet.getInt("cpu_id"),
                             resultSet.getString("cpu_model")
                     );
@@ -38,13 +38,13 @@ public class CPUDAOImpl implements CPUDAO {
     }
 
     @Override
-    public List<IntelCPU> findAll() {
-        List<IntelCPU> cpus = new ArrayList<>();
+    public List<AmdCPU> findAll() {
+        List<AmdCPU> cpus = new ArrayList<>();
         String query = "SELECT * FROM CPU";
         try (PreparedStatement statement = connection.prepareStatement(query);
              ResultSet resultSet = statement.executeQuery()) {
             while (resultSet.next()) {
-                IntelCPU cpu = new IntelCPU(
+                AmdCPU cpu = new AmdCPU(
                         resultSet.getInt("cpu_id"),
                         resultSet.getString("cpu_model")
                 );
@@ -57,7 +57,7 @@ public class CPUDAOImpl implements CPUDAO {
     }
 
     @Override
-    public void create(IntelCPU cpu) {
+    public void create(AmdCPU cpu) {
         String query = "INSERT INTO CPU (cpu_id, cpu_model) VALUES (?, ?)";
         try (PreparedStatement statement = connection.prepareStatement(query)) {
             statement.setInt(1, cpu.getCpuId());
@@ -69,7 +69,7 @@ public class CPUDAOImpl implements CPUDAO {
     }
 
     @Override
-    public void update(IntelCPU cpu) {
+    public void update(AmdCPU cpu) {
         String query = "UPDATE CPU SET cpu_model = ? WHERE cpu_id = ?";
         try (PreparedStatement statement = connection.prepareStatement(query)) {
             statement.setString(1, cpu.getCpuModel());

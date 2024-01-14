@@ -5,20 +5,20 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import javax.xml.bind.annotation.*;
 
 @XmlRootElement
-@XmlType(propOrder = {"intel_cpu_id", "intel_cpu_model"})
-public class IntelCPU implements Component, CPUInterface{
+@XmlType(propOrder = {"amd_cpu_id", "amd_cpu_model"})
+public class AmdCPU implements Component, CPUInterface{
     private int cpuId;
     private String cpuModel;
 
-    public IntelCPU() {}
+    public AmdCPU() {}
 
-    public IntelCPU(int cpuId, String cpuModel) {
+    public AmdCPU(int cpuId, String cpuModel) {
         this.cpuId = cpuId;
         this.cpuModel = cpuModel;
     }
 
     @JsonProperty
-    @XmlAttribute(name = "intel_cpu_id")
+    @XmlAttribute(name = "amd_cpu_id")
     public int getCpuId() {
         return cpuId;
     }
@@ -28,7 +28,7 @@ public class IntelCPU implements Component, CPUInterface{
     }
 
     @JsonProperty
-    @XmlAttribute(name = "intel_cpu_model")
+    @XmlAttribute(name = "amd_cpu_model")
     public String getCpuModel() {
         return cpuModel;
     }
@@ -49,6 +49,6 @@ public class IntelCPU implements Component, CPUInterface{
 
     @Override
     public void processData(String model) {
-        System.out.println("Data processed by Intel:" + model);
+        System.out.println("Data processed by AMD:" + model);
     }
 }

@@ -3,7 +3,7 @@ package org.manumiguezz.factory;
 import org.manumiguezz.models.*;
 
 public interface ComputerFactory {
-    IntelCPU createCPU();
+    CPUInterface createCPU();
     GPU createGPU();
     Motherboard createMotherboard();
     Memory createMemory();

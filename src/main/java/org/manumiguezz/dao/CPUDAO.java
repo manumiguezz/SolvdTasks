@@ -1,17 +1,17 @@
 package org.manumiguezz.dao;
 
-import org.manumiguezz.models.IntelCPU;
+import org.manumiguezz.models.AmdCPU;
 
 import java.util.List;
 
 public interface CPUDAO {
-    IntelCPU findById(int id);
+    AmdCPU findById(int id);
 
-    List<IntelCPU> findAll();
+    List<AmdCPU> findAll();
 
-    void create(IntelCPU cpu);
+    void create(AmdCPU cpu);
 
-    void update(IntelCPU cpu);
+    void update(AmdCPU cpu);
 
     void delete(int id);
 }
