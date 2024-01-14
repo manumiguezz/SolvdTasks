@@ -10,6 +10,7 @@ public class CoolingSystem implements Component{
     private int coolingSystemId;
     private String coolingSystemModel;
     private ComponentListener componentListener;
+    private CoolingStrategyInterface coolingStrategy;
 
     public CoolingSystem() {}
 
@@ -34,6 +35,7 @@ public class CoolingSystem implements Component{
 
     public void startWorking() {
         System.out.println("running");
+        coolingStrategy.cool();
     }
 
     @JsonProperty
