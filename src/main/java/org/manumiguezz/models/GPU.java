@@ -28,6 +28,14 @@ public class GPU implements Component{
         }
     }
 
+    public void stopWorking() {
+        System.out.println("stopped");
+    }
+
+    public void startWorking() {
+        System.out.println("running");
+    }
+
     @JsonProperty
     @XmlAttribute(name = "gpu_id")
     public int getGpuId() {

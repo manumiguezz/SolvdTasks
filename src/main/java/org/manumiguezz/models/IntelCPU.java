@@ -28,6 +28,21 @@ public class IntelCPU implements Component, CPUInterface{
         }
     }
 
+    @Override
+    public void processData(String model) {
+        System.out.println("Data processed by Intel:" + model);
+    }
+
+    @Override
+    public void stopProcessing() {
+        System.out.println("stopped");
+    }
+
+    @Override
+    public void startProcessing() {
+        System.out.println("running");
+    }
+
     @JsonProperty
     @XmlAttribute(name = "intel_cpu_id")
     public int getCpuId() {
@@ -64,10 +79,5 @@ public class IntelCPU implements Component, CPUInterface{
 
     public void setComponentListener(ComponentListener componentListener) {
         this.componentListener = componentListener;
-    }
-
-    @Override
-    public void processData(String model) {
-        System.out.println("Data processed by Intel:" + model);
     }
 }

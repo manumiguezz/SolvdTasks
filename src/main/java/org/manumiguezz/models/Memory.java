@@ -27,6 +27,14 @@ public class Memory implements Component{
         }
     }
 
+    public void stopWorking() {
+        System.out.println("stopped");
+    }
+
+    public void startWorking() {
+        System.out.println("running");
+    }
+
     @JsonProperty
     @XmlAttribute(name = "memory_id")
     public int getMemoryId() {

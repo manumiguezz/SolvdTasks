@@ -28,6 +28,14 @@ public class PowerSupply implements Component{
         }
     }
 
+    public void stopWorking() {
+        System.out.println("stopped");
+    }
+
+    public void startWorking() {
+        System.out.println("running");
+    }
+
     @JsonProperty
     @XmlAttribute(name = "power_supply_id")
     public int getPowerSupplyId() {

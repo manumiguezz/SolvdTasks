@@ -28,6 +28,14 @@ public class CoolingSystem implements Component{
         }
     }
 
+    public void stopWorking() {
+        System.out.println("stopped");
+    }
+
+    public void startWorking() {
+        System.out.println("running");
+    }
+
     @JsonProperty
     @XmlAttribute(name = "cooling_system_id")
     public int getCoolingSystemId() {

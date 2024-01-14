@@ -27,6 +27,14 @@ public class Storage implements Component{
         }
     }
 
+    public void stopWorking() {
+        System.out.println("stopped");
+    }
+
+    public void startWorking() {
+        System.out.println("running");
+    }
+
     @JsonProperty
     @XmlAttribute(name = "storage_id")
     public int getStorageId() {

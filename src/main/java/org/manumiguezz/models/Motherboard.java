@@ -28,6 +28,14 @@ public class Motherboard implements Component{
         }
     }
 
+    public void stopWorking() {
+        System.out.println("stopped");
+    }
+
+    public void startWorking() {
+        System.out.println("running");
+    }
+
     @JsonProperty
     @XmlAttribute(name = "motherboard_id")
     public int getMotherboardId() {
