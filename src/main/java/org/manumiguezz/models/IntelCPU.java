@@ -6,13 +6,13 @@ import javax.xml.bind.annotation.*;
 
 @XmlRootElement
 @XmlType(propOrder = {"cpu_id", "cpu_model"})
-public class CPU implements Component{
+public class IntelCPU implements Component{
     private int cpuId;
     private String cpuModel;
 
-    public CPU() {}
+    public IntelCPU() {}
 
-    public CPU(int cpuId, String cpuModel) {
+    public IntelCPU(int cpuId, String cpuModel) {
         this.cpuId = cpuId;
         this.cpuModel = cpuModel;
     }

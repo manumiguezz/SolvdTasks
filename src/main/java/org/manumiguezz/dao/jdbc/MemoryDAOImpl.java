@@ -64,7 +64,6 @@ public class MemoryDAOImpl implements MemoryDAO {
         try (PreparedStatement statement = connection.prepareStatement(query)) {
             statement.setInt(1, memory.getMemoryId());
             statement.setString(2, memory.getMemoryModel());
-            statement.setInt(3, memory.getMemoryCapacity());
             statement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -76,7 +75,6 @@ public class MemoryDAOImpl implements MemoryDAO {
         String query = "UPDATE Memory SET memory_type = ?, memory_capacity = ? WHERE memory_id = ?";
         try (PreparedStatement statement = connection.prepareStatement(query)) {
             statement.setString(1, memory.getMemoryModel());
-            statement.setInt(2, memory.getMemoryCapacity());
             statement.setInt(3, memory.getMemoryId());
             statement.executeUpdate();
         } catch (SQLException e) {
