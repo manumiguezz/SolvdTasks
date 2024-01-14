@@ -9,8 +9,19 @@ import javax.xml.bind.annotation.*;
 public class GPU implements Component{
     private int gpuId;
     private String gpuModel;
+    private ComponentListener componentListener;
 
     public GPU() {}
+
+    public void registerListener(ComponentListener listener) {
+        this.componentListener = listener;
+    }
+
+    public void notifyListener() {
+        if (componentListener != null) {
+            componentListener.onComponentChanged(gpuModel, gpuId);
+        }
+    }
 
     public GPU(int gpuId, String gpuModel) {
         this.gpuId = gpuId;
@@ -25,6 +36,7 @@ public class GPU implements Component{
 
     public void setGpuId(int gpuId) {
         this.gpuId = gpuId;
+        notifyListener();
     }
 
     @JsonProperty
@@ -35,6 +47,7 @@ public class GPU implements Component{
 
     public void setGpuModel(String gpuModel) {
         this.gpuModel = gpuModel;
+        notifyListener();
     }
 
     @Override

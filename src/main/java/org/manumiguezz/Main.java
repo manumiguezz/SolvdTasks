@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.core.Logger;
 import org.manumiguezz.models.Computer;
+import org.manumiguezz.models.ComputerBuilder;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
@@ -20,6 +21,25 @@ public class Main {
     private static final Logger logger = (Logger) LogManager.getLogger(Main.class);
     public static void main(String[] args) throws JAXBException, JsonProcessingException {
         Scanner scanner = new Scanner(System.in);
+
+        ComputerBuilder computerBuilder = new ComputerBuilder();
+        Computer myComputer = computerBuilder
+                .setCpuModel("intel i7")
+                .setCpuId(1)
+                .setGpuModel("amd rx 870x")
+                .setGpuId(1)
+                .setMotherboardModel("amd ax20")
+                .setMotherboardId(1)
+                .setMemoryModel("asus ddr4")
+                .setMemoryId(1)
+                .setStorageModel("corsair 1tb")
+                .setStorageId(1)
+                .setNetworkAdapterModel("tplink 4423")
+                .setNetworkAdapterId(1)
+                .setPowerSupplyModel("corsair 700w")
+                .setPowerSupplyId(1)
+                .build();
+
 
         JAXBContext context = JAXBContext.newInstance(Computer.class);
         Unmarshaller unmarshaller = context.createUnmarshaller();

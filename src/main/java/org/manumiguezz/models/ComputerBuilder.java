@@ -3,8 +3,12 @@ package org.manumiguezz.models;
 public class ComputerBuilder {
     private Computer computer;
 
-    public ComputerBuilder(Computer computer) {
+    public ComputerBuilder() {
         this.computer = new Computer();
+    }
+
+    public Computer build() {
+        return computer;
     }
 
     public ComputerBuilder setCpuModel (String cpuModel) {
