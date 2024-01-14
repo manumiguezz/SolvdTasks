@@ -4,8 +4,11 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.core.Logger;
+import org.manumiguezz.controllers.ComputerBuilderController;
 import org.manumiguezz.models.Computer;
 import org.manumiguezz.models.ComputerBuilder;
+import org.manumiguezz.models.ComputerBuilderModel;
+import org.manumiguezz.views.ComputerBuilderView;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
@@ -40,6 +43,12 @@ public class Main {
                 .setPowerSupplyId(1)
                 .build();
 
+
+        ComputerBuilderModel model = new ComputerBuilderModel();
+        ComputerBuilderView view = new ComputerBuilderView();
+        ComputerBuilderController controller = new ComputerBuilderController(model, view);
+
+        controller.buildComputer("intel i7", "AMD 560x", "asus g50", "corsair ddr4", "asus 500gb", "corsair cooling", "asus 700w");
 
         JAXBContext context = JAXBContext.newInstance(Computer.class);
         Unmarshaller unmarshaller = context.createUnmarshaller();
