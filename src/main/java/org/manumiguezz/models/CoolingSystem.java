@@ -9,12 +9,23 @@ import javax.xml.bind.annotation.*;
 public class CoolingSystem implements Component{
     private int coolingSystemId;
     private String coolingSystemModel;
+    private ComponentListener componentListener;
 
     public CoolingSystem() {}
 
     public CoolingSystem(int coolingSystemId, String coolingSystemType) {
         this.coolingSystemId = coolingSystemId;
         this.coolingSystemModel = coolingSystemType;
+    }
+
+    public void registerListener(ComponentListener listener) {
+        this.componentListener = listener;
+    }
+
+    public void notifyListener() {
+        if (componentListener != null) {
+            componentListener.onComponentChanged(coolingSystemModel, coolingSystemId);
+        }
     }
 
     @JsonProperty
@@ -45,5 +56,13 @@ public class CoolingSystem implements Component{
     @Override
     public String getModel() {
         return coolingSystemModel;
+    }
+
+    public ComponentListener getComponentListener() {
+        return componentListener;
+    }
+
+    public void setComponentListener(ComponentListener componentListener) {
+        this.componentListener = componentListener;
     }
 }

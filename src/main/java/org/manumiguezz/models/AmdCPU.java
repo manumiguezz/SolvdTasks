@@ -9,12 +9,23 @@ import javax.xml.bind.annotation.*;
 public class AmdCPU implements Component, CPUInterface{
     private int cpuId;
     private String cpuModel;
+    private ComponentListener componentListener;
 
     public AmdCPU() {}
 
     public AmdCPU(int cpuId, String cpuModel) {
         this.cpuId = cpuId;
         this.cpuModel = cpuModel;
+    }
+
+    public void registerListener(ComponentListener listener) {
+        this.componentListener = listener;
+    }
+
+    public void notifyListener() {
+        if (componentListener != null) {
+            componentListener.onComponentChanged(cpuModel, cpuId);
+        }
     }
 
     @JsonProperty
@@ -47,8 +58,18 @@ public class AmdCPU implements Component, CPUInterface{
         return cpuModel;
     }
 
+    public ComponentListener getComponentListener() {
+        return componentListener;
+    }
+
+    public void setComponentListener(ComponentListener componentListener) {
+        this.componentListener = componentListener;
+    }
+
     @Override
     public void processData(String model) {
         System.out.println("Data processed by AMD:" + model);
     }
+
+
 }

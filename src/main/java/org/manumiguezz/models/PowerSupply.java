@@ -9,12 +9,23 @@ import javax.xml.bind.annotation.*;
 public class PowerSupply implements Component{
     private int powerSupplyId;
     private String powerSupplyModel;
+    private ComponentListener componentListener;
 
     public PowerSupply() {}
 
     public PowerSupply(int powerSupplyId, String powerSupplyModel) {
         this.powerSupplyId = powerSupplyId;
         this.powerSupplyModel = powerSupplyModel;
+    }
+
+    public void registerListener(ComponentListener listener) {
+        this.componentListener = listener;
+    }
+
+    public void notifyListener() {
+        if (componentListener != null) {
+            componentListener.onComponentChanged(powerSupplyModel, powerSupplyId);
+        }
     }
 
     @JsonProperty
@@ -45,5 +56,13 @@ public class PowerSupply implements Component{
     @Override
     public String getModel() {
         return powerSupplyModel;
+    }
+
+    public ComponentListener getComponentListener() {
+        return componentListener;
+    }
+
+    public void setComponentListener(ComponentListener componentListener) {
+        this.componentListener = componentListener;
     }
 }

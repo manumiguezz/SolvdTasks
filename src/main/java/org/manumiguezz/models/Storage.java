@@ -9,12 +9,22 @@ import javax.xml.bind.annotation.*;
 public class Storage implements Component{
     private int storageId;
     private String storageModel;
-
+    private ComponentListener componentListener;
     public Storage() {}
 
     public Storage(int storageId, String storageType, int capacity) {
         this.storageId = storageId;
         this.storageModel = storageType;
+    }
+
+    public void registerListener(ComponentListener listener) {
+        this.componentListener = listener;
+    }
+
+    public void notifyListener() {
+        if (componentListener != null) {
+            componentListener.onComponentChanged(storageModel, storageId);
+        }
     }
 
     @JsonProperty
@@ -45,5 +55,13 @@ public class Storage implements Component{
     @Override
     public String getModel() {
         return storageModel;
+    }
+
+    public ComponentListener getComponentListener() {
+        return componentListener;
+    }
+
+    public void setComponentListener(ComponentListener componentListener) {
+        this.componentListener = componentListener;
     }
 }

@@ -13,6 +13,11 @@ public class GPU implements Component{
 
     public GPU() {}
 
+    public GPU(int gpuId, String gpuModel) {
+        this.gpuId = gpuId;
+        this.gpuModel = gpuModel;
+    }
+
     public void registerListener(ComponentListener listener) {
         this.componentListener = listener;
     }
@@ -21,11 +26,6 @@ public class GPU implements Component{
         if (componentListener != null) {
             componentListener.onComponentChanged(gpuModel, gpuId);
         }
-    }
-
-    public GPU(int gpuId, String gpuModel) {
-        this.gpuId = gpuId;
-        this.gpuModel = gpuModel;
     }
 
     @JsonProperty
@@ -58,5 +58,13 @@ public class GPU implements Component{
     @Override
     public String getModel() {
         return gpuModel;
+    }
+
+    public ComponentListener getComponentListener() {
+        return componentListener;
+    }
+
+    public void setComponentListener(ComponentListener componentListener) {
+        this.componentListener = componentListener;
     }
 }

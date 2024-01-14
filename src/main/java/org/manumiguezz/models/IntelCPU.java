@@ -9,12 +9,23 @@ import javax.xml.bind.annotation.*;
 public class IntelCPU implements Component, CPUInterface{
     private int cpuId;
     private String cpuModel;
+    private ComponentListener componentListener;
 
     public IntelCPU() {}
 
     public IntelCPU(int cpuId, String cpuModel) {
         this.cpuId = cpuId;
         this.cpuModel = cpuModel;
+    }
+
+    public void registerListener(ComponentListener listener) {
+        this.componentListener = listener;
+    }
+
+    public void notifyListener() {
+        if (componentListener != null) {
+            componentListener.onComponentChanged(cpuModel, cpuId);
+        }
     }
 
     @JsonProperty
@@ -45,6 +56,14 @@ public class IntelCPU implements Component, CPUInterface{
     @Override
     public String getModel() {
         return cpuModel;
+    }
+
+    public ComponentListener getComponentListener() {
+        return componentListener;
+    }
+
+    public void setComponentListener(ComponentListener componentListener) {
+        this.componentListener = componentListener;
     }
 
     @Override

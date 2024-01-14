@@ -9,12 +9,22 @@ import javax.xml.bind.annotation.*;
 public class Memory implements Component{
     private int memoryId;
     private String memoryModel;
-
+    private ComponentListener componentListener;
     public Memory() {}
 
     public Memory(int memoryId, String memoryType, int memoryCapacity) {
         this.memoryId = memoryId;
         this.memoryModel = memoryType;
+    }
+
+    public void registerListener(ComponentListener listener) {
+        this.componentListener = listener;
+    }
+
+    public void notifyListener() {
+        if (componentListener != null) {
+            componentListener.onComponentChanged(memoryModel, memoryId);
+        }
     }
 
     @JsonProperty
@@ -45,5 +55,13 @@ public class Memory implements Component{
     @Override
     public String getModel() {
         return memoryModel;
+    }
+
+    public ComponentListener getComponentListener() {
+        return componentListener;
+    }
+
+    public void setComponentListener(ComponentListener componentListener) {
+        this.componentListener = componentListener;
     }
 }

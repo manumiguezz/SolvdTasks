@@ -9,12 +9,23 @@ import javax.xml.bind.annotation.*;
 public class Motherboard implements Component{
     private int motherboardId;
     private String motherboardModel;
+    private ComponentListener componentListener;
 
     public Motherboard() {}
 
     public Motherboard(int motherboardId, String motherboardModel) {
         this.motherboardId = motherboardId;
         this.motherboardModel = motherboardModel;
+    }
+
+    public void registerListener(ComponentListener listener) {
+        this.componentListener = listener;
+    }
+
+    public void notifyListener() {
+        if (componentListener != null) {
+            componentListener.onComponentChanged(motherboardModel, motherboardId);
+        }
     }
 
     @JsonProperty
@@ -45,5 +56,13 @@ public class Motherboard implements Component{
     @Override
     public String getModel() {
         return motherboardModel;
+    }
+
+    public ComponentListener getComponentListener() {
+        return componentListener;
+    }
+
+    public void setComponentListener(ComponentListener componentListener) {
+        this.componentListener = componentListener;
     }
 }
