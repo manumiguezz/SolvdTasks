@@ -26,11 +26,11 @@ public class ComputerDAOImpl implements ComputerDAO {
             try (ResultSet resultSet = statement.executeQuery()) {
                 if (resultSet.next()) {
                     computer = new Computer(
-                            resultSet.getInt("computer_id"),
-                            resultSet.getString("computer_name"),
-                            resultSet.getInt("motherboard_id"),
-                            resultSet.getInt("power_supply_id"),
-                            resultSet.getInt("cooling_system_id")
+//                            resultSet.getInt("computer_id"),
+//                            resultSet.getString("computer_name"),
+//                            resultSet.getInt("motherboard_id"),
+//                            resultSet.getInt("power_supply_id"),
+//                            resultSet.getInt("cooling_system_id")
                     );
                 }
             }
@@ -48,11 +48,11 @@ public class ComputerDAOImpl implements ComputerDAO {
              ResultSet resultSet = statement.executeQuery()) {
             while (resultSet.next()) {
                 Computer computer = new Computer(
-                        resultSet.getInt("computer_id"),
-                        resultSet.getString("computer_name"),
-                        resultSet.getInt("motherboard_id"),
-                        resultSet.getInt("power_supply_id"),
-                        resultSet.getInt("cooling_system_id")
+//                        resultSet.getInt("computer_id"),
+//                        resultSet.getString("computer_name"),
+//                        resultSet.getInt("motherboard_id"),
+//                        resultSet.getInt("power_supply_id"),
+//                        resultSet.getInt("cooling_system_id")
                 );
                 computers.add(computer);
             }
@@ -111,11 +111,11 @@ public class ComputerDAOImpl implements ComputerDAO {
             try (ResultSet resultSet = statement.executeQuery()) {
                 while (resultSet.next()) {
                     Computer computer = new Computer(
-                            resultSet.getInt("id"),
-                            resultSet.getString("brand"),
-                            resultSet.getInt("motherboardId"),
-                            resultSet.getInt("powerSupplyId"),
-                            resultSet.getInt("coolingSystemId")
+//                            resultSet.getInt("id"),
+//                            resultSet.getString("brand"),
+//                            resultSet.getInt("motherboardId"),
+//                            resultSet.getInt("powerSupplyId"),
+//                            resultSet.getInt("coolingSystemId")
                     );
                     computers.add(computer);
                 }

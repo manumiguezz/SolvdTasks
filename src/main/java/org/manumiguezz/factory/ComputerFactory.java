@@ -8,4 +8,5 @@ public interface ComputerFactory {
     Motherboard createMotherboard();
     Memory createMemory();
     Storage createStorage();
+    PowerSupply createPowerSupply();
 }

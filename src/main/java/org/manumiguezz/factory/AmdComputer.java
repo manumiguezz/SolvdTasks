@@ -2,11 +2,10 @@ package org.manumiguezz.factory;
 
 import org.manumiguezz.models.*;
 
-public class IntelComputer implements ComputerFactory{
-
+public class AmdComputer implements ComputerFactory{
     @Override
     public CPUInterface createCPU() {
-        return new IntelCPU();
+        return new AmdCPU();
     }
 
     @Override
