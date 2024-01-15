@@ -5,9 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.core.Logger;
 import org.manumiguezz.controllers.ComputerBuilderController;
-import org.manumiguezz.models.Computer;
-import org.manumiguezz.models.ComputerBuilder;
-import org.manumiguezz.models.ComputerBuilderModel;
+import org.manumiguezz.models.*;
 import org.manumiguezz.views.ComputerBuilderView;
 
 import javax.xml.bind.JAXBContext;
@@ -37,7 +35,7 @@ public class Main {
                 .setMemoryId(1)
                 .setStorageModel("corsair 1tb")
                 .setStorageId(1)
-                .setNetworkAdapterModel("tplink 4423")
+                .setNetworkAdapterModel("tp link 4423")
                 .setNetworkAdapterId(1)
                 .setPowerSupplyModel("corsair 700w")
                 .setPowerSupplyId(1)
