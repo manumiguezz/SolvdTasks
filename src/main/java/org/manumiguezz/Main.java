@@ -6,6 +6,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.core.Logger;
 import org.manumiguezz.controllers.ComputerBuilderController;
 import org.manumiguezz.models.*;
+import org.manumiguezz.utils.SystemMonitor;
 import org.manumiguezz.views.ComputerBuilderView;
 
 import javax.xml.bind.JAXBContext;
@@ -22,6 +23,10 @@ public class Main {
     private static final Logger logger = (Logger) LogManager.getLogger(Main.class);
     public static void main(String[] args) throws JAXBException, JsonProcessingException {
         Scanner scanner = new Scanner(System.in);
+
+        IntelCPU cpu = new IntelCPU();
+        SystemMonitor systemMonitor = new SystemMonitor();
+        cpu.registerListener(systemMonitor);
 
         ComputerBuilder computerBuilder = new ComputerBuilder();
         Computer myComputer = computerBuilder
