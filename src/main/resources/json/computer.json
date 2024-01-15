@@ -25,16 +25,14 @@
       "memory_type": "DDR4"
     }
   ],
-  "networkAdapters": [
-    {
-      "network_adapter_id": 1,
-      "network_adapter_type": "Ethernet Card"
-    }
-  ],
   "cpus": [
     {
-      "cpu_id": 1,
-      "cpu_model": "Ryzen 9"
+      "amd_cpu_id": 1,
+      "amd_cpu_model": "Ryzen 9"
+    },
+    {
+      "intel_cpu_id": 1,
+      "intel_cpu_model": "Intel I9"
     }
   ],
   "gpus": [
