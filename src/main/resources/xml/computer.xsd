@@ -18,7 +18,6 @@
     <xs:element name="powerSupplies" type="PowerSupplyType"/>
     <xs:element name="coolingSystems" type="CoolingSystemType"/>
     <xs:element name="memories" type="MemoryType"/>
-    <xs:element name="networkAdapters" type="NetworkAdapterType"/>
     <xs:element name="CPUs" type="CpuType"/>
     <xs:element name="GPUs" type="GpuType"/>
 
@@ -61,17 +60,6 @@
                 <xs:complexType>
                     <xs:attribute name="memory_id" type="xs:int"/>
                     <xs:attribute name="memory_model" type="xs:string"/>
-                </xs:complexType>
-            </xs:element>
-        </xs:sequence>
-    </xs:complexType>
-
-    <xs:complexType name="NetworkAdapterType">
-        <xs:sequence>
-            <xs:element name="network_adapter" minOccurs="0" maxOccurs="unbounded">
-                <xs:complexType>
-                    <xs:attribute name="network_adapter_id" type="xs:int"/>
-                    <xs:attribute name="network_adapter_model" type="xs:string"/>
                 </xs:complexType>
             </xs:element>
         </xs:sequence>
