@@ -22,7 +22,6 @@ import java.util.Scanner;
 public class Main {
     private static final Logger logger = (Logger) LogManager.getLogger(Main.class);
     public static void main(String[] args) throws JAXBException, JsonProcessingException {
-        Scanner scanner = new Scanner(System.in);
 
         IntelCPU cpu = new IntelCPU();
         SystemMonitor systemMonitor = new SystemMonitor();
@@ -73,18 +72,15 @@ public class Main {
                 int event = reader.next();
 
                 switch (event) {
-                    case XMLStreamConstants.START_ELEMENT:
-                        System.out.println("Start Element: " + reader.getLocalName());
-                        break;
-                    case XMLStreamConstants.CHARACTERS:
+                    case XMLStreamConstants.START_ELEMENT ->
+                            System.out.println("Start Element: " + reader.getLocalName());
+                    case XMLStreamConstants.CHARACTERS -> {
                         String text = reader.getText().trim();
                         if (!text.isEmpty()) {
                             System.out.println("Text: " + text);
                         }
-                        break;
-                    case XMLStreamConstants.END_ELEMENT:
-                        System.out.println("End Element: " + reader.getLocalName());
-                        break;
+                    }
+                    case XMLStreamConstants.END_ELEMENT -> System.out.println("End Element: " + reader.getLocalName());
                 }
             }
 
