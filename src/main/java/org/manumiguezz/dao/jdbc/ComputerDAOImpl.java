@@ -25,13 +25,7 @@ public class ComputerDAOImpl implements ComputerDAO {
             statement.setInt(1, id);
             try (ResultSet resultSet = statement.executeQuery()) {
                 if (resultSet.next()) {
-                    computer = new Computer(
-//                            resultSet.getInt("computer_id"),
-//                            resultSet.getString("computer_name"),
-//                            resultSet.getInt("motherboard_id"),
-//                            resultSet.getInt("power_supply_id"),
-//                            resultSet.getInt("cooling_system_id")
-                    );
+                    computer = new Computer();
                 }
             }
         } catch (SQLException e) {
@@ -47,13 +41,7 @@ public class ComputerDAOImpl implements ComputerDAO {
         try (PreparedStatement statement = connection.prepareStatement(query);
              ResultSet resultSet = statement.executeQuery()) {
             while (resultSet.next()) {
-                Computer computer = new Computer(
-//                        resultSet.getInt("computer_id"),
-//                        resultSet.getString("computer_name"),
-//                        resultSet.getInt("motherboard_id"),
-//                        resultSet.getInt("power_supply_id"),
-//                        resultSet.getInt("cooling_system_id")
-                );
+                Computer computer = new Computer();
                 computers.add(computer);
             }
         } catch (SQLException e) {
@@ -110,13 +98,7 @@ public class ComputerDAOImpl implements ComputerDAO {
             statement.setString(1, brand);
             try (ResultSet resultSet = statement.executeQuery()) {
                 while (resultSet.next()) {
-                    Computer computer = new Computer(
-//                            resultSet.getInt("id"),
-//                            resultSet.getString("brand"),
-//                            resultSet.getInt("motherboardId"),
-//                            resultSet.getInt("powerSupplyId"),
-//                            resultSet.getInt("coolingSystemId")
-                    );
+                    Computer computer = new Computer();
                     computers.add(computer);
                 }
             }

@@ -17,6 +17,10 @@
     {
       "cooling_system_id": 1,
       "cooling_system_type": "liquid cooling"
+    },
+    {
+      "cooling_system_id": 2,
+      "cooling_system_type": "air cooling"
     }
   ],
   "memories": [
